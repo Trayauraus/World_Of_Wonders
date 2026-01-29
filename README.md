@@ -37,8 +37,9 @@ It is meant to be a passion project I can work on in my free time.
 
 ### Third-Party Assets
 * **Environment Art:** This project utilizes a background asset from the game **Celeste**, which is the property of **Maddy Makes Games**. This asset is used for placeholder and educational purposes only.
-* **Addons:** * **Indie Blueprint Save Manager:** Used for the game's saving architecture.
-    * **Discord RPC:** Used for rich presence integration.
+* **Addons:** 
+   * **Indie Blueprint Save Manager:** Used for the game's saving architecture.
+   * **Discord RPC:** Used for rich presence integration.
 
 # Lisence
 This game is distributed under the terms of the MIT license, as described in the LICENSE.md file.
