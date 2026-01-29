@@ -1,0 +1,16 @@
+# Language Detection
+*.gd linguist-language=GDScript
+*.tscn linguist-language=GDScript
+*.tres linguist-language=GDScript
+
+# Godot Specific File Handling
+*.gd text
+*.tscn text
+*.tres text
+
+
+*.png binary
+*.jpg binary
+*.webp binary
+*.wav binary
+*.ogg binary
