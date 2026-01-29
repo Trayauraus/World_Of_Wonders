@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'Pixel Game';
+    src: url('Assets/Fonts/Pixel Game.otf') format('opentype');
+}
+
+body {
+    font-family: 'Pixel Game', sans-serif;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+    border-bottom: 2px solid #444;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+nav h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e8452b;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #e8452b;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 3px solid #444;
+}
+
+.cta-button {
+    background-color: #e8452b;
+    color: #f2f2f2;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c53121;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #444;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: flex-end; /* Align content to the bottom */
+}
+
+.card img {
+    max-width: 200px; /* Reverted to previous size */
+    margin-bottom: 1rem;
+    image-rendering: pixelated; /* For crisp pixel art scaling */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: crisp-edges;
+    align-self: center; /* Center image within flex container */
+    transform: scale(3.6); /* Visually zoom the image */
+    transform-origin: center; /* Ensure scaling is from the center */
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Make the link a flex container */
+    flex-direction: column; /* Arrange items in a column */
+    height: 100%; /* Ensure the link takes full height of the card */
+    justify-content: flex-end; /* Align content to the bottom */
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #e8452b;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #444;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#download {
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid #444;
+}
+
+footer a {
+    color: #e8452b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #c53121;
+}
