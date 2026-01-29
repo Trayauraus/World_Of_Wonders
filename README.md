@@ -10,7 +10,7 @@ The playable versions of **World of Wonders** is found here: **[Releases](https:
 
 
 ## Origins
-The project originally started on Godot 4.3 as *Land of Tales* and then moved to *Land of Wonders* before being rebranded to World of Wonders to create the "WoW" acronym.
+The project originally started on [Godot 4.3](https://godotengine.org/download/archive/4.3-stable/) as *Land of Tales* and then moved to *Land of Wonders* before being rebranded to World of Wonders to create the "WoW" acronym.
 It is meant to be a passion project I can work on in my free time.
 
 
@@ -23,7 +23,7 @@ It is meant to be a passion project I can work on in my free time.
 
 ## Technical Specifications
 * **Current Version:** 5.5.
-* **Base Engine:** Godot 4.6
+* **Base Engine:** [Godot 4.6](https://godotengine.org/download/archive/4.6-stable/)
 * **Project Start Date:** February 13, 2025.
 
 ## 🗺️ Development Roadmap
@@ -33,13 +33,16 @@ It is meant to be a passion project I can work on in my free time.
 
 ## Credits & Legal
 ### Development
-* **Lead Developer:** Trayauraus Azul / T_Man.
+* **Lead Developer:** Trayauraus / T_Man.
+* **Artwork:** 
+  * Beyond Pixels (BG Art and Title)
+  * Whispy (Title Art)
 
 ### Third-Party Assets
 * **Environment Art:** This project utilizes a background asset from the game **Celeste**, which is the property of **Maddy Makes Games**. This asset is used for placeholder and educational purposes only.
 * **Addons:** 
-   * **Indie Blueprint Save Manager:** Used for the game's saving architecture.
-   * **Discord RPC:** Used for rich presence integration.
+   * **Indie Blueprint Save Manager:** Used for the game's saving architecture. It is found here: https://godotengine.org/asset-library/asset/3778
+   * **Discord RPC:** Used for rich presence integration. It is found here: https://godotengine.org/asset-library/asset/1950
 
 # Lisence
-This game is distributed under the terms of the MIT license, as described in the LICENSE.md file.
+This game is distributed under the terms of the MIT license. You can find a copy of the license in the [LICENSE](https://github.com/Trayauraus/World_Of_Wonders/blob/main/LICENSE) file.
