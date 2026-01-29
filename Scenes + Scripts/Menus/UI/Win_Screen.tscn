@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bqa3f3qd0yecv"]
+
+[ext_resource type="Script" uid="uid://fl35wpl2juyo" path="res://Scenes + Scripts/Menus/UI/Win Screen Handler.gd" id="1_j7nvd"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="1_jbwxc"]
+[ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="2_j7nvd"]
+
+[node name="WinScreen" type="Control" unique_id=1421105832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7nvd")
+
+[node name="GameWhite" type="ColorRect" parent="." unique_id=663085206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.392157)
+
+[node name="Win Level" type="MarginContainer" parent="." unique_id=612750062]
+top_level = true
+layout_mode = 0
+offset_left = 279.0
+offset_top = 108.0
+offset_right = 885.0
+offset_bottom = 559.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Win Level" unique_id=919508775]
+layout_mode = 2
+
+[node name="Win" type="Label" parent="Win Level/VBoxContainer" unique_id=873038661]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jbwxc")
+theme_override_font_sizes/font_size = 104
+text = "Level Complete
+"
+horizontal_alignment = 1
+
+[node name="Next Lv" type="Button" parent="Win Level/VBoxContainer" unique_id=598005775]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jbwxc")
+theme_override_font_sizes/font_size = 104
+text = "Next Level"
+
+[node name="Main Menu Win" type="Button" parent="Win Level/VBoxContainer" unique_id=1134286134]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jbwxc")
+theme_override_font_sizes/font_size = 104
+text = "Main Menu"
+
+[node name="Start" type="Sprite2D" parent="Win Level" unique_id=1003438715]
+texture_filter = 1
+position = Vector2(43.5568, 272.751)
+scale = Vector2(7.05573, 7.05573)
+texture = ExtResource("2_j7nvd")
+hframes = 42
+
+[node name="B" type="Sprite2D" parent="Win Level" unique_id=1648967364]
+texture_filter = 1
+position = Vector2(45.5568, 383.751)
+scale = Vector2(7.67929, 7.67929)
+texture = ExtResource("2_j7nvd")
+hframes = 42
+frame = 1
+
+[connection signal="pressed" from="Win Level/VBoxContainer/Next Lv" to="." method="_on_next_lv_pressed"]
+[connection signal="pressed" from="Win Level/VBoxContainer/Main Menu Win" to="." method="_on_main_menu_win_pressed"]

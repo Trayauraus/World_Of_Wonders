@@ -1,0 +1,267 @@
+[gd_scene load_steps=43 format=3 uid="uid://cnbmtsnutm8me"]
+
+[ext_resource type="Script" uid="uid://c2vj2favvjfsm" path="res://Scenes + Scripts/General/Collectables/Carrot UPGRADE.gd" id="1_a1r7a"]
+[ext_resource type="Texture2D" uid="uid://d16px4hnnwxaf" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal07.png" id="2_8homl"]
+[ext_resource type="Texture2D" uid="uid://bt8r6kbd2sq8n" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal08.png" id="3_pwg48"]
+[ext_resource type="Texture2D" uid="uid://bhypv1o3vy7a3" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal09.png" id="4_e1pej"]
+[ext_resource type="Texture2D" uid="uid://begw5f3be1qwj" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal10.png" id="5_jm2wc"]
+[ext_resource type="Texture2D" uid="uid://df6cd8gihfyj3" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal11.png" id="6_xwjim"]
+[ext_resource type="Texture2D" uid="uid://due20cxwg0ner" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal12.png" id="7_2h5ut"]
+[ext_resource type="Texture2D" uid="uid://dq6xcnlytomec" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal13.png" id="8_hkks0"]
+[ext_resource type="Texture2D" uid="uid://byjm31xmm08jc" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal14.png" id="9_ymubd"]
+[ext_resource type="Texture2D" uid="uid://da7tt68880gqw" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal15.png" id="10_ra8jr"]
+[ext_resource type="Texture2D" uid="uid://dd0o8lwrkugj7" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal16.png" id="11_42j4p"]
+[ext_resource type="Texture2D" uid="uid://wnassyvuegvc" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal17.png" id="12_5krkl"]
+[ext_resource type="Texture2D" uid="uid://b6aa8aiexqh1a" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal18.png" id="13_mepqo"]
+[ext_resource type="Texture2D" uid="uid://bjmcoits4imke" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal19.png" id="14_ua6rs"]
+[ext_resource type="Texture2D" uid="uid://dvnbjx00qs5ip" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal20.png" id="15_yhl8o"]
+[ext_resource type="Texture2D" uid="uid://2fqoinxvusnt" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0000.png" id="17_hceyr"]
+[ext_resource type="Texture2D" uid="uid://14hv4pl75bg1" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0001.png" id="18_bjll6"]
+[ext_resource type="Texture2D" uid="uid://bd2j7bmdviby4" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0002.png" id="19_5f3pl"]
+[ext_resource type="Texture2D" uid="uid://b7frjbewx4jxd" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0003.png" id="20_3pxp6"]
+[ext_resource type="Texture2D" uid="uid://bajipdditj517" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0004.png" id="21_karhy"]
+[ext_resource type="Texture2D" uid="uid://d2yrv6vbm4twu" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0005.png" id="22_worh2"]
+[ext_resource type="Texture2D" uid="uid://cfev3rrvkm1nm" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0006.png" id="23_oalxk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5eix3"]
+load_path = "res://.godot/imported/normal61.png-4f2a9b41bd817ee2cdafadd8873cbe73.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_euhco"]
+load_path = "res://.godot/imported/normal00.png-98f6fce56b45d8f31d5375a444188699.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tayq0"]
+load_path = "res://.godot/imported/normal01.png-4f82cb1913e0b5b8c11e77bd4a612bd0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bx14g"]
+load_path = "res://.godot/imported/normal02.png-dbb949ceac099282b0df6398c35dff03.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p8lhc"]
+load_path = "res://.godot/imported/normal03.png-f715d9f384a51f8467df8b4499682d47.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gkqc1"]
+load_path = "res://.godot/imported/normal04.png-d2e28922a8505bde461f56d16ff86b77.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ahxdq"]
+load_path = "res://.godot/imported/normal05.png-def2a67608cbb198758b43d7d026b23f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xeit2"]
+load_path = "res://.godot/imported/normal06.png-bdde03df25ad61f2b6f45cf1c4df419c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7wccf"]
+load_path = "res://.godot/imported/wings00.png-bbc0b66fe8b2e2f53f9cc56d723d4a39.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7712d"]
+load_path = "res://.godot/imported/wings01.png-e74ba0e45478bdd37d7163626a0fefd8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_13wfv"]
+load_path = "res://.godot/imported/wings02.png-2ba195078168098d12d6d22ed1e4a43e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w35pi"]
+load_path = "res://.godot/imported/wings03.png-c2c56dfc504eb14c66b1756a0c254448.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nq13k"]
+load_path = "res://.godot/imported/wings04.png-04203bf5faf4e2c4d1c3d0ddeb7398ca.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a0l1c"]
+load_path = "res://.godot/imported/wings05.png-7827a133879c395cf53c96aecc40a3a8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iy4fr"]
+load_path = "res://.godot/imported/wings06.png-c88f5dc3300d1260a7e2560047a90578.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tk0d1"]
+load_path = "res://.godot/imported/wings07.png-c957eed7cec551b57104e03ab509c334.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7nf7"]
+load_path = "res://.godot/imported/wings08.png-c75386980c18cb2878b01c535327868c.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6a34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8homl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pwg48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e1pej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jm2wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xwjim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2h5ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hkks0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ymubd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ra8jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_42j4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5krkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mepqo")
+}, {
+"duration": 0.81,
+"texture": ExtResource("14_ua6rs")
+}, {
+"duration": 0.71,
+"texture": ExtResource("15_yhl8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_5eix3")
+}],
+"loop": false,
+"name": &"Collect",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_hceyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bjll6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5f3pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3pxp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_karhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_worh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_oalxk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_euhco")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tayq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_bx14g")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_p8lhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gkqc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ahxdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xeit2")
+}],
+"loop": true,
+"name": &"IdleOLD",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.31,
+"texture": SubResource("CompressedTexture2D_7wccf")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7712d")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_13wfv")
+}, {
+"duration": 1.61,
+"texture": SubResource("CompressedTexture2D_w35pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_nq13k")
+}, {
+"duration": 1.21,
+"texture": SubResource("CompressedTexture2D_a0l1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_iy4fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tk0d1")
+}, {
+"duration": 1.31,
+"texture": SubResource("CompressedTexture2D_y7nf7")
+}, {
+"duration": 1.41,
+"texture": SubResource("CompressedTexture2D_7wccf")
+}, {
+"duration": 1.41,
+"texture": SubResource("CompressedTexture2D_7712d")
+}, {
+"duration": 1.11,
+"texture": SubResource("CompressedTexture2D_13wfv")
+}, {
+"duration": 1.61,
+"texture": SubResource("CompressedTexture2D_w35pi")
+}, {
+"duration": 1.31,
+"texture": SubResource("CompressedTexture2D_nq13k")
+}, {
+"duration": 1.21,
+"texture": SubResource("CompressedTexture2D_a0l1c")
+}, {
+"duration": 1.31,
+"texture": SubResource("CompressedTexture2D_iy4fr")
+}, {
+"duration": 2.21,
+"texture": SubResource("CompressedTexture2D_tk0d1")
+}, {
+"duration": 2.21,
+"texture": SubResource("CompressedTexture2D_y7nf7")
+}],
+"loop": true,
+"name": &"Winged",
+"speed": 19.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y72d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atihg"]
+size = Vector2(10, 17)
+
+[node name="Carrot Upgrade" type="CharacterBody2D" groups=["Carrot"]]
+script = ExtResource("1_a1r7a")
+
+[node name="Carrot" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_b6a34")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.4439206
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_3y72d")
+debug_color = Color(0.71, 0.40469998, 0.71, 0.12941177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_atihg")
+disabled = true
+debug_color = Color(0.97487754, 0.01937359, 0.41320094, 0.41960785)

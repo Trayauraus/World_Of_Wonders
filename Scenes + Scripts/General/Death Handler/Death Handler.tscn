@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bjyrb7iwinh13"]
+
+[node name="Death Zone" type="Area2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3lgdrmfn0n5v"
+path="res://.godot/imported/Tutorial - Game Harder.mp3-77a517ad238b180c6b5b4ae496a805db.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Tutorial - Game Harder.mp3"
+dest_files=["res://.godot/imported/Tutorial - Game Harder.mp3-77a517ad238b180c6b5b4ae496a805db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

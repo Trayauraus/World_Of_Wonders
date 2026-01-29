@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgcpaukgdbng7"
+path="res://.godot/imported/Main Title - Puzzle Game Loop.mp3-a1a3d211c12c2d1ce9468a4272e79f22.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Menus/Main Title - Puzzle Game Loop.mp3"
+dest_files=["res://.godot/imported/Main Title - Puzzle Game Loop.mp3-a1a3d211c12c2d1ce9468a4272e79f22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

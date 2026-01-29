@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://yjfeqpxn6qty"]
+
+[ext_resource type="Texture2D" uid="uid://b14wfs72nc4im" path="res://Assets/[General Art]/{Pixel}/Tiles/World Tiles.png" id="1_n8hat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hat"]
+size = Vector2(16, 16)
+
+[node name="RopeSegment" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_n8hat")
+region_enabled = true
+region_rect = Rect2(144.084, 352.331, 15.889, 15.873)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n8hat")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, -8, -6, -6, -8, -2, -8, 2, -6, 6, -3, 8, 3, 8, 6, 6, 8, 2, 8, -2, 6, -6, 3, -8)
+disabled = true

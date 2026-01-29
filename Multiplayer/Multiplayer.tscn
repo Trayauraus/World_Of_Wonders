@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cxw37688e2quf"]
+
+[ext_resource type="Texture2D" uid="uid://cwpgwevddivyk" path="res://Assets/[General Art]/Backgrounds/Stats Menu Background.png" id="1_dwh4r"]
+[ext_resource type="Script" uid="uid://ckqawmn73a58k" path="res://Multiplayer/Multiplayer.gd" id="1_mad08"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="3_cxvka"]
+
+[node name="Multiplayer" type="Node2D" unique_id=38083936]
+script = ExtResource("1_mad08")
+button_font = ExtResource("3_cxvka")
+
+[node name="Multiplayer UI" type="Control" parent="." unique_id=1828907912]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBackground" type="Sprite2D" parent="Multiplayer UI" unique_id=2117203078]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("1_dwh4r")
+
+[node name="HostButton" type="Button" parent="Multiplayer UI" unique_id=2031179759]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 99.0
+offset_right = 1128.0
+offset_bottom = 255.0
+text = "HOST"
+
+[node name="JoinButton" type="Button" parent="Multiplayer UI" unique_id=770106507]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 327.0
+offset_right = 1131.0
+offset_bottom = 462.0
+text = "JOIN"
+
+[node name="HostPanel" type="Panel" parent="Multiplayer UI" unique_id=828827582]
+layout_mode = 0
+offset_right = 533.0
+offset_bottom = 647.0
+
+[node name="LevelScroll" type="ScrollContainer" parent="Multiplayer UI/HostPanel" unique_id=1400198039]
+layout_mode = 0
+offset_right = 531.0
+offset_bottom = 563.0
+
+[node name="LevelListVBox" type="VBoxContainer" parent="Multiplayer UI/HostPanel/LevelScroll" unique_id=821903656]
+layout_mode = 2
+
+[node name="ServerNameInput" type="LineEdit" parent="Multiplayer UI/HostPanel" unique_id=1336049487]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 582.0
+offset_right = 528.0
+offset_bottom = 613.0
+
+[node name="JoinPanel" type="Panel" parent="Multiplayer UI" unique_id=1078557996]
+layout_mode = 0
+offset_right = 533.0
+offset_bottom = 648.0
+
+[node name="IPInput" type="LineEdit" parent="Multiplayer UI/JoinPanel" unique_id=1334553338]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 33.0
+
+[node name="JoinManualButton" type="Button" parent="Multiplayer UI/JoinPanel" unique_id=1558574119]
+layout_mode = 0
+offset_left = 663.0
+offset_right = 816.0
+offset_bottom = 32.0
+text = "Manual Join"
+
+[node name="ScanButton" type="Button" parent="Multiplayer UI/JoinPanel" unique_id=1967285144]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 546.0
+offset_right = 1151.0
+offset_bottom = 646.0
+text = "Scan"
+
+[node name="ServerListScroll" type="ScrollContainer" parent="Multiplayer UI/JoinPanel" unique_id=904952884]
+layout_mode = 0
+offset_right = 530.0
+offset_bottom = 580.0
+
+[node name="ServerListVBox" type="VBoxContainer" parent="Multiplayer UI/JoinPanel/ServerListScroll" unique_id=1862801650]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="Multiplayer UI/JoinPanel" unique_id=1816463674]
+texture_filter = 1
+layout_mode = 0
+offset_top = 608.0
+offset_right = 508.0
+offset_bottom = 656.0
+theme_override_fonts/font = ExtResource("3_cxvka")
+theme_override_font_sizes/font_size = 46
+text = "Status"
+
+[node name="Back" type="Button" parent="Multiplayer UI" unique_id=1865304182]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 264.0
+offset_right = 982.0
+offset_bottom = 318.0
+text = "Back To
+Title"
+
+[node name="Warning" type="Label" parent="Multiplayer UI" unique_id=1419278474]
+texture_filter = 1
+layout_mode = 0
+offset_left = 574.0
+offset_top = 548.0
+offset_right = 860.0
+offset_bottom = 605.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.39800072, 0, 0.038652554, 0.6392157)
+theme_override_fonts/font = ExtResource("3_cxvka")
+theme_override_font_sizes/font_size = 26
+text = "WARNING: THIS IS EXTREMELY EXPERIMENTAL"
+autowrap_mode = 2
+
+[node name="LevelSpawner" type="MultiplayerSpawner" parent="." unique_id=1983942657]
+_spawnable_scenes = PackedStringArray("uid://byastfwfdc1r4", "uid://dyx2orcesra6k", "uid://c3sdh66bctg8q", "uid://f730j1p4tfo3", "uid://bj80ue4sa8hi0", "uid://b2jw6bsqmiteh", "uid://d1qk0biynq545", "uid://cr2tongwt8ama", "uid://b8ov1tbnmrhoe", "uid://cmys52yjy8po5")
+spawn_path = NodePath("../LevelContainer")
+
+[node name="LevelContainer" type="Node2D" parent="." unique_id=130251537]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1622152841]
+_spawnable_scenes = PackedStringArray("uid://cg634nb2fx5eq")
+spawn_path = NodePath("../Players")
+
+[node name="Players" type="Node2D" parent="." unique_id=213036364]
+
+[connection signal="pressed" from="Multiplayer UI/HostButton" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Multiplayer UI/JoinButton" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Multiplayer UI/Back" to="." method="_on_back_pressed"]

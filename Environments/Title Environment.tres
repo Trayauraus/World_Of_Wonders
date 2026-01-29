@@ -1,0 +1,20 @@
+[gd_resource type="Environment" format=3 uid="uid://bph5eeiayrexk"]
+
+[resource]
+background_mode = 3
+background_energy_multiplier = 0.8
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_light_affect = 1.0
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 0.45
+glow_strength = 1.07
+glow_bloom = 0.4
+glow_hdr_threshold = 0.0
+fog_light_energy = 3.52
+volumetric_fog_density = 0.499
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2

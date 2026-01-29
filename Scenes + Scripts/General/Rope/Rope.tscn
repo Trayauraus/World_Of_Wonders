@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dskrrvohhc68g"]
+
+[ext_resource type="Script" uid="uid://c5evdrg4u2uch" path="res://Scenes + Scripts/General/Rope/Rope2D.gd" id="1_mehjo"]
+
+[node name="Rope" type="Node2D"]
+script = ExtResource("1_mehjo")
+
+[node name="Line2D" type="Line2D" parent="."]

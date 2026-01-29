@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c2nni7dos5y11"]
+
+[node name="IceDirectionalLight" type="DirectionalLight2D"]
+color = Color(0.63648, 0.636481, 0.63648, 1)
+blend_mode = 2
+shadow_enabled = true

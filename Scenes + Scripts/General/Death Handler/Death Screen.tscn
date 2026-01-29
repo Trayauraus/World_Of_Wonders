@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://culhdkxr5afxi"]
+
+[ext_resource type="Script" uid="uid://goa8mvjxwuvb" path="res://Scenes + Scripts/General/Death Handler/Death Screen.gd" id="1_d7dq6"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_vcahg"]
+[ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="3_ex221"]
+
+[node name="Death Screen" type="Control" unique_id=650622682]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d7dq6")
+
+[node name="RedOverlay" type="ColorRect" parent="." unique_id=619405963]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.98534, 0.587993, 0.338329, 0.486275)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1658094170]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -143.0
+offset_right = 298.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=271481468]
+layout_mode = 2
+
+[node name="You Died" type="Label" parent="MarginContainer/VBoxContainer" unique_id=113143686]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vcahg")
+theme_override_font_sizes/font_size = 104
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="MarginContainer/VBoxContainer" unique_id=785785594]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vcahg")
+theme_override_font_sizes/font_size = 104
+text = "RETRY"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1285259183]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vcahg")
+theme_override_font_sizes/font_size = 104
+text = "Main Menu"
+
+[node name="A" type="Sprite2D" parent="MarginContainer" unique_id=1454328259]
+texture_filter = 1
+position = Vector2(-42.9432, 171.751)
+scale = Vector2(7.05573, 7.05573)
+texture = ExtResource("3_ex221")
+hframes = 42
+frame = 8
+
+[node name="B" type="Sprite2D" parent="MarginContainer" unique_id=1811306667]
+texture_filter = 1
+position = Vector2(-40.9432, 282.751)
+scale = Vector2(7.67929, 7.67929)
+texture = ExtResource("3_ex221")
+hframes = 42
+frame = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

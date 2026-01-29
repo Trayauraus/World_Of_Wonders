@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://nj35fgwr1atr"]
+
+[ext_resource type="Script" uid="uid://d3igjapeerfue" path="res://Scenes + Scripts/Menus/UI/Game UI Script.gd" id="1_i7a6l"]
+[ext_resource type="Texture2D" uid="uid://xtywg0qsm8cw" path="res://Assets/[General Art]/UI/Game UI.png" id="1_lbhrb"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_1evd5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xdrir"]
+font = ExtResource("2_1evd5")
+font_size = 49
+
+[node name="Game UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i7a6l")
+
+[node name="UI" type="Node2D" parent="."]
+position = Vector2(0, -37)
+
+[node name="GameUi" type="Sprite2D" parent="UI"]
+position = Vector2(705, 375)
+scale = Vector2(0.73437494, 0.69444454)
+texture = ExtResource("1_lbhrb")
+
+[node name="Game_Score_Label" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 86.0
+offset_top = 109.0
+offset_right = 106.0
+offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("2_1evd5")
+text = "0"
+label_settings = SubResource("LabelSettings_xdrir")
+
+[node name="Game_Total_T_Label" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 77.0
+offset_top = 51.0
+offset_right = 266.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_1evd5")
+theme_override_font_sizes/font_size = 45
+text = "000:00:00.00"
+
+[node name="Game_Time_Label" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 82.0
+offset_top = 86.0
+offset_right = 162.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_1evd5")
+theme_override_font_sizes/font_size = 25
+text = "000:00:00"
+horizontal_alignment = 1
+
+[node name="Game_FPS_Label" type="Label" parent="UI"]
+offset_left = 1081.0
+offset_top = 42.0
+offset_right = 1149.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "FPS: 00"

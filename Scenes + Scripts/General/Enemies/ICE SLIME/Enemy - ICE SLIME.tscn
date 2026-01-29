@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://chst4jgbqvi6"]
+
+[ext_resource type="Texture2D" uid="uid://b5gawiuwgfvxw" path="res://Assets/[General Art]/{Pixel}/Sprites/Evil Tank Sprite Sheet.png" id="1_qasox"]
+[ext_resource type="Script" uid="uid://ro67w61lyrhd" path="res://Scenes + Scripts/General/Enemies/ICE SLIME/Enemy - ICE SLIME Script.gd" id="1_s6evt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ndx4"]
+size = Vector2(14, 12)
+
+[sub_resource type="Gradient" id="Gradient_hgjcw"]
+offsets = PackedFloat32Array(0.0729927, 0.737226)
+colors = PackedColorArray(0.791999, 0.791999, 0.791999, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ndx4"]
+gradient = SubResource("Gradient_hgjcw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tty0n"]
+atlas = ExtResource("1_qasox")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh0p3"]
+atlas = ExtResource("1_qasox")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nch3g"]
+atlas = ExtResource("1_qasox")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttbxh"]
+atlas = ExtResource("1_qasox")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2ew7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tty0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh0p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nch3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttbxh")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="Enemy" type="Node2D" groups=["Enemy"]]
+script = ExtResource("1_s6evt")
+
+[node name="EnemyArea" type="Area2D" parent="."]
+
+[node name="EnemyCol" type="CollisionShape2D" parent="EnemyArea"]
+position = Vector2(1, 6)
+shape = SubResource("RectangleShape2D_8ndx4")
+
+[node name="EnemyLight" type="PointLight2D" parent="."]
+position = Vector2(1, 6)
+texture = SubResource("GradientTexture2D_8ndx4")
+
+[node name="EnemySprite" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
+texture_filter = 1
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_p2ew7")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.918366
+
+[node name="RayCastRight" type="RayCast2D" parent="." groups=["Enemy"]]
+position = Vector2(1, 5)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." groups=["Enemy"]]
+position = Vector2(1, 5)
+target_position = Vector2(-10, 0)
+
+[connection signal="body_entered" from="EnemyArea" to="." method="enemy_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://covgottjblpb3"
+path="res://.godot/imported/Woosh Cinematic 5 - Dragon Studio - Right to Left.mp3-7031383bb12fe4e9494e3bbc6ceccae5.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Woosh Cinematic 5 - Dragon Studio - Right to Left.mp3"
+dest_files=["res://.godot/imported/Woosh Cinematic 5 - Dragon Studio - Right to Left.mp3-7031383bb12fe4e9494e3bbc6ceccae5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

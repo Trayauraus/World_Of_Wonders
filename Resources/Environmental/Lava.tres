@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LevelEnvironmentData" format=3 uid="uid://47aglto20s8p"]
+
+[ext_resource type="PackedScene" uid="uid://d1mmdig0l0055" path="res://Assets/Directional Lights/RedDirectionalLight.tscn" id="1_nurso"]
+[ext_resource type="Script" uid="uid://dsh8sdc0oh4dv" path="res://Resources/LevelEnvironmentData.gd" id="1_of27k"]
+[ext_resource type="Material" uid="uid://ciaou8irr8a2g" path="res://Assets/Shaders/Shader Process Materials/Particle Process RED.tres" id="2_7tuog"]
+[ext_resource type="Environment" uid="uid://cq6v06gup6ukp" path="res://Environments/WorldEnvironment.tres" id="4_7tuog"]
+
+[resource]
+script = ExtResource("1_of27k")
+ambient_color = Color(0.9098039, 0.27058825, 0.16862746, 1)
+cave_color = Color(0.05490196, 0, 0, 1)
+wind_color = Color(0.77254903, 0.19215687, 0.12941177, 1)
+world_env_normal = ExtResource("4_7tuog")
+world_env_cave = ExtResource("4_7tuog")
+gpu_particles_material = ExtResource("2_7tuog")
+dir_light_normal = ExtResource("1_nurso")
+dir_light_cave = ExtResource("1_nurso")
+metadata/_custom_type_script = "uid://dsh8sdc0oh4dv"

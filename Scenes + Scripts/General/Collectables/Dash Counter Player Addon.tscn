@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://224ysibj0v6r"]
+
+[ext_resource type="Script" uid="uid://wre73v3rjppo" path="res://Scenes + Scripts/General/Collectables/Dash Counter - Player Addon.gd" id="1_45lg0"]
+
+[node name="DASH COUNTER PLAYER ADDON" type="Node2D"]
+script = ExtResource("1_45lg0")
+
+[node name="MOVER" type="Node2D" parent="."]
+position = Vector2(-5, -36)
+
+[node name="Dash_Count" type="Label" parent="MOVER"]
+texture_filter = 1
+offset_right = 10.0
+offset_bottom = 23.0
+text = "Dashes:"

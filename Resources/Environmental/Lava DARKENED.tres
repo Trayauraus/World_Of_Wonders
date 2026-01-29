@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="LevelEnvironmentData" format=3 uid="uid://bfmoebiwb03kg"]
+
+[ext_resource type="Material" uid="uid://ciaou8irr8a2g" path="res://Assets/Shaders/Shader Process Materials/Particle Process RED.tres" id="1_cdji3"]
+[ext_resource type="Script" uid="uid://dsh8sdc0oh4dv" path="res://Resources/LevelEnvironmentData.gd" id="1_cwlc1"]
+[ext_resource type="PackedScene" uid="uid://berfal88yn5wp" path="res://Assets/Directional Lights/DARKEN World/RedDirectionalLightDARKER.tscn" id="1_eua4j"]
+[ext_resource type="PackedScene" uid="uid://denm10sddaerd" path="res://Assets/Directional Lights/DARKEN World/RedDirectionalLightDARK.tscn" id="2_elpff"]
+[ext_resource type="Environment" uid="uid://cq6v06gup6ukp" path="res://Environments/WorldEnvironment.tres" id="2_iwe3x"]
+
+[resource]
+script = ExtResource("1_cwlc1")
+ambient_color = Color(0.6745098, 0.16470589, 0.08627451, 0.8392157)
+cave_color = Color(0.105882354, 0.019607844, 0, 1)
+wind_color = Color(0.6313726, 0.14509805, 0.09411765, 1)
+world_env_normal = ExtResource("2_iwe3x")
+world_env_cave = ExtResource("2_iwe3x")
+gpu_particles_material = ExtResource("1_cdji3")
+dir_light_normal = ExtResource("2_elpff")
+dir_light_cave = ExtResource("1_eua4j")
+metadata/_custom_type_script = "uid://dsh8sdc0oh4dv"

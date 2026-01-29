@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LevelManifest" format=3 uid="uid://87tpemek0swe"]
+
+[ext_resource type="PackedScene" uid="uid://dyx2orcesra6k" path="res://Scenes + Scripts/Levels/000_Tutorial Grounds.tscn" id="1_gtb0j"]
+[ext_resource type="PackedScene" uid="uid://c3sdh66bctg8q" path="res://Scenes + Scripts/Levels/001_The Darkness Intro.tscn" id="2_nyivf"]
+[ext_resource type="PackedScene" uid="uid://f730j1p4tfo3" path="res://Scenes + Scripts/Levels/002_Desert Winds.tscn" id="3_unfq0"]
+[ext_resource type="PackedScene" uid="uid://bj80ue4sa8hi0" path="res://Scenes + Scripts/Levels/003_Icey Caves.tscn" id="4_ll7u8"]
+[ext_resource type="PackedScene" uid="uid://cmys52yjy8po5" path="res://Scenes + Scripts/Levels/008_Eye-Gler.tscn" id="5_60mhm"]
+[ext_resource type="PackedScene" uid="uid://b2jw6bsqmiteh" path="res://Scenes + Scripts/Levels/004_Annoyed ICE Boss.tscn" id="5_gtb0j"]
+[ext_resource type="PackedScene" uid="uid://d1qk0biynq545" path="res://Scenes + Scripts/Levels/005_Rightwards.tscn" id="6_ll7u8"]
+[ext_resource type="PackedScene" uid="uid://cr2tongwt8ama" path="res://Scenes + Scripts/Levels/006_The_Abyss.tscn" id="7_60mhm"]
+[ext_resource type="Script" uid="uid://br5o68bk83hl8" path="res://Resources/LevelManifest.gd" id="7_rnrex"]
+[ext_resource type="PackedScene" uid="uid://b8ov1tbnmrhoe" path="res://Scenes + Scripts/Levels/007_Only_UP.tscn" id="8_4x12g"]
+[ext_resource type="PackedScene" uid="uid://bm6dulf0mnmdp" path="res://Scenes + Scripts/Levels/009 Credits.tscn" id="10_60mhm"]
+
+[resource]
+script = ExtResource("7_rnrex")
+level_scenes = Array[PackedScene]([ExtResource("1_gtb0j"), ExtResource("2_nyivf"), ExtResource("3_unfq0"), ExtResource("4_ll7u8"), ExtResource("5_gtb0j"), ExtResource("6_ll7u8"), ExtResource("7_60mhm"), ExtResource("8_4x12g"), ExtResource("5_60mhm"), ExtResource("10_60mhm")])
+metadata/_custom_type_script = "uid://br5o68bk83hl8"

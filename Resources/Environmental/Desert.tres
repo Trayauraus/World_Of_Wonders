@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LevelEnvironmentData" format=3 uid="uid://b2v6dcliqos7"]
+
+[ext_resource type="Script" uid="uid://dsh8sdc0oh4dv" path="res://Resources/LevelEnvironmentData.gd" id="1_0782t"]
+[ext_resource type="PackedScene" uid="uid://beh0eoxcs577x" path="res://Assets/Directional Lights/DesertDirectionalLight.tscn" id="1_i567m"]
+[ext_resource type="Material" uid="uid://cl2dkbuosew22" path="res://Assets/Shaders/Shader Process Materials/Particle Process YELLOW.tres" id="1_ufkam"]
+[ext_resource type="Environment" uid="uid://dmmer5lu30dwf" path="res://Environments/Lv2Environment.tres" id="2_x1ru3"]
+
+[resource]
+script = ExtResource("1_0782t")
+ambient_color = Color(0.8745098, 0.79607844, 0, 1)
+cave_color = Color(0.20784314, 0.18431373, 0, 1)
+wind_color = Color(0.9372549, 0.72156864, 0.14117648, 1)
+world_env_normal = ExtResource("2_x1ru3")
+world_env_cave = ExtResource("2_x1ru3")
+gpu_particles_material = ExtResource("1_ufkam")
+dir_light_normal = ExtResource("1_i567m")
+metadata/_custom_type_script = "uid://dsh8sdc0oh4dv"

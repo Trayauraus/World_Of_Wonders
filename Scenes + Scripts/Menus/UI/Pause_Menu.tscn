@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://08x43rpv6jbs"]
+
+[ext_resource type="Script" uid="uid://ko2hnxftldeu" path="res://Scenes + Scripts/Menus/UI/Pause Menu.gd" id="1_rbh62"]
+[ext_resource type="Theme" uid="uid://d3pxlnwn8knpg" path="res://Assets/Themes/Main Menu.tres" id="2_18nnx"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_ekwd4"]
+[ext_resource type="Texture2D" uid="uid://dsbn1kd1vb75v" path="res://Assets/[General Art]/[Icons]/icon.svg" id="3_2vdx8"]
+[ext_resource type="Texture2D" uid="uid://cakftg5f5w5y4" path="res://Assets/[General Art]/[Icons]/Xlabs Logo.png" id="6_l36gw"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rbh62")
+
+[node name="Grayify" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -163.0
+offset_right = 196.5
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_18nnx")
+theme_override_fonts/font = ExtResource("2_ekwd4")
+theme_override_font_sizes/font_size = 104
+text = "Resume"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_18nnx")
+theme_override_fonts/font = ExtResource("2_ekwd4")
+theme_override_font_sizes/font_size = 104
+text = "Options"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_18nnx")
+theme_override_fonts/font = ExtResource("2_ekwd4")
+theme_override_font_sizes/font_size = 104
+text = "Main Menu"
+
+[node name="Godot" type="Sprite2D" parent="."]
+position = Vector2(72, 554)
+scale = Vector2(1.03125, 1.02246)
+texture = ExtResource("3_2vdx8")
+
+[node name="Version" type="Label" parent="Godot"]
+offset_left = -68.4137
+offset_top = 61.7143
+offset_right = 194.586
+offset_bottom = 103.714
+scale = Vector2(1.13098, 1.12654)
+theme_override_font_sizes/font_size = 20
+text = "Godot Engine 4.5"
+
+[node name="XlabsLogo" type="Sprite2D" parent="."]
+position = Vector2(1100, 591)
+scale = Vector2(0.102344, 0.106944)
+texture = ExtResource("6_l36gw")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3 uid="uid://pu55wxlabvbt"]
+
+[resource]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.0
+glow_strength = 1.1
+glow_bloom = 0.2
+glow_blend_mode = 1
+glow_hdr_threshold = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 1.5

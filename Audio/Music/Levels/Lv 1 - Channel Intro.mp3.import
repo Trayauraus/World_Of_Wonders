@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j4y5a23d3wj1"
+path="res://.godot/imported/Lv 1 - Channel Intro.mp3-fc6a3d4468197ac3e17acef2a299d71c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 1 - Channel Intro.mp3"
+dest_files=["res://.godot/imported/Lv 1 - Channel Intro.mp3-fc6a3d4468197ac3e17acef2a299d71c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

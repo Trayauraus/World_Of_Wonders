@@ -1,0 +1,15 @@
+[gd_resource type="Environment" format=3 uid="uid://b6vdccokymkyl"]
+
+[resource]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.2
+glow_strength = 1.5
+glow_bloom = 0.08
+glow_blend_mode = 0
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 1.24
+adjustment_enabled = true
+adjustment_brightness = 1.3
+adjustment_contrast = 1.11
+adjustment_saturation = 1.71

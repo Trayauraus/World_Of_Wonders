@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpodgf4dpf4ti"
+path="res://.godot/imported/Tutorial Song 2 - Pixel Party.mp3-f6baadfc7ed2f4d2a1e0baf2067fc65d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Tutorial Song 2 - Pixel Party.mp3"
+dest_files=["res://.godot/imported/Tutorial Song 2 - Pixel Party.mp3-f6baadfc7ed2f4d2a1e0baf2067fc65d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://cnph2c8nxvkft"]
+
+[ext_resource type="Script" uid="uid://oe6jkwysvy14" path="res://Standalone Scripts/Universal/Universal Level Script.gd" id="1_elu6j"]
+[ext_resource type="AudioStream" uid="uid://dql1tt0e21k1h" path="res://Audio/SFX/coin.wav" id="2_xcc7b"]
+[ext_resource type="Material" uid="uid://ciaou8irr8a2g" path="res://Assets/Shaders/Shader Process Materials/Particle Process RED.tres" id="3_18cey"]
+[ext_resource type="AudioStream" uid="uid://d31bws0qi0tow" path="res://Audio/SFX/hurt.wav" id="3_g5oo8"]
+[ext_resource type="Texture2D" uid="uid://gk6nnan6cbyd" path="res://Assets/[General Art]/Backgrounds/Background.png" id="3_n0igu"]
+[ext_resource type="AudioStream" uid="uid://vpk6q47ubiqj" path="res://Audio/SFX/MixKit - GameWon.wav" id="3_or16x"]
+[ext_resource type="PackedScene" uid="uid://cbpeplw1ly4h1" path="res://Scenes + Scripts/General/Player/Player_Scene.tscn" id="4_c3oe1"]
+[ext_resource type="Environment" uid="uid://cq6v06gup6ukp" path="res://Environments/WorldEnvironment.tres" id="4_xcc7b"]
+[ext_resource type="PackedScene" uid="uid://db1gsm346deqk" path="res://Scenes + Scripts/TILEMAPS/BG Tilemap.tscn" id="5_t62s6"]
+[ext_resource type="PackedScene" uid="uid://ulm6wn8c6hjx" path="res://Scenes + Scripts/TILEMAPS/Default Tilemap.tscn" id="6_n0igu"]
+[ext_resource type="PackedScene" uid="uid://bjyrb7iwinh13" path="res://Scenes + Scripts/General/Death Handler/Death Handler.tscn" id="6_ub52t"]
+[ext_resource type="Script" uid="uid://bus17cvx5pffj" path="res://Standalone Scripts/Universal/EnvironmentTrigger.gd" id="9_51wp2"]
+[ext_resource type="PackedScene" uid="uid://nj35fgwr1atr" path="res://Scenes + Scripts/Menus/UI/Game_UI.tscn" id="9_ub52t"]
+[ext_resource type="Resource" uid="uid://47aglto20s8p" path="res://Resources/Environmental/Lava.tres" id="10_llr01"]
+[ext_resource type="Resource" uid="uid://bfmoebiwb03kg" path="res://Resources/Environmental/Lava DARKENED.tres" id="11_py1h4"]
+[ext_resource type="Resource" uid="uid://b2v6dcliqos7" path="res://Resources/Environmental/Desert.tres" id="12_5xv47"]
+[ext_resource type="Resource" uid="uid://c4iwcog384dw0" path="res://Resources/Environmental/Ice.tres" id="13_ydvqm"]
+[ext_resource type="Resource" uid="uid://bf0vufp31d7xu" path="res://Resources/Environmental/Grasslands.tres" id="14_lbq6o"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ub52t"]
+distance = -252.0
+
+[node name="Universal Scene" type="Node2D" unique_id=1225893742]
+script = ExtResource("1_elu6j")
+
+[node name="Directional Light" type="Node" parent="." unique_id=98181342]
+
+[node name="LV Audio" type="Node" parent="." unique_id=906618536]
+
+[node name="SFX" type="Node" parent="LV Audio" unique_id=593956869]
+
+[node name="Coin SFX" type="AudioStreamPlayer" parent="LV Audio/SFX" unique_id=1185517074]
+stream = ExtResource("2_xcc7b")
+pitch_scale = 0.9
+
+[node name="Win SFX" type="AudioStreamPlayer" parent="LV Audio/SFX" unique_id=704247086]
+stream = ExtResource("3_or16x")
+
+[node name="Hurt SFX" type="AudioStreamPlayer" parent="LV Audio/SFX" unique_id=2112686077]
+stream = ExtResource("3_g5oo8")
+pitch_scale = 0.8
+
+[node name="Level Soundtrack" type="AudioStreamPlayer" parent="LV Audio" unique_id=1953888974]
+
+[node name="UNIVERSAL LV Nodes" type="Node" parent="." unique_id=860513859]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="UNIVERSAL LV Nodes" unique_id=1310018807]
+environment = ExtResource("4_xcc7b")
+
+[node name="Ash Follow Cam" type="CanvasLayer" parent="UNIVERSAL LV Nodes" unique_id=1279843842]
+layer = 2
+visible = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="UNIVERSAL LV Nodes/Ash Follow Cam" unique_id=1661618442]
+position = Vector2(954, 509)
+amount = 250
+amount_ratio = 0.6
+process_material = ExtResource("3_18cey")
+
+[node name="WIND" type="Node2D" parent="UNIVERSAL LV Nodes/Ash Follow Cam" unique_id=888463509]
+scale = Vector2(0.6, 0.6)
+
+[node name="CPU Particles ColouredL" type="CPUParticles2D" parent="UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=563836535]
+z_index = 2
+position = Vector2(1919.9998, 540)
+amount = 28
+lifetime = 4.5
+preprocess = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(0, 550)
+direction = Vector2(-1, 0)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 440.0
+initial_velocity_max = 450.0
+radial_accel_min = -15.0
+radial_accel_max = 20.0
+scale_amount_min = 4.0
+scale_amount_max = 4.6
+color = Color(0.937255, 0.721569, 0.141176, 1)
+
+[node name="CPU Particles GrayL" type="CPUParticles2D" parent="UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=1017126986]
+position = Vector2(1919.9998, 540)
+amount = 25
+lifetime = 16.0
+preprocess = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(0, 550)
+direction = Vector2(-1, 0)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 170.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_min = 3.0
+scale_amount_max = 3.6
+color = Color(0.580392, 0.560784, 0.603922, 1)
+
+[node name="CPU Particles ColouredR" type="CPUParticles2D" parent="UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=48224731]
+z_index = 2
+position = Vector2(0, 540)
+amount = 28
+lifetime = 4.5
+preprocess = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(0, 550)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 440.0
+initial_velocity_max = 450.0
+radial_accel_min = -15.0
+radial_accel_max = 20.0
+scale_amount_min = 4.0
+scale_amount_max = 4.6
+color = Color(0.937255, 0.721569, 0.141176, 1)
+
+[node name="CPU Particles GrayR" type="CPUParticles2D" parent="UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=198665848]
+position = Vector2(0, 540)
+amount = 25
+lifetime = 16.0
+preprocess = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(0, 550)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 170.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_min = 3.0
+scale_amount_max = 3.6
+color = Color(0.580392, 0.560784, 0.603922, 1)
+
+[node name="BG" type="Node2D" parent="UNIVERSAL LV Nodes" unique_id=567722113]
+visible = false
+
+[node name="Background" type="ParallaxBackground" parent="UNIVERSAL LV Nodes/BG" unique_id=1419553476]
+visible = false
+
+[node name="Parallax Layer" type="ParallaxLayer" parent="UNIVERSAL LV Nodes/BG/Background" unique_id=1641527526]
+motion_scale = Vector2(0.5, -0.1)
+motion_mirroring = Vector2(734.4, 0)
+
+[node name="Colored BG" type="CanvasModulate" parent="UNIVERSAL LV Nodes/BG/Background/Parallax Layer" unique_id=2145450501]
+color = Color(0.9199, 0.271568, 0.169936, 1)
+
+[node name="BG IMG" type="Sprite2D" parent="UNIVERSAL LV Nodes/BG/Background/Parallax Layer" unique_id=1674955119]
+position = Vector2(0, 20)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("3_n0igu")
+centered = false
+offset = Vector2(-307.2, -98)
+
+[node name="Background Cave" type="ParallaxBackground" parent="UNIVERSAL LV Nodes/BG" unique_id=1248383505]
+layer = -101
+visible = false
+
+[node name="Colored BG" type="CanvasModulate" parent="UNIVERSAL LV Nodes/BG/Background Cave" unique_id=966343900]
+position = Vector2(14, -3)
+color = Color(0.106354, 0.0189822, 0, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="UNIVERSAL LV Nodes/BG/Background Cave" unique_id=1628400623]
+position = Vector2(10, 0)
+motion_scale = Vector2(0.5, -0.1)
+motion_mirroring = Vector2(734.4, 303.12)
+
+[node name="Cave BG IMG" type="Sprite2D" parent="UNIVERSAL LV Nodes/BG/Background Cave/ParallaxLayer" unique_id=1758994549]
+position = Vector2(-10.000001, 322.00003)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("3_n0igu")
+centered = false
+offset = Vector2(-307.2, -98)
+
+[node name="Player" parent="UNIVERSAL LV Nodes" unique_id=795557704 instance=ExtResource("4_c3oe1")]
+
+[node name="Collisions or AREA 2Ds" type="Node" parent="." unique_id=2001554057]
+
+[node name="Lava Env" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=886786840]
+script = ExtResource("9_51wp2")
+environment_to_load = ExtResource("10_llr01")
+
+[node name="Lava DARKENED" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=1111921552]
+script = ExtResource("9_51wp2")
+environment_to_load = ExtResource("11_py1h4")
+
+[node name="Desert Env" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=962922033]
+script = ExtResource("9_51wp2")
+environment_to_load = ExtResource("12_5xv47")
+
+[node name="Ice Env" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=100840483]
+script = ExtResource("9_51wp2")
+environment_to_load = ExtResource("13_ydvqm")
+
+[node name="Grass Env" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=806361312]
+script = ExtResource("9_51wp2")
+environment_to_load = ExtResource("14_lbq6o")
+
+[node name="CaveZone" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=187232702]
+
+[node name="Wind Left" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=1480328551]
+
+[node name="Wind Right" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=1220821223]
+
+[node name="Deactivate Wind" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=1474370439]
+
+[node name="WinArea" type="Area2D" parent="Collisions or AREA 2Ds" unique_id=883585420]
+position = Vector2(2750, -81)
+
+[node name="Death Zone" parent="Collisions or AREA 2Ds" unique_id=1076919440 instance=ExtResource("6_ub52t")]
+
+[node name="BelowMapDeathCol" type="CollisionShape2D" parent="Collisions or AREA 2Ds/Death Zone" unique_id=1967930066]
+position = Vector2(0, 324)
+shape = SubResource("WorldBoundaryShape2D_ub52t")
+debug_color = Color(0.8352941, 0.3019608, 0, 0.7764706)
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=285677984]
+
+[node name="BG Objects" parent="TileMaps" unique_id=1660105240 instance=ExtResource("5_t62s6")]
+
+[node name="Ground" parent="TileMaps" unique_id=100599319 instance=ExtResource("6_n0igu")]
+
+[node name="Collectables" type="Node" parent="." unique_id=1698366799]
+
+[node name="Coins" type="Node" parent="Collectables" unique_id=531716457]
+
+[node name="Special" type="Node" parent="Collectables" unique_id=2035832597]
+
+[node name="Upgrades" type="Node" parent="Collectables" unique_id=839593341]
+
+[node name="Carrot Remover" type="Area2D" parent="Collectables/Upgrades" unique_id=1243624506]
+
+[node name="Current UI" type="CanvasLayer" parent="." unique_id=1115750549]
+visible = false
+
+[node name="Game UI" parent="Current UI" unique_id=1500710627 instance=ExtResource("9_ub52t")]
+
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Lava Env" to="." method="set_lava_environment"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Lava DARKENED" to="." method="set_lava_darkened_environment"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Desert Env" to="." method="set_desert_environment"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Ice Env" to="." method="set_ice_environment"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Grass Env" to="." method="set_grasslands_environment"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/CaveZone" to="." method="connect_cave_enter_zone"]
+[connection signal="body_exited" from="Collisions or AREA 2Ds/CaveZone" to="." method="connect_cave_exit_zone"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Wind Left" to="." method="enable_wind_right_to_left"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Wind Right" to="." method="enable_wind_left_to_right"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Deactivate Wind" to="." method="deactivate_wind"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/WinArea" to="." method="on_player_win"]
+[connection signal="body_entered" from="Collisions or AREA 2Ds/Death Zone" to="." method="_on_death_body_entered"]
+[connection signal="timeout" from="Collisions or AREA 2Ds/Death Zone/Timer" to="." method="on_player_death"]
+
+[editable path="Collisions or AREA 2Ds/Death Zone"]

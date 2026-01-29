@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://chjp7m80w12qx"]
+
+[ext_resource type="Script" uid="uid://b30lv7huj4hqy" path="res://Scenes + Scripts/Menus/UI/Options Menu.gd" id="1_ghaqp"]
+[ext_resource type="Texture2D" uid="uid://dsbn1kd1vb75v" path="res://Assets/[General Art]/[Icons]/icon.svg" id="2_dg8kb"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_m62ii"]
+[ext_resource type="Texture2D" uid="uid://bkqc7m4kkqjb5" path="res://Assets/[General Art]/UI/Settings Icon.png" id="4_odisl"]
+[ext_resource type="Texture2D" uid="uid://cakftg5f5w5y4" path="res://Assets/[General Art]/[Icons]/Xlabs Logo.png" id="5_ghaqp"]
+[ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="6_wn4r0"]
+
+[node name="Options_Menu" type="Control" unique_id=1588771923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghaqp")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=736035104]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 21.0
+offset_right = 1092.5
+offset_bottom = 548.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1056252104]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1907183809]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=132626336]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 50
+text = "Go Back"
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1537627177]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89081734, 0.025140617, 0.31798005, 1)
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 60
+text = "Game"
+horizontal_alignment = 1
+
+[node name="World Environment" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1456334112]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 50
+text = "World Environment"
+
+[node name="Particles" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1302178795]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 50
+text = "Show Particles"
+
+[node name="Instant Respawn2" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=988620606]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 50
+text = "Instant Respawn"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1509608054]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89081734, 0.025140617, 0.31798005, 1)
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 60
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="MuteGame" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1140814712]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 50
+text = "Mute Game"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1263147815]
+layout_mode = 2
+
+[node name="Volume Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=15529308]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 45
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=943225130]
+layout_mode = 2
+min_value = -0.25
+max_value = 2.5
+step = -0.01
+value = 2.0
+
+[node name="Godot" type="Sprite2D" parent="." unique_id=1978226338]
+position = Vector2(36.5, 608.5)
+scale = Vector2(0.57031256, 0.5703125)
+texture = ExtResource("2_dg8kb")
+
+[node name="Godot Ver" type="Label" parent="." unique_id=381318175]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 564.0
+offset_right = 233.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 30
+text = "Godot
+v4.5"
+
+[node name="B" type="Sprite2D" parent="." unique_id=850681367]
+texture_filter = 1
+position = Vector2(495, 47.000004)
+scale = Vector2(3.6111152, 3.7222216)
+texture = ExtResource("6_wn4r0")
+hframes = 42
+frame = 1
+
+[node name="Settings" type="Sprite2D" parent="." unique_id=1544752629]
+texture_filter = 1
+position = Vector2(1101, 51)
+scale = Vector2(0.200232, 0.200036)
+texture = ExtResource("4_odisl")
+
+[node name="XlabsLogo" type="Sprite2D" parent="." unique_id=1901536922]
+position = Vector2(1102, 598)
+scale = Vector2(0.102344, 0.106944)
+texture = ExtResource("5_ghaqp")
+
+[node name="Warning" type="Label" parent="." unique_id=1514134946]
+visible = false
+layout_mode = 0
+offset_left = 187.0
+offset_top = 557.0
+offset_right = 1032.0
+offset_bottom = 664.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_m62ii")
+theme_override_font_sizes/font_size = 50
+text = "Cannot change world environment and particle settings for this level"
+autowrap_mode = 2
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Back" to="." method="_return_to_prev"]
+[connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/World Environment" to="." method="_on_world_environment_toggled"]
+[connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/Particles" to="." method="_on_particles_toggled"]
+[connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/Instant Respawn2" to="." method="_on_instant_respawn_2_toggled"]
+[connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/MuteGame" to="." method="_on_mute_game_toggled"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]

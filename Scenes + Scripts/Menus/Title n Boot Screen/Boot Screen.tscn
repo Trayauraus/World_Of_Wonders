@@ -1,0 +1,495 @@
+[gd_scene format=3 uid="uid://djv1l874flw6e"]
+
+[ext_resource type="Script" uid="uid://66eioix7qltg" path="res://Scenes + Scripts/Menus/Title n Boot Screen/Boot Script.gd" id="1_fl0hb"]
+[ext_resource type="Texture2D" uid="uid://cnmuf2jq6kfcx" path="res://Assets/[General Art]/[Icons]/GODOT Logo-No_BG.png" id="2_70a54"]
+[ext_resource type="Texture2D" uid="uid://de8a3tjhmk2v0" path="res://Assets/[General Art]/[Icons]/T-Man.png" id="2_lehug"]
+[ext_resource type="Environment" uid="uid://b8j01a40sv36r" path="res://Environments/Boot Screen.tres" id="2_pc4qx"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="4_70a54"]
+[ext_resource type="Texture2D" uid="uid://badrfaa61i4l7" path="res://Assets/[General Art]/[Icons]/Tray.png" id="5_rvjn1"]
+
+[sub_resource type="Animation" id="Animation_lehug"]
+resource_name = "Intro"
+length = 11.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Godot:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.2, 6.73333, 10.8, 10.9467),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Godot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.2, 7.10114, 7.8),
+"transitions": PackedFloat32Array(1, 1, 0.482968, 0.420448),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6, 1.71, 8.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", "", "T-MAN", "Godot"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.63333, 1.74333, 8.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", "", "STUDIOS", "Engine"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.46, 2.95, 5.23333, 5.38, 8.61, 8.97, 10.8825, 11.0725),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.46, 3.33333, 3.73333, 5.23333, 5.38, 8.61, 8.97, 10.8825, 11.0725),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("T-man:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 5.23333, 5.38),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("T-man:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.2, 1.31, 1.53333, 1.74),
+"transitions": PackedFloat32Array(1.41421, 1.41421, 1.41421, 1.41421),
+"update": 0,
+"values": [Vector2(576, 355), Vector2(558, 355), Vector2(597, 355), Vector2(576, 355)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("T-man:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.93333, 2.1, 2.14, 2.26667, 2.53333, 3, 3.53333, 4.96667, 5.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1.68179, 0.659754, 1.68179, 1, 4.92458),
+"update": 0,
+"values": [0.0, 0.0436332, 0.0541052, 0.0872665, 0.0, -0.0872665, 0.0, 0.0, 6.28319]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BGS2:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(5.24, 5.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BGS:self_modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(5.24, 5.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Version:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(8.6125, 9.0425),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_70a54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Godot:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Godot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("T-man:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("T-man:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(582, 355)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("T-man:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BGS2:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BGS:self_modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Version:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvjn1"]
+_data = {
+&"Intro": SubResource("Animation_lehug"),
+&"RESET": SubResource("Animation_70a54")
+}
+
+[node name="Boot Screen" type="Control" unique_id=991572122]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fl0hb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=768600935]
+environment = ExtResource("2_pc4qx")
+
+[node name="Timer" type="Timer" parent="." unique_id=1559705368]
+wait_time = 11.5
+one_shot = true
+autostart = true
+
+[node name="BG" type="ColorRect" parent="." unique_id=1610467629]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="BG2" type="ColorRect" parent="BG" unique_id=707587311]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 98.0
+offset_right = 1159.0
+offset_bottom = 504.0
+color = Color(0.162066, 0.162066, 0.162066, 0.721569)
+
+[node name="Particles" type="Node" parent="." unique_id=924174019]
+
+[node name="Black Top" type="CPUParticles2D" parent="Particles" unique_id=570699915]
+position = Vector2(-1, 46)
+amount = 32
+lifetime = 5.9
+preprocess = 2.5
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(1, 50)
+direction = Vector2(1, -0.08)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 160.0
+initial_velocity_max = 180.0
+radial_accel_min = 0.1
+radial_accel_max = 0.5
+angle_max = 78.0
+scale_amount_min = 0.0
+scale_amount_max = 34.0
+color = Color(0.103744, 0.103744, 0.103744, 1)
+hue_variation_min = -0.5
+hue_variation_max = 0.5
+
+[node name="Black Bottom" type="CPUParticles2D" parent="Particles" unique_id=1101226552]
+position = Vector2(1131, 584)
+amount = 64
+lifetime = 5.9
+preprocess = 3.0
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(1, 90)
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 180.0
+initial_velocity_max = 190.0
+radial_accel_min = 0.1
+radial_accel_max = 0.5
+angle_max = 78.0
+scale_amount_min = 0.0
+scale_amount_max = 34.0
+color = Color(0.103744, 0.103744, 0.103744, 1)
+hue_variation_min = -0.5
+hue_variation_max = 0.5
+
+[node name="Particles Gray" type="CPUParticles2D" parent="Particles" unique_id=1582498484]
+position = Vector2(576, 649)
+amount = 100
+lifetime = 3.0
+preprocess = 2.5
+emission_shape = 3
+emission_rect_extents = Vector2(1, 90)
+direction = Vector2(-1, -10)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 210.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+angle_max = 78.0
+scale_amount_min = 0.0
+scale_amount_max = 34.0
+color = Color(0.752941, 0.839216, 0.835294, 1)
+
+[node name="Particles White" type="CPUParticles2D" parent="Particles" unique_id=1846971428]
+position = Vector2(576, 649)
+amount = 128
+lifetime = 3.0
+preprocess = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 90)
+direction = Vector2(-1, -10)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 210.0
+angle_max = 78.0
+scale_amount_min = 0.0
+scale_amount_max = 34.0
+
+[node name="Animated" type="Node2D" parent="." unique_id=253795376]
+z_index = 1
+
+[node name="BGS" type="ColorRect" parent="Animated" unique_id=1647891662]
+offset_left = 307.0
+offset_top = -2.0
+offset_right = 848.0
+offset_bottom = 98.0
+color = Color(0.160784, 0.160784, 0.160784, 0.721569)
+
+[node name="BGS2" type="ColorRect" parent="Animated" unique_id=1631014796]
+offset_left = 307.0
+offset_top = 504.0
+offset_right = 848.0
+offset_bottom = 648.0
+color = Color(0.160784, 0.160784, 0.160784, 0.721569)
+
+[node name="Godot" type="Sprite2D" parent="Animated" unique_id=1642813003]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(578, 302)
+scale = Vector2(0.5, 0.492)
+texture = ExtResource("2_70a54")
+region_enabled = true
+region_rect = Rect2(114.906, 112.317, 844.724, 801.432)
+
+[node name="T-man" type="Sprite2D" parent="Animated" unique_id=497164705]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(582, 355)
+scale = Vector2(0.564094, 0.5)
+texture = ExtResource("2_lehug")
+
+[node name="Left" type="Label" parent="Animated" unique_id=149505099]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 357.0
+offset_top = 578.0
+offset_right = 540.0
+offset_bottom = 645.0
+theme_override_fonts/font = ExtResource("4_70a54")
+theme_override_font_sizes/font_size = 48
+
+[node name="Version" type="Label" parent="Animated" unique_id=1776111971]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 626.0
+offset_right = 183.0
+offset_bottom = 693.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.4326237, 0.43262374, 0.4326237, 0.44705883)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_70a54")
+theme_override_font_sizes/font_size = 28
+text = "VERSION"
+
+[node name="Right" type="Label" parent="Animated" unique_id=307639542]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 616.0
+offset_top = 578.0
+offset_right = 799.0
+offset_bottom = 645.0
+theme_override_fonts/font = ExtResource("4_70a54")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animated" unique_id=1759792669]
+libraries/ = SubResource("AnimationLibrary_rvjn1")
+autoplay = &"Intro"
+
+[node name="Tray" type="Sprite2D" parent="." unique_id=490015181]
+z_index = 1
+position = Vector2(1095, 582.5)
+scale = Vector2(0.121094, 0.119141)
+texture = ExtResource("5_rvjn1")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

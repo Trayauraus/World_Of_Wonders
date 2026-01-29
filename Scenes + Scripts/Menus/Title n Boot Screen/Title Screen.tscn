@@ -1,0 +1,692 @@
+[gd_scene format=3 uid="uid://3r362dlqgu7m"]
+
+[ext_resource type="Script" uid="uid://rpras5h6iahy" path="res://Scenes + Scripts/Menus/Title n Boot Screen/Title Screen.gd" id="1_jx57c"]
+[ext_resource type="Environment" uid="uid://bph5eeiayrexk" path="res://Environments/Title Environment.tres" id="2_r7dj4"]
+[ext_resource type="Texture2D" uid="uid://beju04g6xyfee" path="res://Assets/[General Art]/Backgrounds/Evil Start Screen.png" id="3_bt7t5"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="4_exejt"]
+[ext_resource type="AudioStream" uid="uid://b3ta5gu7xwnnv" path="res://Audio/Music/Menus/Pixel Dreams.mp3" id="5_bt7t5"]
+[ext_resource type="Theme" uid="uid://d3pxlnwn8knpg" path="res://Assets/Themes/Main Menu.tres" id="5_olh2u"]
+[ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="6_w45jh"]
+[ext_resource type="Texture2D" uid="uid://bq07xc0pgsutq" path="res://Assets/[General Art]/Backgrounds/Celeste/CelesteBG_OldSite_00.png" id="7_exejt"]
+[ext_resource type="Texture2D" uid="uid://ihcqgv5j86th" path="res://Assets/[General Art]/[Icons]/Exploding Rabbit Icon.png" id="7_u0e4d"]
+[ext_resource type="Texture2D" uid="uid://c1bi2si0i0oll" path="res://Assets/[General Art]/[Icons]/Exploding Rabbit Icon Win.png" id="8_s5oya"]
+[ext_resource type="Texture2D" uid="uid://brv31siy56nio" path="res://Assets/[General Art]/Backgrounds/Level Select Background.png" id="9_btpcb"]
+[ext_resource type="Texture2D" uid="uid://cwpgwevddivyk" path="res://Assets/[General Art]/Backgrounds/Stats Menu Background.png" id="10_nihqj"]
+[ext_resource type="AudioStream" uid="uid://bgcpaukgdbng7" path="res://Audio/Music/Menus/Main Title - Puzzle Game Loop.mp3" id="12_3egxh"]
+[ext_resource type="PackedScene" uid="uid://chjp7m80w12qx" path="res://Scenes + Scripts/Menus/UI/Options_Menu.tscn" id="12_jx57c"]
+[ext_resource type="AudioStream" uid="uid://cenwb6ksgdekj" path="res://Audio/Music/Levels/Lv 3 Soundtrack.mp3" id="13_r7dj4"]
+
+[node name="Title Screen" type="Control" unique_id=2136062003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jx57c")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1189679509]
+environment = ExtResource("2_r7dj4")
+
+[node name="MainTitle-PuzzleGameLoop" type="AudioStreamPlayer" parent="." unique_id=53879746]
+stream = ExtResource("12_3egxh")
+autoplay = true
+parameters/looping = true
+
+[node name="Title Music?" type="AudioStreamPlayer" parent="." unique_id=482493324]
+stream = ExtResource("13_r7dj4")
+volume_db = 20.0
+pitch_scale = 2.0
+parameters/looping = true
+
+[node name="PixelDreams" type="AudioStreamPlayer" parent="." unique_id=1387379288]
+stream = ExtResource("5_bt7t5")
+
+[node name="Darkener" type="ColorRect" parent="." unique_id=1883743100]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -12.0
+offset_right = 1151.0
+offset_bottom = 642.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="EvilStartScreen" type="Sprite2D" parent="." unique_id=515653568]
+position = Vector2(576.50006, 328.5)
+scale = Vector2(0.929, 0.857)
+texture = ExtResource("3_bt7t5")
+
+[node name="Replacement Start Screen" type="Sprite2D" parent="." unique_id=270410744]
+self_modulate = Color(0.9256205, 0.21818104, 0, 1)
+position = Vector2(576.5, 325)
+scale = Vector2(1.079588, 1)
+texture = ExtResource("7_exejt")
+
+[node name="Title Screen" type="Node2D" parent="." unique_id=1682668700]
+position = Vector2(2, 0)
+scale = Vector2(0.6, 0.6)
+
+[node name="Ver" type="Label" parent="Title Screen" unique_id=678354493]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_right = 1829.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+text = "WoW"
+
+[node name="Title" type="Label" parent="Title Screen" unique_id=1436892644]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 62.0
+offset_right = 2091.0
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 200
+text = "Wonders"
+
+[node name="Title DEMO" type="Label" parent="Title Screen" unique_id=1520976398]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.333332
+offset_top = 225.0
+offset_right = 1878.3334
+offset_bottom = 529.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+text = "DEMO"
+
+[node name="RTX Edition Label" type="Label" parent="Title Screen" unique_id=1513980142]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 1025.0
+offset_right = 223.0
+offset_bottom = 1077.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+text = "RTX edition"
+
+[node name="Mobile NOTE" type="Label" parent="Title Screen" unique_id=1485997360]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1015.0
+offset_top = 988.33325
+offset_right = 2845.0
+offset_bottom = 1292.3333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+text = "NOTE: This game is not fully designed for mobile 
+devices.. bugs may occur"
+
+[node name="ScreenSpace" type="Button" parent="Title Screen" unique_id=1823699204]
+visible = false
+top_level = true
+offset_left = 913.0
+offset_top = -1.0
+offset_right = 1154.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+text = "Swap
+Screenspace 
+Mode"
+
+[node name="MarginContainer" type="MarginContainer" parent="Title Screen" unique_id=978046407]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -539.0
+offset_top = -118.999985
+offset_right = -257.00003
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.312, 1.314)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title Screen/MarginContainer" unique_id=1198763195]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=330446076]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_olh2u")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 72
+text = "Campaign
+"
+
+[node name="Label" type="Label" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=2118305603]
+layout_mode = 2
+theme = ExtResource("5_olh2u")
+
+[node name="Stats" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=1951695527]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_olh2u")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 64
+text = "Stats"
+
+[node name="Options" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=93449156]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_olh2u")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 64
+text = "Options"
+
+[node name="Exit" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=584753935]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_olh2u")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+
+[node name="Controller Icons Main Menu" type="Node" parent="Title Screen" unique_id=2122853395]
+
+[node name="MainMenuIconsC" type="CanvasLayer" parent="Title Screen/Controller Icons Main Menu" unique_id=1271292178]
+
+[node name="A" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/MainMenuIconsC" unique_id=398371097]
+visible = false
+texture_filter = 1
+position = Vector2(329, 476.17)
+scale = Vector2(10, 10.217)
+texture = ExtResource("6_w45jh")
+hframes = 42
+
+[node name="X" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/MainMenuIconsC" unique_id=380873841]
+visible = false
+texture_filter = 1
+position = Vector2(329, 626.813)
+scale = Vector2(10, 10.217)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 2
+
+[node name="B" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/MainMenuIconsC" unique_id=552524816]
+visible = false
+texture_filter = 1
+position = Vector2(329, 780.813)
+scale = Vector2(10, 10.217)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 1
+
+[node name="LevelSelectIconsC" type="Node2D" parent="Title Screen/Controller Icons Main Menu" unique_id=1914320215]
+visible = false
+
+[node name="A" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/LevelSelectIconsC" unique_id=1988521780]
+texture_filter = 1
+position = Vector2(645, 344)
+scale = Vector2(12.9957, 13.517)
+texture = ExtResource("6_w45jh")
+hframes = 42
+
+[node name="ZL" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/LevelSelectIconsC" unique_id=2016879308]
+texture_filter = 1
+position = Vector2(810, 508)
+scale = Vector2(14.702, 14.702)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 11
+
+[node name="ZR" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/LevelSelectIconsC" unique_id=1171115847]
+texture_filter = 1
+position = Vector2(813, 679)
+scale = Vector2(14.1363, 14.1363)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 9
+
+[node name="L" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/LevelSelectIconsC" unique_id=337595447]
+texture_filter = 1
+position = Vector2(813, 846)
+scale = Vector2(14.1007, 13.9361)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 4
+
+[node name="R" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu/LevelSelectIconsC" unique_id=755534317]
+texture_filter = 1
+position = Vector2(665, 998)
+scale = Vector2(13.024, 13.024)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 5
+
+[node name="B" type="Sprite2D" parent="Title Screen/Controller Icons Main Menu" unique_id=1212971893]
+visible = false
+texture_filter = 1
+position = Vector2(71, 405)
+scale = Vector2(15.4275, 15.4275)
+texture = ExtResource("6_w45jh")
+hframes = 42
+frame = 1
+
+[node name="SpriteBunny" type="Sprite2D" parent="Title Screen" unique_id=225696738]
+texture_filter = 1
+position = Vector2(1366, 519)
+scale = Vector2(4.70909, 4.42727)
+texture = ExtResource("7_u0e4d")
+
+[node name="ExplodingRabbitIconWin" type="Sprite2D" parent="Title Screen" unique_id=331459402]
+visible = false
+texture_filter = 3
+position = Vector2(1362.7501, 544.4999)
+scale = Vector2(4.986, 4.859)
+texture = ExtResource("8_s5oya")
+
+[node name="ExplodingRabbitWin2" type="Sprite2D" parent="Title Screen" unique_id=798884207]
+visible = false
+modulate = Color(0, 0.9975063, 0.8246137, 1)
+texture_filter = 1
+position = Vector2(1366, 519)
+scale = Vector2(4.70909, 4.42727)
+texture = ExtResource("7_u0e4d")
+
+[node name="Level Select" type="Node2D" parent="." unique_id=2043421633]
+visible = false
+scale = Vector2(0.6, 0.6)
+
+[node name="LevelSelectBackground" type="Sprite2D" parent="Level Select" unique_id=1450088750]
+position = Vector2(959, 534)
+texture = ExtResource("9_btpcb")
+
+[node name="LevelSelectButtons" type="Node2D" parent="Level Select" unique_id=1142660608]
+
+[node name="Tutorial" type="Button" parent="Level Select/LevelSelectButtons" unique_id=824887994]
+texture_filter = 1
+offset_left = 1204.0
+offset_right = 1694.0
+offset_bottom = 151.0
+focus_neighbor_left = NodePath("../PrevButton")
+focus_neighbor_top = NodePath("../../Go Back")
+focus_neighbor_right = NodePath("../../Go Back")
+focus_neighbor_bottom = NodePath("../PrevButton")
+focus_next = NodePath("../../Go Back")
+focus_previous = NodePath("../1")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 140
+text = "Tutorial"
+
+[node name="1" type="Button" parent="Level Select/LevelSelectButtons" unique_id=2050999455]
+texture_filter = 1
+offset_left = 6.0
+offset_top = 783.0
+offset_right = 492.0
+offset_bottom = 1069.0
+focus_neighbor_left = NodePath("../PrevButton")
+focus_neighbor_top = NodePath("../PrevButton")
+focus_neighbor_right = NodePath("../2")
+focus_neighbor_bottom = NodePath("../2")
+focus_next = NodePath("../2")
+focus_previous = NodePath("../Tutorial")
+theme_override_colors/font_disabled_color = Color(0.298039, 0, 0, 0.427451)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 0.666667)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 150
+disabled = true
+text = "1"
+
+[node name="2" type="Button" parent="Level Select/LevelSelectButtons" unique_id=1766838543]
+texture_filter = 1
+offset_left = 496.0
+offset_top = 783.0
+offset_right = 956.0
+offset_bottom = 1069.0
+focus_neighbor_left = NodePath("../1")
+focus_neighbor_top = NodePath("../Tutorial")
+focus_neighbor_right = NodePath("../3")
+focus_neighbor_bottom = NodePath("../3")
+focus_next = NodePath("../3")
+focus_previous = NodePath("../1")
+theme_override_colors/font_disabled_color = Color(0.298039, 0, 0, 0.427451)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 0.666667)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 150
+disabled = true
+text = "2"
+
+[node name="3" type="Button" parent="Level Select/LevelSelectButtons" unique_id=1782019986]
+texture_filter = 1
+offset_left = 962.0
+offset_top = 783.0
+offset_right = 1443.0
+offset_bottom = 1069.0
+focus_neighbor_left = NodePath("../2")
+focus_neighbor_top = NodePath("../Tutorial")
+focus_neighbor_right = NodePath("../4")
+focus_neighbor_bottom = NodePath("../4")
+focus_next = NodePath("../4")
+focus_previous = NodePath("../2")
+theme_override_colors/font_disabled_color = Color(0.298039, 0, 0, 0.427451)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 0.666667)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 150
+disabled = true
+text = "3"
+
+[node name="4" type="Button" parent="Level Select/LevelSelectButtons" unique_id=1092691449]
+texture_filter = 1
+offset_left = 1451.0
+offset_top = 783.0
+offset_right = 1920.0
+offset_bottom = 1069.0
+focus_neighbor_left = NodePath("../3")
+focus_neighbor_top = NodePath("../NextButton")
+focus_neighbor_right = NodePath("../../Go Back")
+focus_neighbor_bottom = NodePath("../../Go Back")
+focus_next = NodePath("../../Go Back")
+focus_previous = NodePath("../3")
+theme_override_colors/font_disabled_color = Color(0.298039, 0, 0, 0.427451)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 0.666667)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 150
+disabled = true
+text = "4 - Boss"
+
+[node name="PrevButton" type="Button" parent="Level Select/LevelSelectButtons" unique_id=898529205]
+texture_filter = 1
+offset_top = 453.0
+offset_right = 119.0
+offset_bottom = 765.0
+focus_neighbor_left = NodePath("../Tutorial")
+focus_neighbor_top = NodePath("../Tutorial")
+focus_neighbor_right = NodePath("../NextButton")
+focus_neighbor_bottom = NodePath("../1")
+focus_next = NodePath("../NextButton")
+focus_previous = NodePath("../1")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 300
+text = "<"
+
+[node name="NextButton" type="Button" parent="Level Select/LevelSelectButtons" unique_id=564726774]
+texture_filter = 1
+offset_left = 1795.6667
+offset_top = 453.00003
+offset_right = 1914.6667
+offset_bottom = 765.0
+focus_neighbor_left = NodePath("../PrevButton")
+focus_neighbor_top = NodePath("../../Go Back")
+focus_neighbor_right = NodePath("../4")
+focus_neighbor_bottom = NodePath("../4")
+focus_next = NodePath("../4")
+focus_previous = NodePath("../PrevButton")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 300
+text = ">"
+
+[node name="DEMO" type="Button" parent="Level Select/LevelSelectButtons" unique_id=858298991]
+visible = false
+texture_filter = 1
+offset_left = 6.0
+offset_top = 783.0
+offset_right = 1921.6666
+offset_bottom = 1069.0
+focus_neighbor_left = NodePath("../PrevButton")
+focus_neighbor_top = NodePath("../PrevButton")
+focus_neighbor_right = NodePath("../2")
+focus_neighbor_bottom = NodePath("../2")
+focus_next = NodePath("../2")
+focus_previous = NodePath("../Tutorial")
+theme_override_colors/font_disabled_color = Color(0.298039, 0, 0, 0.427451)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 0.666667)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 150
+text = "DEMO LV"
+
+[node name="Go Back" type="Button" parent="Level Select" unique_id=764096584]
+texture_filter = 1
+offset_left = 1712.0
+offset_right = 1915.0
+offset_bottom = 212.0
+focus_neighbor_left = NodePath("../LevelSelectButtons/Tutorial")
+focus_neighbor_top = NodePath("../LevelSelectButtons/NextButton")
+focus_neighbor_right = NodePath("../LevelSelectButtons/NextButton")
+focus_neighbor_bottom = NodePath("../LevelSelectButtons/NextButton")
+focus_next = NodePath("../LevelSelectButtons/NextButton")
+focus_previous = NodePath("../LevelSelectButtons/Tutorial")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 100
+text = "Go
+ Back"
+
+[node name="Total Coins" type="Button" parent="Level Select" unique_id=1334976424]
+texture_filter = 1
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 210.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Coins:"
+
+[node name="Multiplayer" type="Button" parent="Level Select" unique_id=229267844]
+texture_filter = 1
+offset_left = 6.6666565
+offset_top = 134.99998
+offset_right = 60.0
+offset_bottom = 156.66666
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+
+[node name="Stats" type="Node2D" parent="." unique_id=1996921553]
+visible = false
+scale = Vector2(0.6, 0.6)
+
+[node name="StatsMenuBackground" type="Sprite2D" parent="Stats" unique_id=1283570165]
+position = Vector2(960, 540)
+texture = ExtResource("10_nihqj")
+
+[node name="Stats Go Back" type="Button" parent="Stats" unique_id=328492639]
+texture_filter = 1
+offset_left = 1712.0
+offset_right = 1915.0
+offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 100
+text = "Go
+ Back"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Stats" unique_id=1321053488]
+offset_right = 948.3333
+offset_bottom = 933.3333
+
+[node name="SlotListPanel" type="PanelContainer" parent="Stats/HSplitContainer" unique_id=535438416]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats/HSplitContainer/SlotListPanel" unique_id=2073685955]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Stats/HSplitContainer/SlotListPanel/VBoxContainer" unique_id=1854760388]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2829473, 0.55844134, 0.28294972, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 100
+text = "Select a Save Slot"
+
+[node name="SaveSlotList" type="VBoxContainer" parent="Stats/HSplitContainer/SlotListPanel/VBoxContainer" unique_id=830433133]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="NewSlotButton" type="Button" parent="Stats/HSplitContainer/SlotListPanel/VBoxContainer" unique_id=446907645]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 100
+text = "Create New Save Slot"
+
+[node name="SlotDetailPanel" type="PanelContainer" parent="Stats/HSplitContainer" unique_id=257627988]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats/HSplitContainer/SlotDetailPanel" unique_id=1678171522]
+layout_mode = 2
+
+[node name="SlotNameLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1761438138]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.70980394, 1, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Slot: ...\""
+
+[node name="LevelLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=808985470]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Current Level: ...\""
+
+[node name="TimeLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1343013509]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Total Time: ...\""
+
+[node name="CoinsLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1623473785]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7530531, 0.61194724, 0.14535066, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Coins: ...\""
+
+[node name="CoinsBigLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1751706127]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7530531, 0.61194724, 0.14535066, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Coins: ...\""
+
+[node name="CoinsSpecialLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1555932775]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61638445, 0.6696616, 0.13159275, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Coins: ...\""
+
+[node name="DeathLabel" type="Label" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=2013194839]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6577544, 0.035069726, 2.4065375e-07, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+text = "Label - Text: \"Deaths: ...\""
+
+[node name="HSeparator" type="HSeparator" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1217231839]
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=974946757]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 70
+text = "Load Game"
+
+[node name="DeleteButton" type="Button" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=244763583]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 70
+text = "Delete Save"
+
+[node name="CreateSlotDialog" type="ConfirmationDialog" parent="Stats" unique_id=2043548402]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats/CreateSlotDialog" unique_id=1085521066]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Stats/CreateSlotDialog/VBoxContainer" unique_id=435946054]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+text = "Enter a name for the new save slot:"
+
+[node name="SlotNameInput" type="LineEdit" parent="Stats/CreateSlotDialog/VBoxContainer" unique_id=1258927546]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Eg. mysaveslot1"
+
+[node name="ErrorMessage" type="Label" parent="Stats/CreateSlotDialog/VBoxContainer" unique_id=1604530754]
+layout_mode = 2
+text = "File already exists!"
+
+[node name="VersionWarningLabel" type="Label" parent="Stats" unique_id=390146949]
+offset_left = -1.6666663
+offset_top = 926.6669
+offset_right = 1918.3334
+offset_bottom = 1078.6669
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 80
+text = "Warning"
+autowrap_mode = 2
+
+[node name="Options" type="Node2D" parent="." unique_id=1251563325]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Options" unique_id=1296551786]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="Options_Menu" parent="Options" unique_id=1660081394 instance=ExtResource("12_jx57c")]
+is_on_title = true
+
+[node name="GameGrayedOptions" type="ColorRect" parent="." unique_id=427403513]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.392157)
+
+[connection signal="pressed" from="Title Screen/ScreenSpace" to="." method="_swap_screenspace_mode"]
+[connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Stats" to="." method="_on_stats_pressed"]
+[connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Level Select/LevelSelectButtons/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Level Select/LevelSelectButtons/DEMO" to="." method="_on_demo_pressed"]
+[connection signal="pressed" from="Level Select/Go Back" to="." method="_back_to_title_menu"]
+[connection signal="pressed" from="Level Select/Total Coins" to="." method="_back_to_title_menu"]
+[connection signal="pressed" from="Level Select/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Stats/Stats Go Back" to="." method="_back_to_title_menu"]
+[connection signal="canceled" from="Stats/CreateSlotDialog" to="." method="_on_new_slot_button_pressed"]
+[connection signal="confirmed" from="Stats/CreateSlotDialog" to="." method="_on_create_slot_confirm_pressed"]

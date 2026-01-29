@@ -1,0 +1,322 @@
+[gd_scene format=3 uid="uid://xlv3rh212fuw"]
+
+[ext_resource type="Script" uid="uid://gxkk16wbdlkw" path="res://Scenes + Scripts/Menus/Title n Boot Screen/Boot Script WoW.gd" id="1_jr8su"]
+[ext_resource type="Environment" uid="uid://fb17uscdrvan" path="res://Environments/Title Environment EDITOR.tres" id="2_4fyg2"]
+[ext_resource type="AudioStream" uid="uid://cftut85jcyger" path="res://Audio/Music/Menus/WoW Boot Music - Emotional Piano.mp3" id="5_81a5j"]
+[ext_resource type="Texture2D" uid="uid://bdx14kguuuoe8" path="res://Assets/[Cutscenes]/{Title/World O Wonders Title Gray BG.png" id="6_x8vwb"]
+[ext_resource type="Texture2D" uid="uid://doonr1jwjuday" path="res://Assets/[Cutscenes]/{Title/World O Wonders Layer Cave.png" id="7_dys7d"]
+[ext_resource type="Texture2D" uid="uid://bp2hf5xebbew0" path="res://Assets/[Cutscenes]/{Title/World O Wonders Layer Volcano BG.png" id="8_rixc0"]
+[ext_resource type="Texture2D" uid="uid://danwby4pvqx44" path="res://Assets/[Cutscenes]/{Title/World O Wonders Layer Volcano.png" id="9_u6qar"]
+[ext_resource type="Texture2D" uid="uid://ce5ftturhgwo2" path="res://Assets/[Cutscenes]/{Title/World O Wonders Eye Laser.png" id="10_dghnb"]
+[ext_resource type="Texture2D" uid="uid://g1qhcjswt433" path="res://Assets/[Cutscenes]/{Title/World O Wonders Eye.png" id="11_m7k01"]
+[ext_resource type="Texture2D" uid="uid://cbwd4sepcihkp" path="res://Assets/[General Art]/{Pixel}/Sprites/Dash Particle.png" id="12_p56c7"]
+[ext_resource type="Texture2D" uid="uid://b8k52pjgyl182" path="res://Assets/[Cutscenes]/{Title/World O Wonders Layer Cliff.png" id="13_urgwt"]
+[ext_resource type="Texture2D" uid="uid://dhsm3t2w30467" path="res://Assets/[Cutscenes]/{Title/World O Wonders Layer Bunny.png" id="14_g2qdq"]
+[ext_resource type="Texture2D" uid="uid://cxd4ugmcaqkdb" path="res://Assets/[Cutscenes]/{Title/World O Wonders Layer Foreground.png" id="15_nmrah"]
+[ext_resource type="Texture2D" uid="uid://y0ofsdttjwla" path="res://Assets/[Cutscenes]/{Title/World O Wonders Lighting.png" id="16_c73n4"]
+[ext_resource type="Script" uid="uid://iefyw0u8s7eg" path="res://Standalone Scripts/Universal/Universal Cam Shake.gd" id="17_jcgcf"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="18_xipb1"]
+[ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="19_suve6"]
+[ext_resource type="Texture2D" uid="uid://c2agbs8lqnn0" path="res://Assets/[Cutscenes]/{Title/World O Wonders Title.png" id="20_rj32x"]
+
+[sub_resource type="Animation" id="Animation_hhp2p"]
+resource_name = "Fade_Title_In"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.298039, 0.298039, 0.298039, 1), Color(0.298039, 0.298039, 0.298039, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rcif5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gr1ek"]
+_data = {
+&"Fade_Title_In": SubResource("Animation_hhp2p"),
+&"RESET": SubResource("Animation_rcif5")
+}
+
+[node name="Bootup Screen WoW" type="Control" unique_id=1809832483]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jr8su")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1732070115]
+environment = ExtResource("2_4fyg2")
+
+[node name="WoW_BootMusic-EmotionalPiano" type="AudioStreamPlayer" parent="." unique_id=136560479]
+stream = ExtResource("5_81a5j")
+autoplay = true
+parameters/looping = true
+
+[node name="Press A Timer" type="Timer" parent="." unique_id=822057503]
+wait_time = 2.5
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=995645311]
+position = Vector2(589, 332)
+zoom = Vector2(1.2, 1.2)
+script = ExtResource("17_jcgcf")
+isShaking = true
+
+[node name="StartGame" type="Node2D" parent="Camera2D" unique_id=64299782]
+visible = false
+position = Vector2(-10, -34)
+scale = Vector2(0.694, 0.694)
+
+[node name="AToStart" type="Label" parent="Camera2D/StartGame" unique_id=586151692]
+offset_left = -339.0
+offset_top = 319.0
+offset_right = 443.0
+offset_bottom = 570.0
+theme_override_fonts/font = ExtResource("18_xipb1")
+theme_override_font_sizes/font_size = 90
+text = "PRESS           TO START"
+
+[node name="A" type="Sprite2D" parent="Camera2D/StartGame" unique_id=1825787273]
+texture_filter = 1
+position = Vector2(-12, 354)
+scale = Vector2(7.67929, 7.67929)
+texture = ExtResource("19_suve6")
+hframes = 42
+
+[node name="B" type="Sprite2D" parent="Camera2D/StartGame" unique_id=1784694157]
+texture_filter = 1
+position = Vector2(-102, 353)
+rotation = -1.57079
+scale = Vector2(7.67929, 7.67929)
+texture = ExtResource("19_suve6")
+hframes = 42
+frame = 15
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=598898533]
+
+[node name="F1" type="Label" parent="Camera2D/CanvasLayer" unique_id=689042800]
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 367.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("18_xipb1")
+theme_override_font_sizes/font_size = 35
+text = "F1 or  -   to  
+Toggle Lighting"
+
+[node name="ZL" type="Sprite2D" parent="Camera2D/CanvasLayer" unique_id=2016788236]
+texture_filter = 1
+position = Vector2(97, 28)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("19_suve6")
+hframes = 42
+frame = 11
+
+[node name="Title Parallax" type="Parallax2D" parent="Camera2D/CanvasLayer" unique_id=1383589146]
+scroll_scale = Vector2(1.3, 1.2)
+
+[node name="GameGrayedOptions" type="ColorRect" parent="Camera2D/CanvasLayer/Title Parallax" unique_id=1088091503]
+offset_left = 257.0
+offset_top = 64.0
+offset_right = 1595.0
+offset_bottom = 200.0
+scale = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 0.117647)
+
+[node name="WorldOWondersTitle" type="Sprite2D" parent="Camera2D/CanvasLayer/Title Parallax" unique_id=1912416978]
+self_modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(586, 281)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_rj32x")
+
+[node name="DEMO" type="Label" parent="Camera2D/CanvasLayer/Title Parallax" unique_id=393342398]
+visible = false
+offset_left = 492.0
+offset_top = 129.0
+offset_right = 845.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.29219002, 0.29219005, 0.29219, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_xipb1")
+theme_override_font_sizes/font_size = 80
+text = "DEMO"
+
+[node name="Animated Title Screen" type="Node2D" parent="." unique_id=553891012]
+position = Vector2(-371, -208)
+
+[node name="WorldOWondersTitleGrayBg" type="Sprite2D" parent="Animated Title Screen" unique_id=1197591564]
+self_modulate = Color(0.589096, 0.589096, 0.589096, 1)
+z_index = -9
+position = Vector2(983, 542)
+scale = Vector2(0.727, 0.727)
+texture = ExtResource("6_x8vwb")
+
+[node name="Parallax2D" type="Parallax2D" parent="Animated Title Screen" unique_id=1431464531]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="WorldOWondersLayerCave" type="Sprite2D" parent="Animated Title Screen/Parallax2D" unique_id=532754480]
+z_index = -8
+position = Vector2(960, 540)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_dys7d")
+
+[node name="WorldOWondersLayerVolcanoBg" type="Sprite2D" parent="Animated Title Screen/Parallax2D" unique_id=2085014003]
+z_index = -7
+position = Vector2(960, 540)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_rixc0")
+
+[node name="Volcano Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=41995358]
+scroll_scale = Vector2(0.55, 0.6)
+
+[node name="WorldOWondersLayerVolcano" type="Sprite2D" parent="Animated Title Screen/Volcano Parallax" unique_id=372502646]
+z_index = -6
+position = Vector2(973, 540)
+scale = Vector2(0.608, 0.6)
+texture = ExtResource("9_u6qar")
+
+[node name="Laser Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=965747065]
+scroll_scale = Vector2(0.55, 0.55)
+
+[node name="WorldOWondersEyeLaser" type="Sprite2D" parent="Animated Title Screen/Laser Parallax" unique_id=1161699891]
+z_index = -6
+position = Vector2(960, 542)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("10_dghnb")
+
+[node name="Eye Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=126408018]
+scroll_scale = Vector2(0.55, 0.2)
+
+[node name="WorldOWondersEye" type="Sprite2D" parent="Animated Title Screen/Eye Parallax" unique_id=1227555900]
+z_index = -5
+position = Vector2(960, 540)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("11_m7k01")
+
+[node name="CPUP_Red" type="CPUParticles2D" parent="Animated Title Screen" unique_id=55512136]
+z_index = -5
+position = Vector2(1403, 0)
+amount = 92
+texture = ExtResource("12_p56c7")
+lifetime = 4.0
+preprocess = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 550)
+direction = Vector2(0, 1)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_min = 0.1
+color = Color(0.5715, 0.301356, 0.0185983, 1)
+
+[node name="CPUP_WhiteISH2" type="CPUParticles2D" parent="Animated Title Screen" unique_id=457933061]
+z_index = -5
+position = Vector2(406, 0)
+amount = 28
+texture = ExtResource("12_p56c7")
+lifetime = 8.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 150.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_min = 0.5
+color = Color(0.666057, 0.831482, 0.650913, 1)
+
+[node name="Cliff Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=2062308719]
+scroll_scale = Vector2(0.65, 0.65)
+
+[node name="WorldOWondersLayerCliff" type="Sprite2D" parent="Animated Title Screen/Cliff Parallax" unique_id=797061636]
+z_index = -4
+position = Vector2(960, 582.99994)
+scale = Vector2(0.6, 0.513)
+texture = ExtResource("13_urgwt")
+
+[node name="CPUP_GrayISH" type="CPUParticles2D" parent="Animated Title Screen" unique_id=1819215646]
+z_index = -4
+position = Vector2(960, 0)
+amount = 42
+texture = ExtResource("12_p56c7")
+lifetime = 8.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 550)
+direction = Vector2(0, 1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 90.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_max = 2.0
+color = Color(0.214959, 0.0985915, 0.00252437, 1)
+
+[node name="Bunny Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=609124596]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="WorldOWondersLayerBunny" type="Sprite2D" parent="Animated Title Screen/Bunny Parallax" unique_id=463580131]
+z_index = -3
+position = Vector2(960, 583.99994)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("14_g2qdq")
+
+[node name="ForeGround Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=701178229]
+scroll_scale = Vector2(1, 0.5)
+
+[node name="WorldOWondersLayerForeground" type="Sprite2D" parent="Animated Title Screen/ForeGround Parallax" unique_id=2061912215]
+z_index = -2
+position = Vector2(980, 557)
+scale = Vector2(0.69, 0.595)
+texture = ExtResource("15_nmrah")
+
+[node name="WorldOWondersLighting" type="Sprite2D" parent="Animated Title Screen/ForeGround Parallax" unique_id=698395585]
+z_index = -1
+position = Vector2(980.56006, 550.5)
+scale = Vector2(0.6837916, 0.6194445)
+texture = ExtResource("16_c73n4")
+
+[node name="Fades" type="CanvasLayer" parent="." unique_id=2015557417]
+
+[node name="FadeRect" type="ColorRect" parent="Fades" unique_id=1892965527]
+visible = false
+top_level = true
+offset_left = -873.0
+offset_top = -426.0
+offset_right = 3102.0
+offset_bottom = 1613.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="AnimationPlayer" parent="Fades" unique_id=588682035]
+libraries/ = SubResource("AnimationLibrary_gr1ek")
+
+[connection signal="timeout" from="Press A Timer" to="." method="_allow_change_scene"]

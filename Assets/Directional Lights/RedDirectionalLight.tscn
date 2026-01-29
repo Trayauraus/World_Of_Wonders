@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1mmdig0l0055"]
+
+[node name="RedDirectionalLight" type="DirectionalLight2D"]
+color = Color(0.63648, 0.636481, 0.63648, 1)
+blend_mode = 2
+shadow_enabled = true
