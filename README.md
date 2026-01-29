@@ -2,7 +2,7 @@
 
 **World of Wonders (WoW)** is a 2D indie platforming adventure made in the **Godot Game Engine**. In this adventure, you play as a bunny hopping away from certain death and staying alive, while ensuring you avoid the "black plague", all while climbing a Volcano.
 
-The project originally started on Godot 4.3 as *Land of Tales* and *Land of Wonders* before being rebranded to World of Wonders to create the "WoW" acronym.
+The project originally started on Godot 4.3 as *Land of Tales* and then moved to *Land of Wonders* before being rebranded to World of Wonders to create the "WoW" acronym.
 
 ## Game Features
 * **Discord RPC Support:** Communicates with Discord to update your play status and share your current level.
@@ -13,7 +13,7 @@ The project originally started on Godot 4.3 as *Land of Tales* and *Land of Wond
 
 ## Technical Specifications
 * **Current Version:** 5.3.
-* **Base Engine:** Godot 4.5.1.
+* **Base Engine:** Godot 4.6
 * **Project Start Date:** February 13, 2025.
 
 ## 🗺️ Development Roadmap (Level Status)
