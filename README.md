@@ -4,6 +4,10 @@
 
 The project originally started on Godot 4.3 as *Land of Tales* and then moved to *Land of Wonders* before being rebranded to World of Wonders to create the "WoW" acronym.
 
+
+## 📥 Downloads
+The playable versions of **World of Wonders** is found here: **[Releases](https://github.com/Trayauraus/World_Of_Wonders/releases)**. Only stable builds are publicly available.
+
 ## Game Features
 * **Discord RPC Support:** Communicates with Discord to update your play status and share your current level.
 * **Advanced Save System:** Utilizes the *Indie Blueprint Save* addon for managing game data through a global state.
@@ -12,11 +16,11 @@ The project originally started on Godot 4.3 as *Land of Tales* and then moved to
 ---
 
 ## Technical Specifications
-* **Current Version:** 5.3.
+* **Current Version:** 5.5.
 * **Base Engine:** Godot 4.6
 * **Project Start Date:** February 13, 2025.
 
-## 🗺️ Development Roadmap (Level Status)
+## 🗺️ Development Roadmap
 * **The Game Is Actually DONE!!** I may make a level editor in the future but as of right now its completely done.
 
 ---
