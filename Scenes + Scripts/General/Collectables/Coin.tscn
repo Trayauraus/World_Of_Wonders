@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://i13psxcoqy7a"]
+[gd_scene format=3 uid="uid://i13psxcoqy7a"]
 
-[ext_resource type="Script" uid="uid://cu1ob4nb60vee" path="res://Scenes + Scripts/General/Collectables/Coins.gd" id="1_ea8fe"]
+[ext_resource type="Script" uid="uid://wjih5fyvuylv" path="res://Scenes + Scripts/General/Collectables/Coins.gd" id="1_ea8fe"]
 [ext_resource type="Texture2D" uid="uid://u1xoapxudlvb" path="res://Assets/[General Art]/{Pixel}/Sprites/Coin Sprite Sheet.png" id="1_jj5ce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lv4d7"]
@@ -106,21 +106,21 @@ gradient = SubResource("Gradient_8e7qf")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Coin" type="Area2D"]
+[node name="Coin" type="Area2D" unique_id=201204016]
 collision_layer = 2
 script = ExtResource("1_ea8fe")
 
-[node name="Coins" type="AnimatedSprite2D" parent="."]
+[node name="Coins" type="AnimatedSprite2D" parent="." unique_id=2112286557]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mtw3f")
 autoplay = "default"
 frame_progress = 0.0957064
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1404990689]
 scale = Vector2(0.486867, 0.485458)
 shape = SubResource("CircleShape2D_5v5ag")
 
-[node name="PointLight" type="PointLight2D" parent="."]
+[node name="PointLight" type="PointLight2D" parent="." unique_id=1577534280]
 texture = SubResource("GradientTexture2D_6ehq8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

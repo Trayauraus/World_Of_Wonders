@@ -32,6 +32,11 @@ var Volume: float
 var Force_Stop_Time = false
 var Has_Fallen = false
 
+
+var imported_levels: Array = []
+var current_level_path: String = ""
+var speed_up = false # Used in level import system
+
 func _ready():
 	var MASTER_BUS_INDEX = AudioServer.get_bus_index("Master")
 	Volume = AudioServer.get_bus_volume_db(MASTER_BUS_INDEX)
@@ -45,20 +50,25 @@ func _input(_event: InputEvent):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		Fullscreen = !Fullscreen
 
-## Scans the save directory and returns an array of slot names (without the extension).
+## Scans the save directory and returns an array of slot names (only .tscn files).
+## Scans the save directory and returns an array of slot names (only .tres or .res files).
 func get_existing_save_slots() -> Array[String]:
 	var slots: Array[String] = [] 
-	# IndieBlueprintSavedGame.default_path holds the path to your save folder.
 	var dir = DirAccess.open(IndieBlueprintSavedGame.default_path)
+	
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
+		
 		while file_name != "":
 			if not dir.current_is_dir():
-				# Get the filename without the ".tres" or ".res" extension.
-				var slot_name = file_name.get_basename()
-				slots.append(slot_name)
+				# Check if the file is a standard Godot Resource
+				if file_name.ends_with(".tres") or file_name.ends_with(".res"):
+					var slot_name = file_name.get_basename()
+					slots.append(slot_name)
+			
 			file_name = dir.get_next()
+		dir.list_dir_end()
 	else:
 		print("Could not open save directory: ", IndieBlueprintSavedGame.default_path)
 	

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dr6qwoy7nih24"
+path="res://.godot/imported/Final Credits - Waiting Time - Lesiakower.mp3-456345ccce2b70d24549877fdbb083a0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Final Credits - Waiting Time - Lesiakower.mp3"
+dest_files=["res://.godot/imported/Final Credits - Waiting Time - Lesiakower.mp3-456345ccce2b70d24549877fdbb083a0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

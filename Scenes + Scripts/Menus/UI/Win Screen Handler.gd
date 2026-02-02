@@ -68,23 +68,16 @@ func _on_next_lv_pressed() -> void:
 		# It exists! Load the scene.
 		Global.current_lv = next_level_num
 		
-		if not (OS.get_name() == "Android" or OS.get_name() == "iOS"):
-			##Discord Stuff #Using my custom DiscordStatusHandler Script.
-			var discord_img: String = ""
-			if Global.current_lv == 1:
-				discord_img = "lv_1"
-			elif Global.current_lv == 2:
-				discord_img = "lv_2"
-			elif Global.current_lv == 3:
-				discord_img = "lv_3"
-			elif Global.current_lv == 4:
-				discord_img = "lv_4"
-			else: discord_img = "title_screen"
+		if OS.get_name() not in ["Android", "iOS"]:
+			var discord_img: String = "title_screen" # Default fallback
+	
+			if Global.current_lv in range(1, 9):
+				discord_img = "lv_%d" % Global.current_lv
 			
-			DiscordStatusHandler.update_details_and_state("In Game", "On Level: %s" % Global.current_lv)
-			DiscordStatusHandler.update_small_image(discord_img, "WoW! Look at level %s!" % Global.current_lv)
-			DiscordStatusHandler.start_timestamp()
-		
+				DiscordStatusHandler.update_details_and_state("In Game", "On Level: %s" % Global.current_lv)
+				DiscordStatusHandler.update_small_image(discord_img, "WoW! Look at level %s!" % Global.current_lv)
+				DiscordStatusHandler.start_timestamp()
+	
 		Engine.time_scale = 1
 		var scene_path = level_paths[next_level_num]
 		print_rich("[color=green]WIN SCREEN: Found next level. Loading: %s" % scene_path)
@@ -108,6 +101,7 @@ func _on_main_menu_win_pressed() -> void:
 # ----------------------------------------------------------------------------
 
 ## Populates the 'level_paths' dictionary by reading from the LevelManifest resource.
+## Populates the 'level_paths' dictionary by reading from the LevelManifest resource.
 func _find_and_sort_levels():
 	level_paths.clear()
 
@@ -115,20 +109,26 @@ func _find_and_sort_levels():
 		print_rich("[color=red]WIN SCREEN ERROR: Level manifest resource could not be loaded from: %s" % LEVEL_MANIFEST_PATH)
 		return
 
-	# Loop through each scene listed in our manifest file.
-	for scene in level_manifest.level_scenes:
-		var scene_path: String = scene.get_path()
-		var file_name: String = scene_path.get_file()
+	# Iterate through the Array[String] in the manifest
+	for entry in level_manifest.level_scenes:
+		var actual_path: String = entry
 		
-		# Extract the three-digit number from the file name.
+		# 1. Convert UID (uid://...) to a standard res:// path
+		if entry.begins_with("uid://"):
+			actual_path = ResourceUID.get_id_path(ResourceUID.text_to_id(entry))
+		
+		# 2. Extract the filename to get the level number (e.g., "001")
+		var file_name: String = actual_path.get_file()
 		var prefix = file_name.substr(0, 3)
+		
+		# 3. If the prefix is a number, map it in the dictionary
 		if prefix.is_valid_int():
 			var level_num = prefix.to_int()
-			# Don't add the tutorial (level 0) to the progression list.
-			if level_num == 0:
-				continue
 			
-			# Add the level number and its path to our dictionary.
-			level_paths[level_num] = scene_path
-		
+			# Skip the tutorial (0) and credits
+			if level_num == 0 or level_num == 9: 
+				continue
+				
+			level_paths[level_num] = actual_path
+			print("Win Screen found Level %d: %s" % [level_num, actual_path])
 #endregion

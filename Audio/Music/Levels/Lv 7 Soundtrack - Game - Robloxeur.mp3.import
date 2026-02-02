@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p8ilbn7c5r2o"
+path="res://.godot/imported/Lv 7 Soundtrack - Game - Robloxeur.mp3-c06db0c1594aa394d38a87736fbaaee8.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 7 Soundtrack - Game - Robloxeur.mp3"
+dest_files=["res://.godot/imported/Lv 7 Soundtrack - Game - Robloxeur.mp3-c06db0c1594aa394d38a87736fbaaee8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1l7ciommtj3s"
+path="res://.godot/imported/Lv 6 Soundtrack - Minecraft Run Music - u_z2x0wum3cm.mp3-e469020cf38274e987ebd4bef6e2edb4.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 6 Soundtrack - Minecraft Run Music - u_z2x0wum3cm.mp3"
+dest_files=["res://.godot/imported/Lv 6 Soundtrack - Minecraft Run Music - u_z2x0wum3cm.mp3-e469020cf38274e987ebd4bef6e2edb4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

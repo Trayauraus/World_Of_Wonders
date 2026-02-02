@@ -99,12 +99,11 @@ texture = ExtResource("2_dg8kb")
 [node name="Godot Ver" type="Label" parent="." unique_id=381318175]
 layout_mode = 0
 offset_left = 78.0
-offset_top = 564.0
+offset_top = 603.0
 offset_right = 233.0
-offset_bottom = 606.0
+offset_bottom = 645.0
 theme_override_font_sizes/font_size = 30
-text = "Godot
-v4.5"
+text = "Godot Ver"
 
 [node name="B" type="Sprite2D" parent="." unique_id=850681367]
 texture_filter = 1

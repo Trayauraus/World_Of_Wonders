@@ -26,6 +26,7 @@ var current_page: int = 0
 # --- NEW Stats Screen Nodes (match these to your refactored scene tree) ---
 @onready var save_slot_list = $Stats/HSplitContainer/SlotListPanel/VBoxContainer/SaveSlotList
 @onready var new_slot_button = $Stats/HSplitContainer/SlotListPanel/VBoxContainer/NewSlotButton
+@onready var open_file_location_button: Button = $Stats/HSplitContainer/SlotDetailPanel/VBoxContainer/OpenButton
 @onready var slot_detail_panel = $Stats/HSplitContainer/SlotDetailPanel
 @onready var slot_name_label = $Stats/HSplitContainer/SlotDetailPanel/VBoxContainer/SlotNameLabel
 @onready var level_label = $Stats/HSplitContainer/SlotDetailPanel/VBoxContainer/LevelLabel
@@ -40,6 +41,7 @@ var current_page: int = 0
 @onready var slot_name_input = $Stats/CreateSlotDialog/VBoxContainer/SlotNameInput
 @onready var error_message_label = $Stats/CreateSlotDialog/VBoxContainer/ErrorMessage
 @onready var version_warning_label = $Stats/VersionWarningLabel
+
 
 ## This variable will hold the name of the currently selected save slot in the list.
 var selected_slot: String = ""
@@ -270,7 +272,7 @@ func _on_save_slot_pressed(slot_name: String):
 	var current_version = ProjectSettings.get_setting("application/config/version", "1.0.0")
 	if data.version_control != current_version:
 		version_warning_label.show()
-		version_warning_label.text = "WARNING: Godot version mismatch between save file and Godot \nGodot: %s   vs   Saved: %s" % [current_version, data.version_control]
+		version_warning_label.text = "WARNING: WoW version mismatch between save file and current WoW Ver.         WOW: %s   vs   Saved: %s" % [current_version, data.version_control]
 	else:
 		version_warning_label.hide()
 
@@ -299,6 +301,24 @@ func _on_load_selected_pressed():
 		_on_play_pressed()
 	else:
 		push_error("Load failed for slot: %s" % selected_slot)
+
+func _on_open_button_pressed() -> void:
+	if selected_slot.is_empty(): 
+		return
+	
+	# 1. Get the path to the specific save file
+	var save_path = IndieBlueprintSavedGame.get_save_path(selected_slot)
+	
+	# 2. Check if it exists
+	if ResourceLoader.exists(save_path):
+		# 3. Get the folder containing the file and convert to an absolute OS path
+		var folder_path = ProjectSettings.globalize_path(save_path.get_base_dir())
+		
+		# 4. Open the folder in the OS file manager
+		OS.shell_open(folder_path)
+		print("Opening save location: ", folder_path)
+	else:
+		print("Save file does not exist, cannot open location.")
 
 func _on_delete_selected_pressed():
 	if selected_slot.is_empty(): return
@@ -447,22 +467,37 @@ func _find_and_sort_levels():
 	level_paths.clear()
 	level_numbers.clear()
 	if not level_manifest: return
-	for scene in level_manifest.level_scenes:
-		var scene_path: String = scene.get_path()
-		var file_name: String = scene_path.get_file()
+	
+	print("Manifest Loaded. Raw Array Size: ", level_manifest.level_scenes.size())
+
+	for entry in level_manifest.level_scenes:
+		var actual_path: String = entry
+		
+		# If the string is a UID (uid://...), convert it to a res:// path
+		if entry.begins_with("uid://"):
+			actual_path = ResourceUID.get_id_path(ResourceUID.text_to_id(entry))
+		
+		var file_name: String = actual_path.get_file()
 		var prefix = file_name.substr(0, 3)
+		
 		if prefix.is_valid_int():
 			var level_num = prefix.to_int()
 			if level_num == 0: continue
 			if level_num == credits_manifest_no: continue
-			level_paths[level_num] = scene_path
+			
+			level_paths[level_num] = actual_path
+		else:
+			print("Skipping file (no numeric prefix): ", file_name)
+			
 	var keys = level_paths.keys()
 	for key in keys: level_numbers.append(key)
 	level_numbers.sort()
+	print("Title Screen finalized levels: ", level_numbers)
 
 func _update_level_buttons():
-	await get_tree().create_timer(0.01).timeout
-	if Global.current_lv_from_sav_file >= 9 or Global.current_lv >= 9:
+	await get_tree().process_frame
+	await get_tree().process_frame
+	if Global.current_lv_from_sav_file >= credits_manifest_no or Global.current_lv >= credits_manifest_no:
 		$"Title Screen/ExplodingRabbitIconWin".show()
 		$"Replacement Start Screen".hide()
 	else:
@@ -531,21 +566,15 @@ func _on_level_button_pressed(button_index: int):
 		Global.is_dead = false
 		Engine.time_scale = 1
 		
-		if not (OS.get_name() == "Android" or OS.get_name() == "iOS"):
-			var discord_img: String = ""
-			if Global.current_lv == 1:
-				discord_img = "lv_1"
-			elif Global.current_lv == 2:
-				discord_img = "lv_2"
-			elif Global.current_lv == 3:
-				discord_img = "lv_3"
-			elif Global.current_lv == 4:
-				discord_img = "lv_4"
-			else: discord_img = "title_screen"
+		if OS.get_name() not in ["Android", "iOS"]:
+			var discord_img: String = "title_screen" # Default fallback
+	
+			if Global.current_lv in range(1, 9):
+				discord_img = "lv_%d" % Global.current_lv
 			
-			DiscordStatusHandler.update_details_and_state("In Game", "On Level: %s" % Global.current_lv)
-			DiscordStatusHandler.update_small_image(discord_img, "WoW! Look at level %s!" % Global.current_lv)
-			DiscordStatusHandler.start_timestamp()
+				DiscordStatusHandler.update_details_and_state("In Game", "On Level: %s" % Global.current_lv)
+				DiscordStatusHandler.update_small_image(discord_img, "WoW! Look at level %s!" % Global.current_lv)
+				DiscordStatusHandler.start_timestamp()
 		get_tree().change_scene_to_file(scene_path)
 
 
@@ -574,4 +603,10 @@ func _on_demo_pressed() -> void:
 
 
 func _on_multiplayer_pressed() -> void:
+	DiscordStatusHandler.update_details_and_state("In Menu", "On Level Importer")
 	get_tree().change_scene_to_file("res://Multiplayer/Multiplayer.tscn")
+
+
+func _on_level_importer_pressed() -> void:
+	DiscordStatusHandler.update_details_and_state("In Menu", "On Level Importer")
+	get_tree().change_scene_to_file("res://Scenes + Scripts/Menus/Level Importer.tscn")

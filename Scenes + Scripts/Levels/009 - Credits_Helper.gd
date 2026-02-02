@@ -4,7 +4,7 @@ var detection_count = 0
 
 var has_won = false
 
-const LEVEL_MANIFEST_PATH = "res://Manifest/level_manifest.tres"
+const LEVEL_MANIFEST_PATH = "res://Resources/level_manifest.tres"
 
 # --- Script Variables ---
 ## A dictionary mapping a level number (e.g., 3) to its file path.
@@ -15,6 +15,10 @@ func _ready():
 	$"Win Art/EndCam/CanvasLayer/Continue".hide()
 	$Animated.hide()
 	$"Win Art".hide()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	if $"Universal Scene/UNIVERSAL LV Nodes/Ash Follow Cam/GPUParticles2D":
+		$"Universal Scene/UNIVERSAL LV Nodes/Ash Follow Cam/GPUParticles2D".emitting = false
 
 func _on_fall_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -33,13 +37,16 @@ func _on_fall_detector_body_entered(body: Node2D) -> void:
 			$"Universal Scene/UNIVERSAL LV Nodes/Player/Credits/Cred2Label".hide()
 			$"Universal Scene/UNIVERSAL LV Nodes/Player/Credits/Cred3Label".hide()
 			$"Universal Scene/UNIVERSAL LV Nodes/Player/Credits/Cred4Label".hide()
-			$FallDetector.monitoring = false
+			$FallDetector.set_deferred("monitoring", false)
 
 
 func _on_winbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		if $"Universal Scene/UNIVERSAL LV Nodes/Player":
 			$"Universal Scene/UNIVERSAL LV Nodes/Player".queue_free()
+		
+		if $"Universal Scene/LV Audio/Level Soundtrack":
+			$"Universal Scene/LV Audio/Level Soundtrack".stop()
 		
 		$Winbox.queue_free()
 		

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqnyioap0wpjl"
+path="res://.godot/imported/Lv 8 - Boss Phase 3 - Retro ChipTune Adventure.mp3-dfbcded998b55eecfdafe941a0705a55.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 8 - Boss Phase 3 - Retro ChipTune Adventure.mp3"
+dest_files=["res://.godot/imported/Lv 8 - Boss Phase 3 - Retro ChipTune Adventure.mp3-dfbcded998b55eecfdafe941a0705a55.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

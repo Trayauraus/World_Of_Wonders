@@ -43,6 +43,7 @@ stream = ExtResource("3_g5oo8")
 pitch_scale = 0.8
 
 [node name="Level Soundtrack" type="AudioStreamPlayer" parent="LV Audio" unique_id=1953888974]
+autoplay = true
 
 [node name="UNIVERSAL LV Nodes" type="Node" parent="." unique_id=860513859]
 
@@ -231,6 +232,8 @@ debug_color = Color(0.8352941, 0.3019608, 0, 0.7764706)
 [node name="Upgrades" type="Node" parent="Collectables" unique_id=839593341]
 
 [node name="Carrot Remover" type="Area2D" parent="Collectables/Upgrades" unique_id=1243624506]
+
+[node name="Enemies" type="Node" parent="." unique_id=125243272]
 
 [node name="Current UI" type="CanvasLayer" parent="." unique_id=1115750549]
 visible = false

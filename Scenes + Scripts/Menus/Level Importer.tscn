@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://loqx2xalerjo"]
+
+[ext_resource type="Texture2D" uid="uid://cwpgwevddivyk" path="res://Assets/[General Art]/Backgrounds/Stats Menu Background.png" id="1_jhifr"]
+[ext_resource type="Script" uid="uid://cd5i6e8relj16" path="res://Scenes + Scripts/Menus/Level Importer.gd" id="1_kdsp7"]
+[ext_resource type="Environment" uid="uid://bph5eeiayrexk" path="res://Environments/Title Environment.tres" id="2_7bsqs"]
+[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_kdsp7"]
+
+[node name="Level Importer" type="Control" unique_id=1462694073]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kdsp7")
+
+[node name="MenuEnvironment" type="WorldEnvironment" parent="." unique_id=752497612]
+environment = ExtResource("2_7bsqs")
+
+[node name="StatsMenuBackground" type="Sprite2D" parent="." unique_id=1008850535]
+unique_name_in_owner = true
+position = Vector2(576, 323.5)
+scale = Vector2(0.6, 0.59907407)
+texture = ExtResource("1_jhifr")
+
+[node name="Stats Go Back" type="Button" parent="." unique_id=1526663406]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("2_kdsp7")
+theme_override_font_sizes/font_size = 46
+text = "Go
+ Back"
+
+[node name="Panel2" type="Panel" parent="." unique_id=1718740883]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1008.0
+offset_top = -537.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1404144656]
+layout_mode = 0
+offset_right = 994.0
+offset_bottom = 582.0
+split_offsets = PackedInt32Array(936)
+split_offset = 936
+
+[node name="SlotListPanel" type="PanelContainer" parent="HSplitContainer" unique_id=1656509114]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/SlotListPanel" unique_id=1025086073]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/SlotListPanel/ScrollContainer" unique_id=1405138308]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer" unique_id=1259413952]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=914341508]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2829473, 0.55844134, 0.28294972, 1)
+theme_override_fonts/font = ExtResource("2_kdsp7")
+theme_override_font_sizes/font_size = 100
+text = "Recent LEvels"
+
+[node name="VSeparator" type="VSeparator" parent="HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1872744941]
+layout_mode = 2
+theme_override_constants/separation = 186
+
+[node name="RefreshButton" type="Button" parent="HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=112830976]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kdsp7")
+theme_override_font_sizes/font_size = 67
+text = "Refresh"
+
+[node name="LevelSlotList" type="VBoxContainer" parent="HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer" unique_id=897467740]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="ImportButton" type="Button" parent="HSplitContainer" unique_id=1261434940]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kdsp7")
+theme_override_font_sizes/font_size = 67
+text = "Import"
+autowrap_mode = 3
+
+[node name="Speed Up" type="Button" parent="HSplitContainer/ImportButton" unique_id=731070920]
+z_index = 1
+layout_mode = 0
+offset_left = 59.0
+offset_top = 113.0
+offset_right = 201.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("2_kdsp7")
+theme_override_font_sizes/font_size = 23
+text = "SPEED UP LEVEL SPAWN
+(INACURACIES IN IMAGE MAY OCCUR)"
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=157698494]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="WarningLabel" type="Label" parent="." unique_id=1649403029]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 587.0
+offset_right = 1152.0
+offset_bottom = 662.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_kdsp7")
+theme_override_font_sizes/font_size = 30
+text = "Warning:"
+autowrap_mode = 2
+
+[connection signal="pressed" from="HSplitContainer/ImportButton/Speed Up" to="." method="_on_speed_up_pressed"]

@@ -90,12 +90,18 @@ func _on_phase_changed(new_phase: int):
 		1:
 			position.y = original_y
 			position.x = 180
+		2:
+			await get_tree().create_timer(1.5).timeout
+			position.y = original_y + 20
+			position.x = 300
 		3:
 			position = phase_3_teleport_location
 			# Crucial: Enable the hitbox so it can be dashed into
 			if boss_collision_area:
 				boss_collision_area.set_deferred("monitoring", true)
 				boss_collision_area.set_deferred("monitorable", true)
+		4:
+			$"BossSprite/Boss Collision/CollisionShape2D".disabled = true
 
 # --- Mode: Phase 3 (Final Blow) ---
 func process_phase_3_logic(_delta):

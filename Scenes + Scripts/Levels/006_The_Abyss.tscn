@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://gk6nnan6cbyd" path="res://Assets/[General Art]/Backgrounds/Background.png" id="2_cy47g"]
 [ext_resource type="Shader" uid="uid://m8ymjngipdsl" path="res://Assets/Shaders/Player_Scene.gdshader" id="2_kpg0f"]
 [ext_resource type="Texture2D" uid="uid://bq07xc0pgsutq" path="res://Assets/[General Art]/Backgrounds/Celeste/CelesteBG_OldSite_00.png" id="2_ky27y"]
+[ext_resource type="AudioStream" uid="uid://d1l7ciommtj3s" path="res://Audio/Music/Levels/Lv 6 Soundtrack - Minecraft Run Music - u_z2x0wum3cm.mp3" id="3_hnu2r"]
 [ext_resource type="PackedScene" uid="uid://cnbmtsnutm8me" path="res://Scenes + Scripts/General/Collectables/Carrot Upgrade.tscn" id="4_vnpyl"]
 [ext_resource type="PackedScene" uid="uid://be273ujt1top7" path="res://Scenes + Scripts/General/SOLID WALL.tscn" id="7_hnu2r"]
 [ext_resource type="PackedScene" uid="uid://ulm6wn8c6hjx" path="res://Scenes + Scripts/TILEMAPS/Default Tilemap.tscn" id="8_ky27y"]
-[ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="43_kj5i1"]
 [ext_resource type="PackedScene" uid="uid://i13psxcoqy7a" path="res://Scenes + Scripts/General/Collectables/Coin.tscn" id="44_l28oa"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnu2r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ky27y"]
 resource_local_to_scene = true
 shader = ExtResource("2_kpg0f")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -45,6 +45,11 @@ size = Vector2(14, 2)
 [node name="Universal Scene" parent="." unique_id=1143610008 instance=ExtResource("1_5275m")]
 bg_img = ExtResource("2_ky27y")
 
+[node name="Level Soundtrack" parent="Universal Scene/LV Audio" parent_id_path=PackedInt32Array(1143610008, 906618536) index="1" unique_id=1953888974]
+stream = ExtResource("3_hnu2r")
+volume_db = -3.5
+parameters/looping = true
+
 [node name="BG" parent="Universal Scene/UNIVERSAL LV Nodes" parent_id_path=PackedInt32Array(1143610008, 860513859) index="2" unique_id=567722113]
 visible = true
 
@@ -56,7 +61,7 @@ camera_zoom_curve = null
 limit_bottom = 10000000
 
 [node name="AnimatedSprite" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="4" unique_id=1102127678]
-material = SubResource("ShaderMaterial_hnu2r")
+material = SubResource("ShaderMaterial_ky27y")
 frame = 5
 frame_progress = 0.54101384
 
@@ -126,6 +131,65 @@ position = Vector2(1072, -543)
 [node name="Coin5" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="4" unique_id=1728302961 instance=ExtResource("44_l28oa")]
 position = Vector2(1094, -543)
 
+[node name="Coin6" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="5" unique_id=201204016 instance=ExtResource("44_l28oa")]
+position = Vector2(1255, 16)
+
+[node name="Coin7" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="6" unique_id=790012068 instance=ExtResource("44_l28oa")]
+position = Vector2(1496, 39)
+
+[node name="Coin8" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="7" unique_id=907763348 instance=ExtResource("44_l28oa")]
+position = Vector2(1496, 6)
+
+[node name="Coin9" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="8" unique_id=306158333 instance=ExtResource("44_l28oa")]
+position = Vector2(1496, -26)
+
+[node name="Coin10" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="9" unique_id=525545236 instance=ExtResource("44_l28oa")]
+position = Vector2(2104, -344)
+EmitsLight = false
+
+[node name="Coin11" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="10" unique_id=924140281 instance=ExtResource("44_l28oa")]
+position = Vector2(2200, -281)
+EmitsLight = false
+
+[node name="Coin12" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="11" unique_id=2007998640 instance=ExtResource("44_l28oa")]
+position = Vector2(2103, -184)
+EmitsLight = false
+
+[node name="Coin13" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="12" unique_id=297104441 instance=ExtResource("44_l28oa")]
+position = Vector2(2271, 170)
+EmitsLight = false
+
+[node name="Coin14" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="13" unique_id=724394394 instance=ExtResource("44_l28oa")]
+position = Vector2(2968, -216)
+EmitsLight = false
+
+[node name="Coin15" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="14" unique_id=445398125 instance=ExtResource("44_l28oa")]
+position = Vector2(2823, -218)
+EmitsLight = false
+
+[node name="Coin16" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="15" unique_id=1711900963 instance=ExtResource("44_l28oa")]
+position = Vector2(2616, -184)
+EmitsLight = false
+
+[node name="Coin17" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="16" unique_id=1473888138 instance=ExtResource("44_l28oa")]
+position = Vector2(2681, -281)
+EmitsLight = false
+
+[node name="Coin18" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="17" unique_id=540059786 instance=ExtResource("44_l28oa")]
+position = Vector2(2424, -439)
+EmitsLight = false
+
+[node name="Coin19" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="18" unique_id=453257527 instance=ExtResource("44_l28oa")]
+position = Vector2(2393, -311)
+EmitsLight = false
+
+[node name="Coin20" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="19" unique_id=1692688565 instance=ExtResource("44_l28oa")]
+position = Vector2(3432, -327)
+EmitsLight = false
+
+[node name="Coin21" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="20" unique_id=2100138373 instance=ExtResource("44_l28oa")]
+position = Vector2(3624, -215)
+
 [node name="BEEG" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(1143610008, 2035832597) index="0" unique_id=1922011072 instance=ExtResource("44_l28oa")]
 position = Vector2(2249, -43)
 EmitsLight = false
@@ -163,28 +227,28 @@ position = Vector2(1911, -64)
 target_node = NodePath("../Carrot Upgrade")
 forced_max_dashes = 3
 
-[node name="Carrot DOWNGRADE" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="3" unique_id=265628919 node_paths=PackedStringArray("target_node", "removal_object") instance=ExtResource("4_vnpyl")]
+[node name="Carrot DOWNGRADE" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="3" unique_id=265628919 node_paths=PackedStringArray("target_node", "removal_objects") instance=ExtResource("4_vnpyl")]
 position = Vector2(2156, -441)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 forced_max_dashes = 0
 enable_object_removal = true
-removal_object = NodePath("../../../../Removable/WALL_Removeable")
+removal_objects = [NodePath("../../../../Removable/WALL_Removeable")]
 enable_object_addition = true
-additional_object_scene = ExtResource("7_hnu2r")
-spawn_location = Vector2i(2000, -448)
+additional_object_scenes = Array[PackedScene]([ExtResource("7_hnu2r")])
+spawn_locations = Array[Vector2]([Vector2(1984, -432)])
 
-[node name="Carrot" parent="Universal Scene/Collectables/Upgrades/Carrot DOWNGRADE" index="0"]
+[node name="Carrot" parent="Universal Scene/Collectables/Upgrades/Carrot DOWNGRADE" index="0" unique_id=678494656]
 modulate = Color(0.47524446, 0.56937784, 1.92523e-07, 1)
 
-[node name="Carrot Upgrade3" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="4" unique_id=724739882 node_paths=PackedStringArray("target_node", "removal_object") instance=ExtResource("4_vnpyl")]
+[node name="Carrot Upgrade3" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="4" unique_id=724739882 node_paths=PackedStringArray("target_node", "removal_objects") instance=ExtResource("4_vnpyl")]
 position = Vector2(3478, -164)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 forced_max_dashes = 3
 enable_object_removal = true
-removal_object = NodePath("../../../../Removable/WALL_Removeable2")
+removal_objects = [NodePath("../../../../Removable/WALL_Removeable2")]
 enable_object_addition = true
-additional_object_scene = ExtResource("7_hnu2r")
-spawn_location = Vector2i(3376, -96)
+additional_object_scenes = Array[PackedScene]([ExtResource("7_hnu2r")])
+spawn_locations = Array[Vector2]([Vector2(3376, -96)])
 
 [node name="BG" type="Sprite2D" parent="Universal Scene" unique_id=337501339]
 z_index = -4096
@@ -204,18 +268,7 @@ z_index = -11
 position = Vector2(-16, 0)
 tile_map_data = PackedByteArray("AADTAOz/AQALAB4AAADUAOz/AQALAB4AAADVAOz/AQALAB4AAADWAOz/AQALAB4AAADXAOz/AQALAB4AAADYAOz/AQALAB4AAADZAOz/AQALAB4AAADaAOz/AQALAB4AAADbAOz/AQALAB4AAADcAOz/AQALAB4AAADdAOz/AQALAB4AAADSAJP/AQALAB4AAADSAJT/AQALAB4AAADSAJX/AQALAB4AAADSAJb/AQALAB4AAADSAJf/AQALAB4AAADSAJj/AQALAB4AAADSAJn/AQALAB4AAADSAJr/AQALAB4AAADSAJv/AQALAB4AAADSAJz/AQALAB4AAADSAJ3/AQALAB4AAADSAJ7/AQALAB4AAADSAJ//AQALAB4AAADSAKD/AQALAB4AAADSAKH/AQALAB4AAADSAKL/AQALAB4AAADSAKP/AQALAB4AAADSAKT/AQALAB4AAADSAKX/AQALAB4AAADSAKb/AQALAB4AAADSAKf/AQALAB4AAADSAKj/AQALAB4AAADSAKn/AQALAB4AAADSAKr/AQALAB4AAADSAKv/AQALAB4AAADSAKz/AQALAB4AAADSAK3/AQALAB4AAADSAK7/AQALAB4AAADSAK//AQALAB4AAADSALD/AQALAB4AAADSALH/AQALAB4AAADSALL/AQALAB4AAADSALP/AQALAB4AAADSALT/AQALAB4AAADSALX/AQALAB4AAADSALb/AQALAB4AAADSALf/AQALAB4AAADSALj/AQALAB4AAADSALn/AQALAB4AAADSALr/AQALAB4AAADSALv/AQALAB4AAADSALz/AQALAB4AAADSAL3/AQALAB4AAADSAL7/AQALAB4AAADSAL//AQALAB4AAADSAMD/AQALAB4AAADSAMH/AQALAB4AAADSAML/AQALAB4AAADSAMP/AQALAB4AAADSAMT/AQALAB4AAADSAMX/AQALAB4AAADSAMb/AQALAB4AAADSAMf/AQALAB4AAADSAMj/AQALAB4AAADSAMn/AQALAB4AAADSAMr/AQALAB4AAADSAMv/AQALAB4AAADSAMz/AQALAB4AAADSAM3/AQALAB4AAADSAM7/AQALAB4AAADSAM//AQALAB4AAADSAND/AQALAB4AAADSANH/AQALAB4AAADSANL/AQALAB4AAADSANP/AQALAB4AAADSANT/AQALAB4AAADSANX/AQALAB4AAADSANb/AQALAB4AAADSANf/AQALAB4AAADSANj/AQALAB4AAADSANn/AQALAB4AAADSANr/AQALAB4AAADSANv/AQALAB4AAADSANz/AQALAB4AAADSAN3/AQALAB4AAADSAN7/AQALAB4AAADSAN//AQALAB4AAADSAOD/AQALAB4AAADSAOH/AQALAB4AAADSAOL/AQALAB4AAADSAOP/AQALAB4AAADSAOT/AQALAB4AAADSAOX/AQALAB4AAADSAOb/AQALAB4AAADSAOf/AQALAB4AAADSAOj/AQALAB4AAADSAOn/AQALAB4AAADSAOr/AQALAB4AAADTAOr/AQALAB4AAADTAOv/AQALAB4AAAA=")
 
-[node name="[PLACEHOLDER]" type="Label" parent="." unique_id=1347102721]
-texture_filter = 1
-offset_left = 45.0
-offset_top = -42.0
-offset_right = 169.0
-offset_bottom = 1.0
-scale = Vector2(0.44850805, 0.39751232)
-theme_override_fonts/font = ExtResource("43_kj5i1")
-theme_override_font_sizes/font_size = 41
-text = "UPGRADE"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=475432665]
+[node name="[Placecholder]" type="CollisionShape2D" parent="." unique_id=475432665]
 position = Vector2(3553, -639)
 shape = SubResource("RectangleShape2D_kj5i1")
 

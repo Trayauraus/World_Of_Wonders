@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdyb1k8fwsrip"
+path="res://.godot/imported/Lv 7 Soundtrack - Pixel Run - Boadrius.mp3-8fcd9b11d6cd5d046f0255305cf64b38.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 7 Soundtrack - Pixel Run - Boadrius.mp3"
+dest_files=["res://.godot/imported/Lv 7 Soundtrack - Pixel Run - Boadrius.mp3-8fcd9b11d6cd5d046f0255305cf64b38.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

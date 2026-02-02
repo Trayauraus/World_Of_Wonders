@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://08x43rpv6jbs"]
+[gd_scene format=3 uid="uid://08x43rpv6jbs"]
 
 [ext_resource type="Script" uid="uid://ko2hnxftldeu" path="res://Scenes + Scripts/Menus/UI/Pause Menu.gd" id="1_rbh62"]
 [ext_resource type="Theme" uid="uid://d3pxlnwn8knpg" path="res://Assets/Themes/Main Menu.tres" id="2_18nnx"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbn1kd1vb75v" path="res://Assets/[General Art]/[Icons]/icon.svg" id="3_2vdx8"]
 [ext_resource type="Texture2D" uid="uid://cakftg5f5w5y4" path="res://Assets/[General Art]/[Icons]/Xlabs Logo.png" id="6_l36gw"]
 
-[node name="Pause Menu" type="Control"]
+[node name="Pause Menu" type="Control" unique_id=860639939]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,13 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rbh62")
 
-[node name="Grayify" type="ColorRect" parent="."]
+[node name="Grayify" type="ColorRect" parent="." unique_id=1294744157]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.39215687)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1121484759]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,45 +35,45 @@ offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=969420794]
 layout_mode = 2
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1434244554]
 layout_mode = 2
 theme = ExtResource("2_18nnx")
 theme_override_fonts/font = ExtResource("2_ekwd4")
 theme_override_font_sizes/font_size = 104
 text = "Resume"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=236771292]
 layout_mode = 2
 theme = ExtResource("2_18nnx")
 theme_override_fonts/font = ExtResource("2_ekwd4")
 theme_override_font_sizes/font_size = 104
 text = "Options"
 
-[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=41904234]
 layout_mode = 2
 theme = ExtResource("2_18nnx")
 theme_override_fonts/font = ExtResource("2_ekwd4")
 theme_override_font_sizes/font_size = 104
 text = "Main Menu"
 
-[node name="Godot" type="Sprite2D" parent="."]
+[node name="Godot" type="Sprite2D" parent="." unique_id=851406330]
 position = Vector2(72, 554)
 scale = Vector2(1.03125, 1.02246)
 texture = ExtResource("3_2vdx8")
 
-[node name="Version" type="Label" parent="Godot"]
+[node name="Version" type="Label" parent="Godot" unique_id=173240646]
 offset_left = -68.4137
 offset_top = 61.7143
 offset_right = 194.586
 offset_bottom = 103.714
 scale = Vector2(1.13098, 1.12654)
 theme_override_font_sizes/font_size = 20
-text = "Godot Engine 4.5"
+text = "Godot Engine Ver"
 
-[node name="XlabsLogo" type="Sprite2D" parent="."]
+[node name="XlabsLogo" type="Sprite2D" parent="." unique_id=6024376]
 position = Vector2(1100, 591)
 scale = Vector2(0.102344, 0.106944)
 texture = ExtResource("6_l36gw")

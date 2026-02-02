@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3r362dlqgu7m"]
 
-[ext_resource type="Script" uid="uid://rpras5h6iahy" path="res://Scenes + Scripts/Menus/Title n Boot Screen/Title Screen.gd" id="1_jx57c"]
+[ext_resource type="Script" uid="uid://c7lfxbe6y27a" path="res://Scenes + Scripts/Menus/Title n Boot Screen/Title Screen.gd" id="1_jx57c"]
 [ext_resource type="Environment" uid="uid://bph5eeiayrexk" path="res://Environments/Title Environment.tres" id="2_r7dj4"]
 [ext_resource type="Texture2D" uid="uid://beju04g6xyfee" path="res://Assets/[General Art]/Backgrounds/Evil Start Screen.png" id="3_bt7t5"]
 [ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="4_exejt"]
@@ -74,7 +74,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1.0
 offset_right = 1829.0
-offset_bottom = 304.0
+offset_bottom = 86.666664
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_exejt")
@@ -123,15 +123,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 12.0
+offset_left = -0.16666031
 offset_top = 1025.0
-offset_right = 223.0
+offset_right = 381.83334
 offset_bottom = 1077.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 50
-text = "RTX edition"
+text = "Environment edition"
 
 [node name="Mobile NOTE" type="Label" parent="Title Screen" unique_id=1485997360]
 visible = false
@@ -192,9 +192,14 @@ theme_override_font_sizes/font_size = 72
 text = "Campaign
 "
 
-[node name="Label" type="Label" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=2118305603]
+[node name="Level Importer" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=139791172]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_olh2u")
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 20
+text = "-"
+flat = true
 
 [node name="Stats" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=1951695527]
 texture_filter = 1
@@ -624,6 +629,12 @@ theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 70
 text = "Delete Save"
 
+[node name="OpenButton" type="Button" parent="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer" unique_id=1727169168]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 70
+text = "Open File Loc"
+
 [node name="CreateSlotDialog" type="ConfirmationDialog" parent="Stats" unique_id=2043548402]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stats/CreateSlotDialog" unique_id=1085521066]
@@ -679,6 +690,7 @@ color = Color(0, 0, 0, 0.392157)
 
 [connection signal="pressed" from="Title Screen/ScreenSpace" to="." method="_swap_screenspace_mode"]
 [connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Level Importer" to="." method="_on_level_importer_pressed"]
 [connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Stats" to="." method="_on_stats_pressed"]
 [connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Title Screen/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
@@ -688,5 +700,6 @@ color = Color(0, 0, 0, 0.392157)
 [connection signal="pressed" from="Level Select/Total Coins" to="." method="_back_to_title_menu"]
 [connection signal="pressed" from="Level Select/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="Stats/Stats Go Back" to="." method="_back_to_title_menu"]
+[connection signal="pressed" from="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
 [connection signal="canceled" from="Stats/CreateSlotDialog" to="." method="_on_new_slot_button_pressed"]
 [connection signal="confirmed" from="Stats/CreateSlotDialog" to="." method="_on_create_slot_confirm_pressed"]

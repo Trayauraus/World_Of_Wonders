@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cnbmtsnutm8me"]
+[gd_scene format=3 uid="uid://cnbmtsnutm8me"]
 
 [ext_resource type="Script" uid="uid://c2vj2favvjfsm" path="res://Scenes + Scripts/General/Collectables/Carrot UPGRADE.gd" id="1_a1r7a"]
 [ext_resource type="Texture2D" uid="uid://d16px4hnnwxaf" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/Collect/normal07.png" id="2_8homl"]
@@ -243,24 +243,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atihg"]
 size = Vector2(10, 17)
 
-[node name="Carrot Upgrade" type="CharacterBody2D" groups=["Carrot"]]
+[node name="Carrot Upgrade" type="CharacterBody2D" unique_id=1470881704 groups=["Carrot"]]
 script = ExtResource("1_a1r7a")
 
-[node name="Carrot" type="AnimatedSprite2D" parent="."]
+[node name="Carrot" type="AnimatedSprite2D" parent="." unique_id=678494656]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b6a34")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.4439206
 
-[node name="DetectionArea" type="Area2D" parent="."]
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1615988546]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1108829325]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_3y72d")
 debug_color = Color(0.71, 0.40469998, 0.71, 0.12941177)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2087388269]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_atihg")
 disabled = true

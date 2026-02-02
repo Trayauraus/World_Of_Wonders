@@ -291,6 +291,9 @@ func _physics_process(delta: float) -> void:
 
 	# Logic pipeline
 	_handle_movement() 
+	if cant_move_until_floor_touched:
+		move_and_slide()
+		return
 	_handle_jump()      
 	_handle_dash()      
 	_handle_roll()
@@ -300,9 +303,7 @@ func _physics_process(delta: float) -> void:
 	_handle_camera_shake(delta) # Apply shake effect
 	_handle_animation()
 	
-	if cant_move_until_floor_touched:
-		return
-		
+	
 	_handle_camera_idle()
 	# Manages the timer for idle animations, auto-wake, and camera zoom
 	_update_idle_logic(delta)

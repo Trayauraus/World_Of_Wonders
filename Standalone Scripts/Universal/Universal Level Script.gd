@@ -11,8 +11,9 @@ extends Node2D
 @export var use_universal_tilemap: bool = true
 
 @export_group("Environment Setup")
-## The DEFAULT environment resource to load when the level starts.
+## Enable the DEFAULT custom environment resource to load when the level starts.
 @export var enable_environment: bool = true
+## The DEFAULT custom environment resource to load when the level starts. This is for the custom environment system made specifically for this game.
 @export var default_environment: LevelEnvironmentData = preload("res://Resources/Environmental/Lava.tres")
 
 ## Toggles Background visibility
@@ -125,13 +126,14 @@ func _ready() -> void:
 		_set_player_camera_limit(camera_limit)
 	
 	# Load the default environment resource if one is assigned
-	if not enable_environment:
-		print("Disabled Emvironment. Ensure scene has it's own.")
-		return
-	if default_environment:
-		change_environment_resource(default_environment)
-	else:
-		push_warning("UniversalLevel: No 'Default Environment' resource assigned in Inspector!")
+	if enable_environment:
+		# If the slot is empty (null), load Lava as the hardcoded fallback
+		if default_environment == null:
+			default_environment = load("res://Resources/Environmental/Lava.tres")
+			print("No env set, loaded Lava fallback.")
+
+		var is_preview = get_parent() is SubViewport
+		change_environment_resource(default_environment, is_preview)
 
 
 func _input(_event: InputEvent):
@@ -174,7 +176,7 @@ func add_or_remove_pause_menu():
 	if current_ui.has_node("Win Screen") or current_ui.has_node("Options Menu"):
 		return 
 
-	var rope_manager_node = get_node_or_null("../Rope")
+	var rope_manager_node = get_node_or_null("Enemies/Rope")
 	
 	if current_ui.has_node("Pause Menu"):
 		# --- UNPAUSE LOGIC ---
@@ -287,12 +289,13 @@ func deactivate_wind(body: Node2D) -> void:
 #==============================================================================
 
 ## Call this to switch the entire environment theme using a Resource
-func change_environment_resource(new_resource: LevelEnvironmentData) -> void:
+func change_environment_resource(new_resource: LevelEnvironmentData, instant: bool = false) -> void:
+	#print_rich("[color=cyan]ENV: change_environment called. Instant: [/color]", instant)
 	_current_environment_resource = new_resource
-	_apply_environment(new_resource)
+	_apply_environment(new_resource, instant)
 
 ## Internal function to apply the data from the resource
-func _apply_environment(data: LevelEnvironmentData) -> void:
+func _apply_environment(data: LevelEnvironmentData, instant: bool = false) -> void:
 	if not data:
 		push_error("UniversalLevel: Cannot apply environment, Resource is null.")
 		return
@@ -317,11 +320,18 @@ func _apply_environment(data: LevelEnvironmentData) -> void:
 			world_environment.environment = null
 
 	# Tween Colors
-	var tween = create_tween()
-	tween.set_parallel(true)
-	if bg_normal_color_rect and bg_cave_color_rect:
-		tween.tween_property(bg_normal_color_rect, "color", bg_color, 1.0)
-		tween.tween_property(bg_cave_color_rect, "color", bg_color, 1.0)
+	if instant:
+		#print_rich("[color=yellow]ENV: Applying Colors INSTANTLY[/color]")
+		if bg_normal_color_rect: bg_normal_color_rect.color = bg_color
+		if bg_cave_color_rect: bg_cave_color_rect.color = bg_color
+	else:
+		#print_rich("[color=yellow]ENV: Applying Colors via TWEEN[/color]")
+		var tween = create_tween()
+		tween.set_parallel(true)
+		if bg_normal_color_rect:
+			tween.tween_property(bg_normal_color_rect, "color", bg_color, 1.0)
+		if bg_cave_color_rect:
+			tween.tween_property(bg_cave_color_rect, "color", bg_color, 1.0)
 	
 	# Update Particles
 	if $"UNIVERSAL LV Nodes/Ash Follow Cam":

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cmyd4q0luibew" path="res://Scenes + Scripts/Levels/009 - Credits_Helper.gd" id="1_wrr0m"]
 [ext_resource type="Texture2D" uid="uid://b12oja5b0dqi1" path="res://Assets/[General Art]/{Pixel}/Tiles/World Tiles v1.png" id="2_2gn1y"]
 [ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_513w6"]
+[ext_resource type="AudioStream" uid="uid://dr6qwoy7nih24" path="res://Audio/Music/Levels/Final Credits - Waiting Time - Lesiakower.mp3" id="3_ltlbn"]
 [ext_resource type="Texture2D" uid="uid://cakftg5f5w5y4" path="res://Assets/[General Art]/[Icons]/Xlabs Logo.png" id="4_6b3wv"]
 [ext_resource type="Shader" uid="uid://m8ymjngipdsl" path="res://Assets/Shaders/Player_Scene.gdshader" id="4_wv0n5"]
 [ext_resource type="Texture2D" uid="uid://gk6nnan6cbyd" path="res://Assets/[General Art]/Backgrounds/Background.png" id="5_m4mw5"]
@@ -21,7 +22,7 @@
 [ext_resource type="Script" uid="uid://iefyw0u8s7eg" path="res://Standalone Scripts/Universal/Universal Cam Shake.gd" id="20_eeghb"]
 [ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="21_vj1is"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kc0a1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltlbn"]
 resource_local_to_scene = true
 shader = ExtResource("4_wv0n5")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -265,6 +266,11 @@ script = ExtResource("1_wrr0m")
 [node name="Universal Scene" parent="." unique_id=1026648688 instance=ExtResource("1_iyssw")]
 use_bg = false
 
+[node name="Level Soundtrack" parent="Universal Scene/LV Audio" parent_id_path=PackedInt32Array(1026648688, 906618536) index="1" unique_id=1953888974]
+stream = ExtResource("3_ltlbn")
+volume_db = -5.0
+parameters/looping = true
+
 [node name="Player" parent="Universal Scene/UNIVERSAL LV Nodes" parent_id_path=PackedInt32Array(1026648688, 860513859) index="3" unique_id=795557704]
 position = Vector2(-42, -1166)
 max_dash_count = 0
@@ -275,7 +281,7 @@ cant_move_until_floor_touched = true
 limit_right = 835
 
 [node name="AnimatedSprite" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="4" unique_id=1102127678]
-material = SubResource("ShaderMaterial_kc0a1")
+material = SubResource("ShaderMaterial_ltlbn")
 
 [node name="Credits" type="Node2D" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="13" unique_id=1809760372]
 position = Vector2(0, -28)
@@ -304,7 +310,7 @@ text = "Boss Fight Assets:
 Beyond Pixels
 
 General Art:
-Jervaix N."
+Whispy"
 
 [node name="Cred3Label" type="Label" parent="Universal Scene/UNIVERSAL LV Nodes/Player/Credits" unique_id=221814369]
 visible = false
@@ -316,8 +322,8 @@ offset_bottom = 27.0
 theme_override_fonts/font = ExtResource("2_513w6")
 theme_override_font_sizes/font_size = 25
 text = "Music:
-sourced from royalty
-free audio"
+sourced from
+Pixabay"
 
 [node name="Cred4Label" type="Label" parent="Universal Scene/UNIVERSAL LV Nodes/Player/Credits" unique_id=1037307386]
 visible = false
@@ -329,7 +335,7 @@ offset_bottom = 129.0
 theme_override_fonts/font = ExtResource("2_513w6")
 theme_override_font_sizes/font_size = 25
 text = "Everything Else:
-Micah M. 
+T-Man
 AKA Trayauraus"
 
 [node name="BG Objects" type="TileMapLayer" parent="Universal Scene" unique_id=986344014]

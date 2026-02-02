@@ -23,7 +23,7 @@ extends Node
 # --- Configuration ---
 const BASE_PORT = 7000
 const BROADCAST_PORT = 6999 
-const LEVEL_MANIFEST_PATH = "res://Manifest/level_manifest.tres"
+const LEVEL_MANIFEST_PATH = "res://Resources/level_manifest.tres"
 
 @export_group("Settings")
 @export var credits_manifest_no: int = 9 
@@ -76,15 +76,46 @@ func _process(_delta):
 ## --- LEVEL LOGIC ---
 
 func _parse_level_manifest():
-	if not level_manifest: return
-	level_data[-1] = {"path": "res://Scenes + Scripts/Levels/-001 Tutorial Grasslands.tscn", "name": "Tutorial Grasslands"}
-	for scene in level_manifest.level_scenes:
-		var path = scene.get_path()
-		var filename = path.get_file().get_basename()
-		var level_num = filename.substr(0, 4).to_int() if filename.begins_with("-") else filename.substr(0, 3).to_int()
-		if level_num == credits_manifest_no: continue
-		var pretty_name = filename.substr(4 if filename.begins_with("-") else 3).replace("_", " ").replace("-", " ").strip_edges()
-		level_data[level_num] = { "path": path, "name": pretty_name }
+	if not level_manifest: 
+		return
+	
+	level_data.clear()
+	
+	# Manually add the special tutorial level
+	level_data[-1] = {
+		"path": "res://Scenes + Scripts/Levels/-001 Tutorial Grasslands.tscn", 
+		"name": "Tutorial Grasslands"
+	}
+	
+	for entry in level_manifest.level_scenes:
+		var actual_path: String = entry
+		
+		# 1. Convert UID (uid://...) to a standard res:// path
+		if entry.begins_with("uid://"):
+			actual_path = ResourceUID.get_id_path(ResourceUID.text_to_id(entry))
+		
+		# 2. Extract the filename to determine the level number and name
+		var filename = actual_path.get_file().get_basename()
+		
+		# Handle negative numbers for tutorials (e.g., "-001") or standard (e.g., "001")
+		var level_num_str = filename.substr(0, 4) if filename.begins_with("-") else filename.substr(0, 3)
+		
+		if level_num_str.is_valid_int():
+			var level_num = level_num_str.to_int()
+			
+			# Skip the credits or invalid levels
+			if level_num == credits_manifest_no: 
+				continue
+				
+			# 3. Create a readable name by removing the numeric prefix and underscores
+			var prefix_length = 4 if filename.begins_with("-") else 3
+			var pretty_name = filename.substr(prefix_length).replace("_", " ").replace("-", " ").strip_edges()
+			
+			# 4. Store the data for the UI to use
+			level_data[level_num] = { 
+				"path": actual_path, 
+				"name": pretty_name 
+			}
 
 func _populate_level_selection():
 	for child in level_list_container.get_children(): child.queue_free()
@@ -261,3 +292,7 @@ func sync_carrot_removed(player_name: String):
 		if is_instance_valid(carrot):
 			if multiplayer.get_remote_sender_id() != 0: carrot.set_meta("is_network_sync", true)
 			carrot._on_carrot_remover_body_entered(player_node)
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes + Scripts/Menus/Title n Boot Screen/Title Screen.tscn")

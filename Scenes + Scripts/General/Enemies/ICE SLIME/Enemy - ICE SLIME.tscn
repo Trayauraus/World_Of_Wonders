@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://chst4jgbqvi6"]
+[gd_scene format=3 uid="uid://chst4jgbqvi6"]
 
 [ext_resource type="Texture2D" uid="uid://b5gawiuwgfvxw" path="res://Assets/[General Art]/{Pixel}/Sprites/Evil Tank Sprite Sheet.png" id="1_qasox"]
 [ext_resource type="Script" uid="uid://ro67w61lyrhd" path="res://Scenes + Scripts/General/Enemies/ICE SLIME/Enemy - ICE SLIME Script.gd" id="1_s6evt"]
@@ -51,32 +51,32 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Enemy" type="Node2D" groups=["Enemy"]]
+[node name="Enemy - ICE Slime" type="Node2D" unique_id=1567987967 groups=["Enemy"]]
 script = ExtResource("1_s6evt")
 
-[node name="EnemyArea" type="Area2D" parent="."]
+[node name="EnemyArea" type="Area2D" parent="." unique_id=85443388]
 
-[node name="EnemyCol" type="CollisionShape2D" parent="EnemyArea"]
+[node name="EnemyCol" type="CollisionShape2D" parent="EnemyArea" unique_id=760657898]
 position = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_8ndx4")
 
-[node name="EnemyLight" type="PointLight2D" parent="."]
+[node name="EnemyLight" type="PointLight2D" parent="." unique_id=586827106]
 position = Vector2(1, 6)
 texture = SubResource("GradientTexture2D_8ndx4")
 
-[node name="EnemySprite" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
+[node name="EnemySprite" type="AnimatedSprite2D" parent="." unique_id=994491523 groups=["Enemy"]]
 texture_filter = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_p2ew7")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.918366
+frame_progress = 0.526484
 
-[node name="RayCastRight" type="RayCast2D" parent="." groups=["Enemy"]]
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1703779397 groups=["Enemy"]]
 position = Vector2(1, 5)
 target_position = Vector2(9, 0)
 
-[node name="RayCastLeft" type="RayCast2D" parent="." groups=["Enemy"]]
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1930381165 groups=["Enemy"]]
 position = Vector2(1, 5)
 target_position = Vector2(-10, 0)
 

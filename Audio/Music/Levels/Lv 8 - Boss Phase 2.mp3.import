@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjncr4s3i2vwo"
+path="res://.godot/imported/Lv 8 - Boss Phase 2.mp3-d1a92e4583008d714eb1cdb904628d5e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 8 - Boss Phase 2.mp3"
+dest_files=["res://.godot/imported/Lv 8 - Boss Phase 2.mp3-d1a92e4583008d714eb1cdb904628d5e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

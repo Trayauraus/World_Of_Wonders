@@ -3,8 +3,14 @@ extends Control
 
 @export var is_on_title: bool = false
 @export var darken_area_around_options: bool = true
+@onready var version: Label = $"Godot Ver"
 
 func _ready():
+	# Gets a dictionary with major, minor, patch, and status
+	var version_info = Engine.get_version_info()
+	
+	# "string" contains the full version (e.g., "4.2.1.stable.official")
+	version.text = "Godot Engine: " + version_info["string"]
 	if Global.current_lv == 1:
 		_spawn_warning()
 	# Initialize the UI controls with the current global settings

@@ -1,7 +1,8 @@
 # BossController.gd (V3) #SpiderBOSS
 extends CharacterBody2D
 
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
+@onready var death_collision: CollisionPolygon2D = $"Death Zone/CollisionPolygon2D"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 #region Export Variables
@@ -94,10 +95,10 @@ func _physics_process(delta: float) -> void:
 		time_until_win -= delta
 		$WinTimerLabel.text = "%.1fs" % time_until_win
 	else:
-		if $"../Universal Scene":
+		if $"../..":
 			if player_path:
 				var player: CharacterBody2D = get_node(player_path)
-				$"../Universal Scene".on_player_win(player)
+				$"../..".on_player_win(player)
 	
 	match _current_state:
 		State.PATROLLING:
@@ -179,11 +180,24 @@ func _handle_recovering(_delta: float) -> void:
 func _on_screen_entered():
 	if _current_state == State.INACTIVE:
 		print_rich("[color=lime]Boss is on screen, [b]ACTIVATING![/b][/color]")
+		
+		# --- MUSIC SWAP LOGIC ---
+		var level_music = get_node_or_null("../../LV Audio/Level Soundtrack")
+		var boss_music = get_node_or_null("../../LV Audio/Boss Soundtrack")
+		
+		if level_music and level_music is AudioStreamPlayer:
+			level_music.stop()
+			
+		if boss_music and boss_music is AudioStreamPlayer:
+			boss_music.play()
+		# ------------------------
+
 		set_physics_process(true)
 		_stuck_timer.start(stuck_check_interval)
 		_transition_to_state(State.PATROLLING)
 		# Disconnect the signal so this function never runs again.
 		_notifier.screen_entered.disconnect(_on_screen_entered)
+#endregion
 
 # MODIFIED: Now triggers either a chase or a slam.
 func _on_action_timer_timeout() -> void:
@@ -237,8 +251,8 @@ func _transition_to_state(new_state: State) -> void:
 	match new_state:
 		State.PATROLLING:
 			set_collision_mask(_original_collision_mask)
-			collision_shape_2d.disabled = false # Re-enable collision
-			$"Death Zone/CollisionShape2D".disabled = false
+			collision_polygon_2d.disabled = false # Re-enable collision
+			death_collision.disabled = false
 			_start_action_timer()
 		State.CHASING:
 			# No collision change, just start the timer for how long to chase
@@ -251,14 +265,14 @@ func _transition_to_state(new_state: State) -> void:
 			velocity.x = 0 # Slam straight down
 			# Only set the collision mask to the bridge layer so we only collide with the bridge
 			set_collision_mask(bridge_only_mask)
-			collision_shape_2d.disabled = false # Ensure collision is enabled for the slam
-			$"Death Zone/CollisionShape2D".disabled = false
+			collision_polygon_2d.disabled = false # Ensure collision is enabled for the slam
+			death_collision.disabled = false
 		State.RECOVERING:
 			# Reset the collision mask before disabling the shape.
 			# This is important if you want the boss to collide with platforms on the way up.
 			set_collision_mask(_original_collision_mask)
-			collision_shape_2d.disabled = true # Disable the shape to go through the bridge
-			$"Death Zone/CollisionShape2D".disabled = true
+			collision_polygon_2d.disabled = true # Disable the shape to go through the bridge
+			death_collision.disabled = true
 			velocity.x = 0
 			velocity.y = recover_jump_velocity
 #endregion

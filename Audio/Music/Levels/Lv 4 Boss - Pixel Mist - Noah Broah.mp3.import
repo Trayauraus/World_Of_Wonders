@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ldvau317ss0b"
+path="res://.godot/imported/Lv 4 Boss - Pixel Mist - Noah Broah.mp3-fe0699e1a8713da84da09b2702f28ed5.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Lv 4 Boss - Pixel Mist - Noah Broah.mp3"
+dest_files=["res://.godot/imported/Lv 4 Boss - Pixel Mist - Noah Broah.mp3-fe0699e1a8713da84da09b2702f28ed5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

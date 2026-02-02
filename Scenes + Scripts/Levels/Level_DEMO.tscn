@@ -30,7 +30,7 @@ script = ExtResource("1_7jfo4")
 [node name="Universal Scene" parent="." unique_id=2033821342 instance=ExtResource("1_i0v0v")]
 default_environment = ExtResource("3_7jfo4")
 
-[node name="Lv3Soundtrack" type="AudioStreamPlayer" parent="Universal Scene/LV Audio" parent_id_path=PackedInt32Array(2033821342, 906618536) index="1" unique_id=1767203438]
+[node name="DemoSoundtrack" type="AudioStreamPlayer" parent="Universal Scene/LV Audio" parent_id_path=PackedInt32Array(2033821342, 906618536) index="1" unique_id=1767203438]
 stream = ExtResource("8_hwx6u")
 autoplay = true
 parameters/looping = true
@@ -169,25 +169,23 @@ position = Vector2(2600, 3)
 collision_layer = 1
 collision_mask = 2
 
-[node name="Current UI" parent="Universal Scene" index="6" unique_id=1115750549]
-visible = true
-
-[node name="Enemies" type="Node" parent="." unique_id=1835779559]
-
-[node name="Enemy1" parent="Enemies" unique_id=562852298 instance=ExtResource("2_7lxct")]
+[node name="Enemy1" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(2033821342, 125243272) index="0" unique_id=562852298 instance=ExtResource("2_7lxct")]
 visibility_layer = 4
 position = Vector2(999, 84)
 
-[node name="Enemy2" parent="Enemies" unique_id=829629890 instance=ExtResource("2_7lxct")]
+[node name="Enemy2" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(2033821342, 125243272) index="1" unique_id=829629890 instance=ExtResource("2_7lxct")]
 visibility_layer = 4
 position = Vector2(1510, -348)
 super_tank_variant = "ICE"
 
-[node name="Enemy" parent="Enemies" unique_id=1601199985 instance=ExtResource("2_7lxct")]
+[node name="Enemy" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(2033821342, 125243272) index="2" unique_id=1601199985 instance=ExtResource("2_7lxct")]
 position = Vector2(-188, 70)
 super_tank_variant = "GRASSY"
 SPEED = 8.0
 emits_light = false
+
+[node name="Current UI" parent="Universal Scene" index="7" unique_id=1115750549]
+visible = true
 
 [node name="Signs" type="Node" parent="." unique_id=2082555973]
 

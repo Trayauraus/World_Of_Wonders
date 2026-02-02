@@ -31,6 +31,7 @@ It is meant to be a passion project I can work on in my free time.
 
 ## 🗺️ Development Roadmap
 * **The Game Is Actually DONE!!** I may make a level editor in the future but as of right now its completely done.
+An import system *has* been added already but it still dosent guarantee a fully functional level editor though.
 
 ---
 
@@ -43,6 +44,21 @@ It is meant to be a passion project I can work on in my free time.
 
 ### Third-Party Assets
 * **Environment Art:** This project utilizes a background asset from the game **Celeste**, which is the property of **Maddy Makes Games**. This asset is used for placeholder and educational purposes only.
+
+This project utilizes a background asset from the game Celeste ("res://Assets/[General Art]/Backgrounds/Celeste/CelesteBG_OldSite_00.png"), which is the property of Maddy Makes Games. 
+This asset is used for placeholder and educational purposes only.
+
+
+* **Enemy and Various SFX:**
+Taken from Brackeys' 2D Asset Pack (Officially named [Brackeys' Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle).)
+Specific Assets used from Brackeys:
+   * Enemy Sprite (Retextured)
+   * Tilemap (Most Tiles are NEW but some were taken from Brackeys)
+   * Coin Sprite
+
+* **Music:** The music comes from [Pixabay](https://pixabay.com/music)'s site which gives non-copyright music.
+If any included music *does* have copyright, I, Trayauraus, the creator of this game and truly sorry for adding it and if it is requested, I will remove it immediately.
+
 * **Addons:** 
    * **Indie Blueprint Save Manager:** Used for the game's saving architecture. It is found here: https://godotengine.org/asset-library/asset/3778
    * **Discord RPC:** Used for rich presence integration. It is found here: https://godotengine.org/asset-library/asset/1950

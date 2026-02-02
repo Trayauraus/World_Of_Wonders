@@ -1,4 +1,4 @@
-[gd_scene load_steps=368 format=3 uid="uid://cg634nb2fx5eq"]
+[gd_scene format=3 uid="uid://cg634nb2fx5eq"]
 
 [ext_resource type="Script" uid="uid://bdjsbegoey3w4" path="res://Multiplayer/Player Script Multiplayer.gd" id="1_qnqxn"]
 [ext_resource type="Texture2D" uid="uid://na7k1tv36wym" path="res://Assets/[General Art]/UI/Dev Mode Indicator.png" id="3_w5k08"]
@@ -2086,26 +2086,26 @@ properties/9/path = NodePath("DashParticle:emitting")
 properties/9/spawn = true
 properties/9/replication_mode = 1
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=911111320 groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_qnqxn")
 
-[node name="Hitbox" type="CollisionShape2D" parent="." groups=["Player"]]
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1042691234 groups=["Player"]]
 position = Vector2(-0.5, 6.5)
 shape = SubResource("RectangleShape2D_ph4fv")
 
-[node name="General" type="Node2D" parent="."]
+[node name="General" type="Node2D" parent="." unique_id=69498856]
 
-[node name="DEBUG DEV" type="CanvasLayer" parent="."]
+[node name="DEBUG DEV" type="CanvasLayer" parent="." unique_id=849642461]
 
-[node name="DevModeIndicator" type="Sprite2D" parent="DEBUG DEV"]
+[node name="DevModeIndicator" type="Sprite2D" parent="DEBUG DEV" unique_id=1530353349]
 visible = false
 texture_filter = 1
 position = Vector2(70.838, 252.225)
 scale = Vector2(0.9616485, 0.9564188)
 texture = ExtResource("3_w5k08")
 
-[node name="Dev" type="Label" parent="DEBUG DEV/DevModeIndicator"]
+[node name="Dev" type="Label" parent="DEBUG DEV/DevModeIndicator" unique_id=1559022144]
 offset_left = -38.7985
 offset_top = -71.9208
 offset_right = 35.2015
@@ -2113,7 +2113,7 @@ offset_bottom = -48.9208
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "DevMode"
 
-[node name="Dev V" type="Label" parent="DEBUG DEV/DevModeIndicator"]
+[node name="Dev V" type="Label" parent="DEBUG DEV/DevModeIndicator" unique_id=1608692532]
 offset_left = 49.0085
 offset_top = 46.5922
 offset_right = 123.009
@@ -2121,7 +2121,7 @@ offset_bottom = 69.5922
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "V4"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1134885489]
 zoom = Vector2(2.4, 2.4)
 limit_left = -100000
 limit_bottom = 180
@@ -2129,11 +2129,11 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 script = ExtResource("4_1lv3q")
 
-[node name="Timer" type="Timer" parent="Camera2D"]
+[node name="Timer" type="Timer" parent="Camera2D" unique_id=920951055]
 wait_time = 1.2
 one_shot = true
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." groups=["Player"]]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=769640737 groups=["Player"]]
 texture_filter = 1
 material = SubResource("ShaderMaterial_grfxd")
 position = Vector2(0, 1)
@@ -2142,7 +2142,7 @@ sprite_frames = SubResource("SpriteFrames_e1ecl")
 animation = &"Idle_1"
 autoplay = "NEW_Idle"
 
-[node name="DashParticle" type="GPUParticles2D" parent="."]
+[node name="DashParticle" type="GPUParticles2D" parent="." unique_id=284098973]
 self_modulate = Color(1, 1, 0.564706, 1)
 position = Vector2(0, 6)
 emitting = false
@@ -2150,54 +2150,52 @@ amount = 60
 lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_g0q72")
 
-[node name="Player Light" type="PointLight2D" parent="."]
+[node name="Player Light" type="PointLight2D" parent="." unique_id=371428490]
 visible = false
 position = Vector2(1, 6)
 texture = SubResource("GradientTexture2D_ppaly")
 
-[node name="RayCast2DRight" type="RayCast2D" parent="."]
+[node name="RayCast2DRight" type="RayCast2D" parent="." unique_id=1184155223]
 visible = false
 position = Vector2(0, 6)
 target_position = Vector2(9, 0)
 
-[node name="RayCast2DLeft" type="RayCast2D" parent="."]
+[node name="RayCast2DLeft" type="RayCast2D" parent="." unique_id=555434949]
 visible = false
 position = Vector2(0, 6)
 target_position = Vector2(-11, 0)
 
-[node name="SFX" type="Node" parent="."]
+[node name="SFX" type="Node" parent="." unique_id=1438319782]
 
-[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+[node name="Jump" type="AudioStreamPlayer" parent="SFX" unique_id=746414010]
 stream = ExtResource("267_k1mk8")
 volume_db = -7.0
 pitch_scale = 0.6
 
-[node name="DashRedLeft" type="AudioStreamPlayer" parent="SFX"]
+[node name="DashRedLeft" type="AudioStreamPlayer" parent="SFX" unique_id=85294993]
 stream = ExtResource("268_g2wet")
 pitch_scale = 0.8
 
-[node name="DashRedRight" type="AudioStreamPlayer" parent="SFX"]
+[node name="DashRedRight" type="AudioStreamPlayer" parent="SFX" unique_id=1062962224]
 stream = ExtResource("269_0nm5r")
 pitch_scale = 0.8
 
-[node name="Timers" type="Node" parent="."]
+[node name="Timers" type="Node" parent="." unique_id=719845179]
 
-[node name="RollTimer" type="Timer" parent="Timers" groups=["Player"]]
+[node name="RollTimer" type="Timer" parent="Timers" unique_id=1899942362 groups=["Player"]]
 wait_time = 0.3
 one_shot = true
 
-[node name="RollAnimLoop" type="Timer" parent="Timers" groups=["Player"]]
+[node name="RollAnimLoop" type="Timer" parent="Timers" unique_id=1270821360 groups=["Player"]]
 wait_time = 0.3
 one_shot = true
 
-[node name="WindIntervalTimer" type="Timer" parent="Timers"]
+[node name="WindIntervalTimer" type="Timer" parent="Timers" unique_id=2038209867]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_j1u3y")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=69367343]
+libraries/ = SubResource("AnimationLibrary_j1u3y")
 
-[node name="BlackColor" type="ColorRect" parent="."]
+[node name="BlackColor" type="ColorRect" parent="." unique_id=1197922416]
 visible = false
 z_index = 50
 z_as_relative = false
@@ -2212,11 +2210,11 @@ scale = Vector2(2.34126, 3.02053)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1857398222]
 replication_config = SubResource("SceneReplicationConfig_oarwg")
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timers/RollTimer" to="." method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="Timers/RollTimer" to="." method="_on_dash_time_timeout"]
 [connection signal="timeout" from="Timers/RollTimer" to="." method="_on_roll_timer_timeout"]
+[connection signal="timeout" from="Timers/RollTimer" to="." method="_on_dash_time_timeout"]
 [connection signal="timeout" from="Timers/RollAnimLoop" to="." method="_on_roll_anim_loop_timeout"]

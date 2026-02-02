@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df6iqqt6ddwlr"
+path="res://.godot/imported/Tutorial Bounce Soundtrack.mp3-e2f9241cba72a663050fd9b1b7378749.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Levels/Tutorial Bounce Soundtrack.mp3"
+dest_files=["res://.godot/imported/Tutorial Bounce Soundtrack.mp3-e2f9241cba72a663050fd9b1b7378749.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

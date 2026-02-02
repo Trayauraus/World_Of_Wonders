@@ -315,6 +315,127 @@ polygon = PackedVector2Array(-995, -1444, -950, -1363, -800, -1335, -801, -1448,
 position = Vector2(-1, 0)
 tile_map_data = PackedByteArray("AADk/wkAAQAYABMAABDk/woAAQAYABMAABDk/wsAAQAYABMAABAwAAEAAQAYABMAAAAwAAIAAQAYABMAAAAwAAMAAQAYABMAAAAwAAQAAQAYABMAAAAwAAUAAQAYABMAAADr/8r/AQAOAAMAAAA7AMH/AQAOAAMAAAArAMb/AQAOAAMAAAAaAMr/AQAOAAMAAAAxAOH/AQAOAAMAAAApAO3/AQAOAAMAAAAWAPH/AQAOAAMAAAAKAPP/AQAOAAMAAAD7////AQAPAAMAABARAP7/AQAOAAMAAAAIAAAAAQAPAAMAAAApAPH/AQAPAAMAAABbAOD/AQAPAAMAAABwAOL/AQAPAAMAAABKAMD/AQAPAAMAAAArALD/AQAPAAMAAAAcAKD/AQAPAAMAAAD5/6L/AQAPAAMAAAACAKL/AQAPAAMAAADk/6r/AQAPAAMAAADT/7j/AQAPAAMAAADR/7j/AQAOAAMAAADA/6z/AQAOAAMAAAD7/6L/AQAOAAMAAAASAKL/AQAOAAMAAAA=")
 
+[node name="Coin" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="0" unique_id=914637646 instance=ExtResource("4_2pn00")]
+position = Vector2(-96, -51)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin2" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="1" unique_id=1897889112 instance=ExtResource("4_2pn00")]
+position = Vector2(-237, -677)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin3" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="2" unique_id=1992804038 instance=ExtResource("4_2pn00")]
+position = Vector2(-251, -677)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin4" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="3" unique_id=94729042 instance=ExtResource("4_2pn00")]
+position = Vector2(-602, -825)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin5" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="4" unique_id=1056389603 instance=ExtResource("4_2pn00")]
+position = Vector2(-65, -1227)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+coin_type = "Special_Coin"
+
+[node name="Coin6" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="5" unique_id=241462174 instance=ExtResource("4_2pn00")]
+position = Vector2(159, -1551)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin7" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="6" unique_id=1253850175 instance=ExtResource("4_2pn00")]
+position = Vector2(171, -1551)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin8" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="7" unique_id=751006715 instance=ExtResource("4_2pn00")]
+position = Vector2(918, -1016)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin9" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="8" unique_id=815407057 instance=ExtResource("4_2pn00")]
+position = Vector2(930, -1016)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin10" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="9" unique_id=2054811695 instance=ExtResource("4_2pn00")]
+position = Vector2(1653, -1190)
+collision_layer = 1
+collision_mask = 2
+
+[node name="Coin11" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="10" unique_id=763490224 instance=ExtResource("4_2pn00")]
+position = Vector2(1665, -1190)
+collision_layer = 1
+collision_mask = 2
+
+[node name="Coin12" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="11" unique_id=1768986142 instance=ExtResource("4_2pn00")]
+position = Vector2(1190, -575)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin13" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="12" unique_id=1586869471 instance=ExtResource("4_2pn00")]
+position = Vector2(1202, -575)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin14" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="13" unique_id=1153868382 instance=ExtResource("4_2pn00")]
+position = Vector2(700, -323)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin15" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="14" unique_id=632709790 instance=ExtResource("4_2pn00")]
+position = Vector2(790, -416)
+collision_layer = 1
+collision_mask = 2
+EmitsLight = false
+
+[node name="Coin16" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="15" unique_id=979998873 instance=ExtResource("4_2pn00")]
+position = Vector2(527, -682)
+
+[node name="BEEG COIN" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(557514029, 2035832597) index="0" unique_id=873680726 instance=ExtResource("4_2pn00")]
+position = Vector2(-677, -1253)
+coin_type = "Big_Yellow"
+coin_size = 5.0
+
+[node name="Enemy" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(557514029, 125243272) index="0" unique_id=989570406 instance=ExtResource("5_jicsx")]
+position = Vector2(637, -236)
+emits_light = false
+
+[node name="Enemy2" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(557514029, 125243272) index="1" unique_id=1432075359 instance=ExtResource("5_jicsx")]
+position = Vector2(996, -476)
+SPEED = 80.0
+emits_light = false
+
+[node name="Enemy3" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(557514029, 125243272) index="2" unique_id=1923031890 instance=ExtResource("5_jicsx")]
+position = Vector2(1377, -477)
+emits_light = false
+
+[node name="Enemy4" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(557514029, 125243272) index="3" unique_id=46574645 instance=ExtResource("5_jicsx")]
+position = Vector2(1122, -924)
+super_tank_variant = "DESERT"
+
+[node name="Enemy5" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(557514029, 125243272) index="4" unique_id=1018071720 instance=ExtResource("5_jicsx")]
+position = Vector2(1735, -1148)
+
+[node name="Enemy6" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(557514029, 125243272) index="5" unique_id=869882861 instance=ExtResource("5_jicsx")]
+position = Vector2(230, -1500)
+SPEED = 80.0
+
 [node name="BG Objects" type="TileMapLayer" parent="Universal Scene" unique_id=1829800893]
 texture_filter = 1
 position = Vector2(-1, 0)
@@ -375,131 +496,6 @@ theme_override_fonts/font = ExtResource("3_nf025")
 theme_override_font_sizes/font_size = 25
 text = "use the wind
 to your advantage"
-
-[node name="Coins" type="Node" parent="." unique_id=207986313]
-
-[node name="Coin" parent="Coins" unique_id=914637646 instance=ExtResource("4_2pn00")]
-position = Vector2(-96, -51)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin2" parent="Coins" unique_id=1897889112 instance=ExtResource("4_2pn00")]
-position = Vector2(-237, -677)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin3" parent="Coins" unique_id=1992804038 instance=ExtResource("4_2pn00")]
-position = Vector2(-251, -677)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin4" parent="Coins" unique_id=94729042 instance=ExtResource("4_2pn00")]
-position = Vector2(-602, -825)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin5" parent="Coins" unique_id=1056389603 instance=ExtResource("4_2pn00")]
-position = Vector2(-65, -1227)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-coin_type = "Special_Coin"
-
-[node name="Coin6" parent="Coins" unique_id=241462174 instance=ExtResource("4_2pn00")]
-position = Vector2(159, -1551)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin7" parent="Coins" unique_id=1253850175 instance=ExtResource("4_2pn00")]
-position = Vector2(171, -1551)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin8" parent="Coins" unique_id=751006715 instance=ExtResource("4_2pn00")]
-position = Vector2(918, -1016)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin9" parent="Coins" unique_id=815407057 instance=ExtResource("4_2pn00")]
-position = Vector2(930, -1016)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin10" parent="Coins" unique_id=2054811695 instance=ExtResource("4_2pn00")]
-position = Vector2(1653, -1190)
-collision_layer = 1
-collision_mask = 2
-
-[node name="Coin11" parent="Coins" unique_id=763490224 instance=ExtResource("4_2pn00")]
-position = Vector2(1665, -1190)
-collision_layer = 1
-collision_mask = 2
-
-[node name="Coin12" parent="Coins" unique_id=1768986142 instance=ExtResource("4_2pn00")]
-position = Vector2(1190, -575)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin13" parent="Coins" unique_id=1586869471 instance=ExtResource("4_2pn00")]
-position = Vector2(1202, -575)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin14" parent="Coins" unique_id=1153868382 instance=ExtResource("4_2pn00")]
-position = Vector2(700, -323)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin15" parent="Coins" unique_id=632709790 instance=ExtResource("4_2pn00")]
-position = Vector2(790, -416)
-collision_layer = 1
-collision_mask = 2
-EmitsLight = false
-
-[node name="Coin16" parent="Coins" unique_id=979998873 instance=ExtResource("4_2pn00")]
-position = Vector2(527, -682)
-
-[node name="BEEG COIN" parent="Coins" unique_id=873680726 instance=ExtResource("4_2pn00")]
-position = Vector2(-677, -1253)
-coin_type = "Big_Yellow"
-coin_size = 5.0
-
-[node name="Enemies" type="Node" parent="." unique_id=842125263]
-
-[node name="Enemy" parent="Enemies" unique_id=989570406 instance=ExtResource("5_jicsx")]
-position = Vector2(637, -236)
-emits_light = false
-
-[node name="Enemy2" parent="Enemies" unique_id=1432075359 instance=ExtResource("5_jicsx")]
-position = Vector2(996, -476)
-SPEED = 80.0
-emits_light = false
-
-[node name="Enemy3" parent="Enemies" unique_id=1923031890 instance=ExtResource("5_jicsx")]
-position = Vector2(1377, -477)
-emits_light = false
-
-[node name="Enemy4" parent="Enemies" unique_id=46574645 instance=ExtResource("5_jicsx")]
-position = Vector2(1122, -924)
-super_tank_variant = "DESERT"
-
-[node name="Enemy5" parent="Enemies" unique_id=1018071720 instance=ExtResource("5_jicsx")]
-position = Vector2(1735, -1148)
-
-[node name="Enemy6" parent="Enemies" unique_id=869882861 instance=ExtResource("5_jicsx")]
-position = Vector2(230, -1500)
-SPEED = 80.0
 
 [editable path="Universal Scene"]
 [editable path="Universal Scene/Collisions or AREA 2Ds/Death Zone"]

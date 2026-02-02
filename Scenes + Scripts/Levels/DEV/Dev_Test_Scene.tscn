@@ -143,17 +143,62 @@ coin_size = 2.0
 position = Vector2(-112, -347)
 coin_type = "Special_Coin"
 
-[node name="Enemies" type="Node" parent="." unique_id=1747572537]
+[node name="Carrot -1" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="1" unique_id=967686535 node_paths=PackedStringArray("target_node") instance=ExtResource("4_iospu")]
+position = Vector2(-309, -427)
+target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 
-[node name="Enemy" parent="Enemies" unique_id=2017491433 instance=ExtResource("2_056jf")]
+[node name="Carrot" parent="Universal Scene/Collectables/Upgrades/Carrot -1" index="0" unique_id=678494656]
+modulate = Color(0.6392157, 0.7647059, 0, 1)
+
+[node name="Carrot Downgrade 0" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="2" unique_id=540695608 node_paths=PackedStringArray("target_node") instance=ExtResource("4_iospu")]
+position = Vector2(-281, -427)
+target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
+forced_max_dashes = 0
+
+[node name="Carrot" parent="Universal Scene/Collectables/Upgrades/Carrot Downgrade 0" index="0" unique_id=678494656]
+modulate = Color(0.4745098, 0.5686275, 0, 1)
+
+[node name="Carrot Upgrade3" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="3" unique_id=1257476167 node_paths=PackedStringArray("target_node") instance=ExtResource("4_iospu")]
+position = Vector2(-253, -427)
+target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
+forced_max_dashes = 3
+
+[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="4" unique_id=1490325058 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade2" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="5" unique_id=1537708122 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade4" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="6" unique_id=1565817911 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade5" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="7" unique_id=132283040 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade6" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="8" unique_id=404204440 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade7" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="9" unique_id=771246312 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade8" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="10" unique_id=90460541 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade9" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="11" unique_id=1868898198 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Carrot Upgrade10" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(66473449, 839593341) index="12" unique_id=949844505 instance=ExtResource("4_iospu")]
+position = Vector2(-52, -255)
+
+[node name="Enemy" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(66473449, 125243272) index="0" unique_id=2017491433 instance=ExtResource("2_056jf")]
 position = Vector2(-139, -28)
 
-[node name="Enemy2" parent="Enemies" unique_id=584103850 instance=ExtResource("2_056jf")]
+[node name="Enemy2" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(66473449, 125243272) index="1" unique_id=584103850 instance=ExtResource("2_056jf")]
 position = Vector2(464, 22)
 SPEED = 80.0
 emits_light = false
 
-[node name="Enemy3" parent="Enemies" unique_id=564082888 instance=ExtResource("2_056jf")]
+[node name="Enemy3" parent="Universal Scene/Enemies" parent_id_path=PackedInt32Array(66473449, 125243272) index="2" unique_id=564082888 instance=ExtResource("2_056jf")]
 position = Vector2(489, 22)
 emits_light = false
 
@@ -215,56 +260,7 @@ offset_right = 99.0
 offset_bottom = 23.0
 text = "3"
 
-[node name="Carrots" type="Node" parent="." unique_id=1842429839]
-
-[node name="Carrot -1" parent="Carrots" unique_id=967686535 node_paths=PackedStringArray("target_node") instance=ExtResource("4_iospu")]
-position = Vector2(-309, -427)
-target_node = NodePath("../../Universal Scene/UNIVERSAL LV Nodes/Player")
-
-[node name="Carrot" parent="Carrots/Carrot -1" index="0"]
-modulate = Color(0.6392157, 0.7647059, 0, 1)
-
-[node name="Carrot Downgrade 0" parent="Carrots" unique_id=540695608 node_paths=PackedStringArray("target_node") instance=ExtResource("4_iospu")]
-position = Vector2(-281, -427)
-target_node = NodePath("../../Universal Scene/UNIVERSAL LV Nodes/Player")
-forced_max_dashes = 0
-
-[node name="Carrot" parent="Carrots/Carrot Downgrade 0" index="0"]
-modulate = Color(0.4745098, 0.5686275, 0, 1)
-
-[node name="Carrot Upgrade3" parent="Carrots" unique_id=1257476167 node_paths=PackedStringArray("target_node") instance=ExtResource("4_iospu")]
-position = Vector2(-253, -427)
-target_node = NodePath("../../Universal Scene/UNIVERSAL LV Nodes/Player")
-forced_max_dashes = 3
-
-[node name="Carrot Upgrade" parent="Carrots" unique_id=1490325058 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade2" parent="Carrots" unique_id=1537708122 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade4" parent="Carrots" unique_id=1565817911 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade5" parent="Carrots" unique_id=132283040 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade6" parent="Carrots" unique_id=404204440 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade7" parent="Carrots" unique_id=771246312 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade8" parent="Carrots" unique_id=90460541 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade9" parent="Carrots" unique_id=1868898198 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
-[node name="Carrot Upgrade10" parent="Carrots" unique_id=949844505 instance=ExtResource("4_iospu")]
-position = Vector2(-52, -255)
-
 [editable path="Universal Scene"]
 [editable path="Universal Scene/Collisions or AREA 2Ds/Death Zone"]
-[editable path="Carrots/Carrot -1"]
-[editable path="Carrots/Carrot Downgrade 0"]
+[editable path="Universal Scene/Collectables/Upgrades/Carrot -1"]
+[editable path="Universal Scene/Collectables/Upgrades/Carrot Downgrade 0"]

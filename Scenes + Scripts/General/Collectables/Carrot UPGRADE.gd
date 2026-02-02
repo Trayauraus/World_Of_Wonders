@@ -21,12 +21,13 @@ const DASH_COUNTER_SCENE = preload("res://Scenes + Scripts/General/Collectables/
 
 @export_group("Force / Remove")
 @export var enable_object_removal: bool = false
-@export var removal_object: Node
+@export var removal_objects: Array[Node] = []
 
 @export_group("Force / Spawn")
 @export var enable_object_addition: bool = false
-@export var additional_object_scene: PackedScene
-@export var spawn_location: Vector2i
+@export var additional_object_scenes: Array[PackedScene] = []
+# CHANGED: Now an array. Match index 0 here with index 0 in 'additional_object_scenes'
+@export var spawn_locations: Array[Vector2] = [] 
 
 ### NEW: Variable to track who we physically follow (Player OR another Carrot)
 var follow_target: Node2D = null 
@@ -41,18 +42,15 @@ var _original_max_dashes: int = 2
 
 func _ready() -> void:
 	# --- RANDOMIZATION ---
-	# Offsets the "internal clock" and speed so chained carrots don't move in unison
 	_time = randf_range(0.0, 50.0) 
 	hover_speed *= randf_range(0.85, 1.15)
 	
 	# --- AUTO-LINK CARROT REMOVER ---
 	var remover = get_node_or_null("../Carrot Remover")
 	if remover:
-		# Connect the signal via code so you don't have to do it manually in the editor
 		if not remover.body_entered.is_connected(_on_carrot_remover_body_entered):
 			remover.body_entered.connect(_on_carrot_remover_body_entered)
 	else:
-		# Your specific error message if the node is missing
 		print_rich("[color=orange]CARROT:[color=yellow]Could not find a Carrot Remover. Is this an error or intentional? [color=/]", self)
 
 	# --- INITIALIZATION ---
@@ -117,7 +115,6 @@ func add_dash_counter() -> void:
 			_spawned_addon = addon
 
 func _on_carrot_remover_body_entered(body: Node2D) -> void:
-	# This is now triggered by the code-connected signal from "Carrot Remover"
 	if body.is_in_group("Player"):
 		if is_following:
 			if _is_collecting: return
@@ -161,19 +158,36 @@ func _on_body_entered(body: Node) -> void:
 		body.set_meta("last_carrot", self)
 		is_following = true
 		
-		if enable_object_removal and removal_object:
-			removal_object.queue_free()
+		if enable_object_removal:
+			for obj in removal_objects:
+				if is_instance_valid(obj):
+					obj.queue_free()
 		
-		if enable_object_addition and additional_object_scene: 
-			var instance = additional_object_scene.instantiate()
-			get_tree().current_scene.add_child(instance)
-			if instance is Node2D:
-				instance.global_position = Vector2(spawn_location)
-				instance.z_index = 0
+		# --- CHANGED: PARALLEL ARRAY LOGIC ---
+		if enable_object_addition: 
+			# We loop through the scenes by Index (i)
+			for i in range(additional_object_scenes.size()):
+				var scene_to_spawn = additional_object_scenes[i]
+				
+				if scene_to_spawn:
+					var instance = scene_to_spawn.instantiate()
+					get_tree().current_scene.add_child(instance)
+					
+					if instance is Node2D:
+						# If we have a matching location in the list, use it
+						if i < spawn_locations.size():
+							instance.global_position = spawn_locations[i]
+						else:
+							# Fallback: If you forgot to set a location, spawn at Carrot's position
+							instance.global_position = global_position
+							print_rich("[color=orange]Warning: No spawn location set for object index %d. Spawning at Carrot pos.[/color]" % i)
+						
+						instance.z_index = 0
 		
 		add_dash_counter()
 
 func force_carrot_upgrade():
 	if target_node:
 		_on_body_entered(target_node)
-	else: print_rich("[color=orange]Carrot:[color=red] UPGRADE Tried to be forced but failed. Is a targetnode set?[color=/] ID:   ", self)
+	else: 
+		print_rich("[color=orange]Carrot:[color=red] UPGRADE Tried to be forced but failed. Is a targetnode set?[color=/] ID:   ", self)

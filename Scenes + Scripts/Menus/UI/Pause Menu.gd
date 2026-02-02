@@ -1,8 +1,16 @@
 extends Control
 
+@onready var version: Label = $Godot/Version
+
 var options_button
 
 func _ready():
+	# Gets a dictionary with major, minor, patch, and status
+	var version_info = Engine.get_version_info()
+	
+	# "string" contains the full version (e.g., "4.2.1.stable.official")
+	version.text = "Godot Engine: " + version_info["string"]
+
 	if $MarginContainer/VBoxContainer/Resume:
 		$MarginContainer/VBoxContainer/Resume.grab_focus()
 
