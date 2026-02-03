@@ -25,13 +25,14 @@ It is meant to be a passion project I can work on in my free time.
 ---
 
 ## Technical Specifications
-* **Current Version:** 5.5.
+* **Current Version:** [Check Here](https://github.com/Trayauraus/World_Of_Wonders/releases/)
 * **Base Engine:** [Godot 4.6](https://godotengine.org/download/archive/4.6-stable/)
 * **Project Start Date:** February 13, 2025.
 
 ## 🗺️ Development Roadmap
 * **The Game Is Actually DONE!!** I may make a level editor in the future but as of right now its completely done.
-An import system *has* been added already but it still dosent guarantee a fully functional level editor though.
+An import system *has* been added already but it still dosent guarantee a _fully_ functional level editor though.
+As of the moment there is a very basic editor.
 
 ---
 
@@ -39,22 +40,22 @@ An import system *has* been added already but it still dosent guarantee a fully 
 ### Development
 * **Lead Developer:** Trayauraus / T_Man.
 * **Artwork:** 
-  * Beyond Pixels (BG Art and Title)
+  * Beyond Pixels (BG Art and Title Art, as well as the Eye Boss's sprite)
   * Whispy (Title Art)
 
 ### Third-Party Assets
 * **Environment Art:** This project utilizes a background asset from the game **Celeste**, which is the property of **Maddy Makes Games**. This asset is used for placeholder and educational purposes only.
 
- This project utilizes a background asset from the game Celeste ("res://Assets/[General Art]/Backgrounds/Celeste/CelesteBG_OldSite_00.png"), which is the property of Maddy Makes Games. 
+ This project utilizes a background asset from the game [Celeste](https://store.steampowered.com/app/504230/Celeste/) [Found Here In Game Files](https://github.com/Trayauraus/World_Of_Wonders/blob/main/Assets/%5BGeneral%20Art%5D/Backgrounds/Celeste/CelesteBG_OldSite_00.png), which is the property of [Maddy Makes Games](https://www.mattmakesgames.com/). 
  This asset is used for placeholder and educational purposes only.
 
 
 * **Enemy and Various SFX:**
 Taken from Brackeys' 2D Asset Pack (Officially named [Brackeys' Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle).)
 Specific Assets used from Brackeys:
-   * Enemy Sprite (Retextured)
-   * Tilemap (Most Tiles are NEW but some were taken from Brackeys)
-   * Coin Sprite
+   * [Enemy Sprite](https://github.com/Trayauraus/World_Of_Wonders/blob/main/Assets/%5BGeneral%20Art%5D/%7BPixel%7D/Sprites/Evil%20Tank%20Sprite%20Sheet.png) (Retextured)
+   * [Tilemap](https://github.com/Trayauraus/World_Of_Wonders/tree/main/Assets/%5BGeneral%20Art%5D/%7BPixel%7D/Tiles) (Most Tiles are NEW but some were taken from Brackeys)
+   * [Coin Sprite](https://github.com/Trayauraus/World_Of_Wonders/blob/main/Assets/%5BGeneral%20Art%5D/%7BPixel%7D/Sprites/Coin%20Sprite%20Sheet.png)
 
 * **Music:** The music comes from [Pixabay](https://pixabay.com/music)'s site which gives non-copyright music.
 
