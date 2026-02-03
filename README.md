@@ -1,8 +1,10 @@
-# World of Wonders (WoW)
+# World of Wonders (WoW) ![Bunny IDLES](https://github.com/user-attachments/assets/367f47b2-d924-462a-a366-fc8cf4a06696)
+
 
 **World of Wonders (WoW)** is a 2D indie platforming adventure made in the **Godot Game Engine**. In this adventure, you play as a bunny hopping away from certain death and staying alive, while ensuring you avoid the "black plague", all while climbing a Volcano.
 
-## Website
+## Website ![Carrot](https://github.com/user-attachments/assets/3b1b03d3-d9de-4b17-8b4e-30d33d7009b5)
+
 [**World Of Wonder's Website**](https://trayauraus.github.io/World_Of_Wonders/)
 
 ## 📥 Downloads
@@ -24,12 +26,14 @@ It is meant to be a passion project I can work on in my free time.
 
 ---
 
-## Technical Specifications
+## Technical Specifications ![Idle4 - Carrot Eat](https://github.com/user-attachments/assets/423d2972-3630-40d9-888d-35fad9caac21)
+
 * **Current Version:** [Check Here](https://github.com/Trayauraus/World_Of_Wonders/releases/)
 * **Base Engine:** [Godot 4.6](https://godotengine.org/download/archive/4.6-stable/)
 * **Project Start Date:** February 13, 2025.
 
-## 🗺️ Development Roadmap
+## 🗺️ Development Roadmap ![Idle3 - Turn](https://github.com/user-attachments/assets/59eec873-71b1-4abe-be1f-28000e15522e)
+
 * **The Game Is Actually DONE!!** I may make a level editor in the future but as of right now its completely done.
 An import system *has* been added already but it still dosent guarantee a _fully_ functional level editor though.
 As of the moment there is a very basic editor.
