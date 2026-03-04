@@ -63,7 +63,7 @@ Specific Assets used from Brackeys:
 
 * **Music:** The music comes from [Pixabay](https://pixabay.com/music)'s site which gives non-copyright music.
 
-If any included music *does* have copyright, I, Trayauraus, the creator of this game and truly sorry for adding it and if it is requested, I will remove it immediately.
+If any included music *does* have copyright, I, Trayauraus, the creator of this game am truly sorry for adding it and if it is requested, I will remove it immediately.
 
 * **Addons:** 
    * **Indie Blueprint Save Manager:** Used for the game's saving architecture. It is found here: https://godotengine.org/asset-library/asset/3778
