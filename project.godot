@@ -37,7 +37,7 @@ window/vsync/vsync_mode=2
 
 [editor]
 
-movie_writer/movie_file="D:/[Game Engine Projects]/[Godot Projects]/[Mine]/World O' Wonders - Rev2/Assets/[Cutscenes]/Godot Movies/Test.avi"
+movie_writer/movie_file="F:/Nextcloud/Trayauraus/[Game Projects]/[Godot]/[Mine]/World O' Wonders - Rev2/Assets/[Cutscenes]/Godot Movies/Test.avi"
 
 [editor_plugins]
 
@@ -79,6 +79,7 @@ folder_colors={
 [global_group]
 
 Carrot=""
+Player=""
 
 [input]
 

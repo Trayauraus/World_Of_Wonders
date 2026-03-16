@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bh1oepnyn23ov"]
+
+[ext_resource type="Script" uid="uid://bdsujf32c8pxj" path="res://Scenes + Scripts/General/Enemies/Bosses/Miniboss - Spider Character Controller.gd" id="1_0887w"]
+[ext_resource type="Texture2D" uid="uid://dsm880i7a0uyq" path="res://Assets/[General Art]/{Pixel}/Sprites/Ice Boss Sprite Sheet.png" id="2_3ocnd"]
+[ext_resource type="PackedScene" uid="uid://bjyrb7iwinh13" path="res://Scenes + Scripts/General/Death Handler/Death Handler.tscn" id="3_8bugc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr7mo"]
+atlas = ExtResource("2_3ocnd")
+region = Rect2(0, 0, 51, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkuif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr7mo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syu3x"]
+size = Vector2(75, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkuif"]
+size = Vector2(78, 40)
+
+[node name="Spider MiniBoss" type="CharacterBody2D" unique_id=952571155]
+script = ExtResource("1_0887w")
+player_path = NodePath("../../UNIVERSAL LV Nodes/Player")
+camera_path = NodePath("../../UNIVERSAL LV Nodes/Player/Camera2D")
+chase_speed = 95.0
+gravity = 830.0
+jump_velocity = -650.0
+min_action_interval = 5.0
+max_action_interval = 13.0
+recover_jump_velocity = -400.0
+bridge_collision_layer = 2
+stuck_check_interval = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1108892653]
+texture_filter = 1
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_kkuif")
+frame_progress = 0.07538054
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1021596183]
+visible = false
+polygon = PackedVector2Array(-44, 13, -37, -9, -26, -20, -8, -20, 9, -6, 21, -4, 22, 6, 33, 13, 33, 18, -44, 18)
+
+[node name="ActionTimer" type="Timer" parent="." unique_id=331253090]
+
+[node name="StuckTimer" type="Timer" parent="." unique_id=464138574]
+wait_time = 0.5
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1826609438]
+
+[node name="Death Zone" parent="." unique_id=969765102 instance=ExtResource("3_8bugc")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Death Zone" unique_id=541681279]
+scale = Vector2(1.01, 1.01)
+polygon = PackedVector2Array(-44, 13, -37, -9, -26, -20, -8, -20, 9, -6, 21, -4, 22, 6, 33, 13, 33, 18, -44, 18)
+
+[node name="WinTimerLabel" type="Label" parent="." unique_id=748487034]
+offset_left = -25.0
+offset_top = -66.0
+offset_right = 15.0
+offset_bottom = -43.0
+
+[node name="Old Col" type="Node" parent="." unique_id=1949313572]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Old Col" unique_id=690261033]
+visible = false
+position = Vector2(1182.5, -288)
+shape = SubResource("RectangleShape2D_syu3x")
+disabled = true
+
+[node name="DeathCol" type="CollisionShape2D" parent="Old Col" unique_id=844163743]
+visible = false
+position = Vector2(1182, -287)
+shape = SubResource("RectangleShape2D_kkuif")
+disabled = true
+debug_color = Color(0.88308686, 0.31750616, 0.29025957, 0.21176471)

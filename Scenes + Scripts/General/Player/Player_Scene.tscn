@@ -2560,8 +2560,9 @@ process_material = SubResource("ParticleProcessMaterial_g0q72")
 
 [node name="Player Light" type="PointLight2D" parent="." unique_id=1704994521]
 visible = false
-position = Vector2(1, 6)
+position = Vector2(0, 6)
 energy = 0.9
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_ppaly")
 
 [node name="RayCast2DRight" type="RayCast2D" parent="." unique_id=242192685]
@@ -2620,7 +2621,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timers/RollTimer" to="." method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="Timers/RollTimer" to="." method="_on_roll_timer_timeout"]
 [connection signal="timeout" from="Timers/RollTimer" to="." method="_on_dash_time_timeout"]
+[connection signal="timeout" from="Timers/RollTimer" to="." method="_on_roll_timer_timeout"]
+[connection signal="timeout" from="Timers/RollTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Timers/RollAnimLoop" to="." method="_on_roll_anim_loop_timeout"]

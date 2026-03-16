@@ -77,6 +77,9 @@ extends CharacterBody2D
 @export var black_fade_on_landing: bool = false
 @export var spawn_height: float = 100.0
 @export var fall_to_ground_speed: float = 80.0
+
+@export_group("Special")
+@export var music_fade: AnimationPlayer
 #endregion
 
 #region Node References
@@ -157,8 +160,8 @@ var eerie_ambience_player: AudioStreamPlayer = null
 #endregion
 
 func _ready():
-	if $"../../MusicFade":
-		$"../../MusicFade".play("RESET")
+	if music_fade:
+		music_fade.play("RESET")
 	if not Global.Has_Fallen:
 		if no_music_until_landed:
 			if $"../../LV Audio/LvMusic":

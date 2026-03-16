@@ -807,7 +807,7 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p3hog"]
 gradient = SubResource("Gradient_7uaef")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qofy1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcoqk"]
 resource_local_to_scene = true
 shader = ExtResource("7_hdmkx")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -1606,7 +1606,7 @@ parameters/looping = true
 limit_left = -1008
 
 [node name="AnimatedSprite" parent="Universal Scene/UNIVERSAL LV Nodes/Player" parent_id_path=PackedInt32Array(1070781711, 795557704) index="4" unique_id=1102127678]
-material = SubResource("ShaderMaterial_qofy1")
+material = SubResource("ShaderMaterial_lcoqk")
 
 [node name="Tower L" type="Node" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1070781711, 531716457) index="0" unique_id=53353951]
 

@@ -76,13 +76,14 @@ pitch_scale = 1.03
 autoplay = true
 parameters/looping = true
 
-[node name="Player" parent="Universal Scene/UNIVERSAL LV Nodes" parent_id_path=PackedInt32Array(1225893742, 860513859) index="3" unique_id=795557704]
+[node name="Player" parent="Universal Scene/UNIVERSAL LV Nodes" parent_id_path=PackedInt32Array(1225893742, 860513859) index="3" unique_id=795557704 node_paths=PackedStringArray("music_fade")]
 cant_move_until_floor_touched = true
 force_spawn_in_sky = true
 no_music_until_landed = true
 black_fade_on_landing = true
 spawn_height = 920.0
 fall_to_ground_speed = 180.0
+music_fade = NodePath("../../MusicFade")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Universal Scene/Collisions or AREA 2Ds/CaveZone" parent_id_path=PackedInt32Array(1225893742, 187232702) index="0" unique_id=1315433443]
 visible = false

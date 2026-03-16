@@ -280,7 +280,7 @@ scale_amount_max = 2.0
 color = Color(0.214959, 0.0985915, 0.00252437, 1)
 
 [node name="Bunny Parallax" type="Parallax2D" parent="Animated Title Screen" unique_id=609124596]
-scroll_scale = Vector2(0.7, 0.7)
+scroll_scale = Vector2(0.7, 1.42)
 
 [node name="WorldOWondersLayerBunny" type="Sprite2D" parent="Animated Title Screen/Bunny Parallax" unique_id=463580131]
 z_index = -3
