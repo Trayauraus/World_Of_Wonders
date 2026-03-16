@@ -9,6 +9,7 @@
 
 ## 📥 Downloads
 The playable versions of **World of Wonders** is found here: **[Releases](https://github.com/Trayauraus/World_Of_Wonders/releases)**. **Only stable builds** are publicly available.
+
 A level creator is also available. It is found [here](https://github.com/Trayauraus/World_Of_Wonders-Editor)
 
 <img width="1252" height="702" alt="Title Screen WORDS" src="https://github.com/user-attachments/assets/5b70f29e-6e41-4a86-89c1-ebe859187866" />
