@@ -9,6 +9,7 @@
 
 ## 📥 Downloads
 The playable versions of **World of Wonders** is found here: **[Releases](https://github.com/Trayauraus/World_Of_Wonders/releases)**. **Only stable builds** are publicly available.
+A level creator is also available. It is found [here](https://github.com/Trayauraus/World_Of_Wonders-Editor)
 
 <img width="1252" height="702" alt="Title Screen WORDS" src="https://github.com/user-attachments/assets/5b70f29e-6e41-4a86-89c1-ebe859187866" />
 
@@ -29,7 +30,7 @@ It is meant to be a passion project I can work on in my free time.
 ## Technical Specifications ![Idle4 - Carrot Eat](https://github.com/user-attachments/assets/423d2972-3630-40d9-888d-35fad9caac21)
 
 * **Current Version:** [Check Here](https://github.com/Trayauraus/World_Of_Wonders/releases/)
-* **Base Engine:** [Godot 4.6](https://godotengine.org/download/archive/4.6-stable/)
+* **Base Engine:** [Godot 4.6.1](https://godotengine.org/download/archive/4.6.1-stable/)
 * **Project Start Date:** February 13, 2025.
 
 ## 🗺️ Development Roadmap ![Idle3 - Turn](https://github.com/user-attachments/assets/59eec873-71b1-4abe-be1f-28000e15522e)
@@ -44,7 +45,7 @@ As of the moment there is a very basic editor.
 ### Development
 * **Lead Developer:** Trayauraus / T_Man.
 * **Artwork:** 
-  * Beyond Pixels (BG Art and Title Art, as well as the Eye Boss's sprite)
+  * Drqnx (BG Art and Title Art, as well as the Eye Boss's sprite)
   * Whispy (Title Art)
 
 ### Third-Party Assets
