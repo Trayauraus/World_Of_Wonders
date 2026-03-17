@@ -13,6 +13,7 @@
             --text-color: #e6e6e6;
             --accent-color: #fca311;
             --secondary-color: #16213e;
+            --danger-color: #ff4d4d;
         }
 
         body {
@@ -28,6 +29,7 @@
         #hero p, #about p, #about a, #about ul, #about li, #about span,
         #editor p, #editor a, #editor ul, #editor li, #editor span,
         #import-system p, #import-system a, #import-system ul, #import-system li, #import-system span,
+        .import-details,
         footer p, footer a, footer span {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
             font-size: 1.1rem;
@@ -94,7 +96,7 @@
         }
 
         main {
-            max-width: 1200px; /* Widened slightly for the grid */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -143,13 +145,12 @@
             transform: translateY(-5px);
         }
 
-        /* Keeping icons huge */
         .feature-icon {
             width: 120px;
             height: 120px;
             margin-bottom: 20px;
             object-fit: contain;
-            image-rendering: pixelated; /* Keeps pixel art sharp */
+            image-rendering: pixelated;
         }
 
         .feature-card h3 {
@@ -198,6 +199,44 @@
             border-radius: 12px;
         }
 
+        /* Editor Screenshot */
+        .editor-preview-img {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 2px solid var(--secondary-color);
+        }
+
+        /* Fixed Import List Formatting */
+        .import-details {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .format-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .format-item {
+            margin-bottom: 15px;
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .format-item strong {
+            color: var(--accent-color);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
         footer {
             background-color: var(--secondary-color);
             text-align: center;
@@ -221,8 +260,8 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#in-game-images">Images</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#editor">WoW Editor</a></li>
-                <li><a href="#import-system">Custom Levels</a></li>
+                <li><a href="#editor">Editor</a></li>
+                <li><a href="#import-system">Import Info</a></li>
             </ul>
         </nav>
     </header>
@@ -233,13 +272,12 @@
                 <img src="Assets/[Cutscenes]/{Title/Title Screen.PNG" alt="World O' Wonders Title Screen">
             </div>
             <div class="hero-content">
-                <h2>WoW! A 2D Platformer where you play as a bunny!</h2>
-                <p>Explore a vast and wondrous world, overcome challenges, and uncover secrets.</p>
-                <a href="#about" class="cta-button">Play Now</a>
+                <h2>Hopping away from certain death... and stayin' alive!</h2>
+                <p>The Black Plague has arrived. Escape the darkness, leap into the unknown, and survive the wonders that await below.</p>
+                <a href="#about" class="cta-button">Start Adventure</a>
             </div>
         </section>
 
-        <!-- Features Grid Section with updated links and names -->
         <section id="features">
             <h2>Features</h2>
             <div class="features-grid">
@@ -274,16 +312,18 @@
         <section id="about">
             <hr style="width: 50%; margin: 50px auto; border-color: var(--secondary-color);">
             <h2>About the Game</h2>
-            <p>World O' Wonders is a passion project built in the Godot Engine. Play as a courageous bunny on a quest to escape the darkness while navigating treacherous zones and enemies.</p>
+            <p>A peaceful life shattered by the Black Plague. After watching his world be engulfed into darkness, and his family frozen into glowing white statues, our hero bunny finds himself at the edge of a cliff with a gloomy red glow below. With the plague right behind him, he has no choice but to jump. Navigate treacherous zones and avoid the infection at all costs.</p>
             <a href="https://github.com/Trayauraus/World_Of_Wonders" class="cta-button" target="_blank">Download Game</a>
         </section>
 
         <section id="editor">
             <hr style="width: 50%; margin: 50px auto; border-color: var(--secondary-color);">
-            <h2>World O' Wonders - Editor</h2>
-            <p>Unleash your creativity with the official World O' Wonders Editor! Build your own custom levels, place enemies, configure environments, and share your creations with the community.</p>
+            <h2>Editor</h2>
+            <p>Unleash your creativity with the official World O' Wonders Editor! Build your own custom levels, place enemies, and configure environments.</p>
             
-            <div style="margin-top: 30px;">
+            <img src="Webpage Assets/Editor - Editing.jpeg" alt="World O' Wonders Editor Screenshot" class="editor-preview-img">
+            
+            <div style="margin-top: 10px;">
                 <a href="https://github.com/Trayauraus/World_Of_Wonders-Editor/releases/" class="cta-button" target="_blank">Download Editor</a>
                 <a href="https://github.com/Trayauraus/World_Of_Wonders-Editor/" class="cta-button" target="_blank" style="background-color: #333; color: white;">GitHub Page</a>
                 <a href="editor_docs.html" class="cta-button" target="_blank" style="background-color: #4CAF50; color: white;">Read Documentation</a>
@@ -292,22 +332,31 @@
 
         <section id="import-system">
             <hr style="width: 50%; margin: 50px auto; border-color: var(--secondary-color);">
-            <h2>Custom Level Support</h2>
-            <p>Take control of your experience! We've added an <strong>Import System</strong> located directly below the Play button in the main menu.</p>
+            <h2>Import Info</h2>
+            <p>Take control of your experience! The <strong>Import System</strong> is located directly below the Play button in the main menu.</p>
             
             <div class="import-details">
-                <h3>Supported Formats:</h3>
-                <ul>
-                    <li><strong>.wowlv</strong> – The official World O' Wonders custom level format (Exported to the game).</li>
-                    <li><strong>.tlst</strong> – Editor tileset saves (The editor utilizes two of these files: one for the main tileset, one for the background).</li>
-                    <li><strong>.dat</strong> – The main level data project file saved by the editor.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 20px;">
-                    <h3 style="text-align: center; margin-top: 30px;">
-                    (Levels <span style="color: red;">MUST</span> be created in the WoW Editor)
-                    </h3>
+                <h3 style="color: var(--accent-color); margin-top: 40px;">SUPPORTED FORMATS</h3>
+                <div class="format-list">
+                    <div class="format-item">
+                        <strong>.wowlv</strong>
+                        <span>The official custom level format exported to the game.</span>
+                    </div>
+                    <div class="format-item">
+                        <strong>.tlst</strong>
+                        <span>Editor tileset saves for main tilesets and backgrounds.</span>
+                    </div>
+                    <div class="format-item">
+                        <strong>.dat</strong>
+                        <span>The main level data project file saved by the editor.</span>
+                    </div>
                 </div>
-                <p style="margin-top: 20px;">Simply import your exported .wowlv files and dive into new worlds instantly.</p>
+
+                <h3 style="text-align: center; margin-top: 30px; font-size: 0.8rem; line-height: 1.5;">
+                    (Levels <span style="color: var(--danger-color);">MUST</span> be created in the WoW Editor)
+                </h3>
+                
+                <p style="margin-top: 30px;">Simply import your exported .wowlv files and dive into new worlds instantly.</p>
             </div>
         </section>
     </main>
