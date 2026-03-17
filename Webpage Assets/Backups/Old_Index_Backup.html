@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World O' Wonders - A 2D Platformer by T-Man</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensuring the new section matches your center-aligned theme */
+        #import-system {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        #import-system ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left; /* Keeps the dots/text aligned while the block is centered */
+        }
+        #import-system h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Assets/[General Art]/[Icons]/GODOT Logo-No_BG.png" alt="Godot Engine Logo">
+                <h1>World O' Wonders</h1>
+            </div>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#in-game-images">In Game Images</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#import-system">Custom Levels</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>WoW! A 2D Platformer where you play as a bunny!</h2>
+                <p>Explore a vast and wondrous world, overcome challenges, and uncover secrets.</p>
+                <a href="#download" class="cta-button">Play Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="Assets/[Cutscenes]/{Title/Title Screen.PNG" alt="World O' Wonders Title Screen">
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <img src="Webpage Assets/Bunny IDLES.gif" alt="Player Sprite">
+                    <h3>Revamped Player</h3>
+                    <p>Enjoy fluid and responsive controls with the revamped player character.</p>
+                </div>
+                <div class="card">
+                    <img src="Webpage Assets/Carrot.gif" alt="Carrot Upgrade">
+                    <h3>Collect & Upgrade</h3>
+                    <p>Gather carrots to unlock new abilities and power-ups.</p>
+                </div>
+                <div class="card">
+                    <img src="Webpage Assets/Boss Eye.gif" alt="Eye-Gler Boss">
+                    <h3>Epic Boss Fights</h3>
+                    <p>Challenge the bosses, each with unique mechanics and attack patterns.</p>
+                </div>
+                <div class="card">
+                    <a href="#in-game-images">
+                        <h3>CLICK ME</h3>
+                        <h3>8 Levels Total</h3>
+                        <p>Explore a variety of new and exciting levels.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="in-game-images">
+            <h2>In Game Images:</h2>
+            <div class="gallery">
+                <img src="Assets/Discord%20Statuses/lv_6.png" alt="Image 1">
+                <img src="Assets/Discord%20Statuses/lv_2.png" alt="Image 2">
+                <img src="Assets/Discord%20Statuses/lv_3.png" alt="Image 3">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>World O' Wonders is a 2D platformer created by Trayauraus / T-Man. It is built with the Godot Engine and features a charming pixel art style, challenging gameplay, and a world full of secrets to discover.</p>
+        </section>
+
+        <section id="download">
+            <h2>Download</h2>
+            <p>The game is available for free on GitHub. Click the button below to download the latest version.</p>
+            <a href="https://github.com/Trayauraus/World_Of_Wonders" class="cta-button" target="_blank">Download from GitHub</a>
+        </section>
+
+        <section id="import-system">
+            <hr style="width: 50%; margin: 50px auto;">
+            <h2>Custom Level Support</h2>
+            <p>Take control of your experience! We've added an <strong>Import System</strong> located directly below the Play button in the main menu.</p>
+            
+            <div class="import-details">
+                <h3>Supported Formats:</h3>
+                <ul>
+                    <li><strong>.wowlv</strong> – The official World O' Wonders custom level format.</li>
+                    <li><strong>.tscn</strong> – Godot scene files built for the game.</li>
+                    <div style="text-align: center; margin-top: 20px;">
+                    <h3 style="text-align: center; margin-top: 30px;">
+                    (Levels <span style="color: red;">MUST</span> be created in WoW Editor)
+                    </h3>
+                    <h2 style="text-align: center; margin-top: 30px;">
+                    (WoW Creator <span style="color: red;">NOT</span> Officially Out Yet)
+                    </h2>
+                    </div>
+                </ul>
+                <p>Simply import your files and dive into new worlds instantly.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Trayauraus / T-Man. Made with <a href="https://godotengine.org/">Godot Engine</a>.</p>
+    </footer>
+</body>
+</html>

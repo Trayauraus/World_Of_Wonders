@@ -4,21 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World O' Wonders - A 2D Platformer by T-Man</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Ensuring the new section matches your center-aligned theme */
-        #import-system {
+        /* Base Theme Settings */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        :root {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --accent-color: #fca311;
+            --secondary-color: #16213e;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- FONT OVERRIDE RULES --- */
+        #hero p, #about p, #about a, #about ul, #about li, #about span,
+        #editor p, #editor a, #editor ul, #editor li, #editor span,
+        #import-system p, #import-system a, #import-system ul, #import-system li, #import-system span,
+        footer p, footer a, footer span {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Press Start 2P', cursive !important;
+            color: var(--accent-color);
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        .logo h1 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 1200px; /* Widened slightly for the grid */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        /* Hero Styling */
+        #hero {
+            padding: 40px 0;
+        }
+
+        .hero-image img {
+            max-width: 1000px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        /* Features Grid Styling */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--secondary-color);
+            padding: 40px 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* Keeping icons huge */
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            object-fit: contain;
+            image-rendering: pixelated; /* Keeps pixel art sharp */
+        }
+
+        .feature-card h3 {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #111;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #ffb84d;
+            transform: scale(1.05);
+        }
+
+        /* Image Gallery Styling */
+        .gallery-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery-container img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--secondary-color);
+        }
+
+        #import-system, #editor {
             text-align: center;
             padding: 50px 20px;
+            background-color: rgba(22, 33, 62, 0.5);
+            border-radius: 12px;
         }
-        #import-system ul {
-            list-style: none;
-            padding: 0;
-            display: inline-block;
-            text-align: left; /* Keeps the dots/text aligned while the block is centered */
+
+        footer {
+            background-color: var(--secondary-color);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
         }
-        #import-system h3 {
-            margin-top: 20px;
+        
+        footer a {
+            color: var(--accent-color);
         }
     </style>
 </head>
@@ -26,105 +214,106 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="Assets/[General Art]/[Icons]/GODOT Logo-No_BG.png" alt="Godot Engine Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg" alt="Godot Engine Logo">
                 <h1>World O' Wonders</h1>
             </div>
             <ul>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#in-game-images">In Game Images</a></li>
+                <li><a href="#in-game-images">Images</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#editor">WoW Editor</a></li>
                 <li><a href="#import-system">Custom Levels</a></li>
-                <li><a href="#download">Download</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <div class="hero-content">
-                <h2>WoW! A 2D Platformer where you play as a bunny!</h2>
-                <p>Explore a vast and wondrous world, overcome challenges, and uncover secrets.</p>
-                <a href="#download" class="cta-button">Play Now</a>
-            </div>
             <div class="hero-image">
                 <img src="Assets/[Cutscenes]/{Title/Title Screen.PNG" alt="World O' Wonders Title Screen">
             </div>
+            <div class="hero-content">
+                <h2>WoW! A 2D Platformer where you play as a bunny!</h2>
+                <p>Explore a vast and wondrous world, overcome challenges, and uncover secrets.</p>
+                <a href="#about" class="cta-button">Play Now</a>
+            </div>
         </section>
 
+        <!-- Features Grid Section with updated links and names -->
         <section id="features">
             <h2>Features</h2>
-            <div class="feature-cards">
-                <div class="card">
-                    <img src="Webpage Assets/Bunny IDLES.gif" alt="Player Sprite">
-                    <h3>Revamped Player</h3>
-                    <p>Enjoy fluid and responsive controls with the revamped player character.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="Webpage Assets/Bunny IDLES.gif" alt="Dynamic Player" class="feature-icon">
+                    <h3>DYNAMIC PLAYER</h3>
                 </div>
-                <div class="card">
-                    <img src="Webpage Assets/Carrot.gif" alt="Carrot Upgrade">
-                    <h3>Collect & Upgrade</h3>
-                    <p>Gather carrots to unlock new abilities and power-ups.</p>
+                <div class="feature-card">
+                    <img src="Webpage Assets/Carrot.gif" alt="Collect & Upgrade" class="feature-icon">
+                    <h3>COLLECT & UPGRADE</h3>
                 </div>
-                <div class="card">
-                    <img src="Webpage Assets/Boss Eye.gif" alt="Eye-Gler Boss">
-                    <h3>Epic Boss Fights</h3>
-                    <p>Challenge the bosses, each with unique mechanics and attack patterns.</p>
+                <div class="feature-card">
+                    <img src="Webpage Assets/Boss Eye.gif" alt="Epic Boss Fights" class="feature-icon">
+                    <h3>EPIC BOSS FIGHTS</h3>
                 </div>
-                <div class="card">
-                    <a href="#in-game-images">
-                        <h3>CLICK ME</h3>
-                        <h3>8 Levels Total</h3>
-                        <p>Explore a variety of new and exciting levels.</p>
-                    </a>
+                <div class="feature-card">
+                    <img src="Assets/[General Art]/Backgrounds/Level Select Background.png" alt="8 Levels Total" class="feature-icon">
+                    <h3>8 LEVELS TOTAL</h3>
                 </div>
             </div>
         </section>
 
         <section id="in-game-images">
-            <h2>In Game Images:</h2>
-            <div class="gallery">
-                <img src="Assets/Discord%20Statuses/lv_6.png" alt="Image 1">
-                <img src="Assets/Discord%20Statuses/lv_2.png" alt="Image 2">
-                <img src="Assets/Discord%20Statuses/lv_3.png" alt="Image 3">
+            <h2>In Game Images</h2>
+            <div class="gallery-container">
+                <img src="Assets/Discord%20Statuses/lv_6.png" alt="World O' Wonders Level 6">
+                <img src="Assets/Discord%20Statuses/lv_2.png" alt="World O' Wonders Level 2">
+                <img src="Assets/Discord%20Statuses/lv_3.png" alt="World O' Wonders Level 3">
             </div>
         </section>
 
         <section id="about">
-            <h2>About</h2>
-            <p>World O' Wonders is a 2D platformer created by Trayauraus / T-Man. It is built with the Godot Engine and features a charming pixel art style, challenging gameplay, and a world full of secrets to discover.</p>
+            <hr style="width: 50%; margin: 50px auto; border-color: var(--secondary-color);">
+            <h2>About the Game</h2>
+            <p>World O' Wonders is a passion project built in the Godot Engine. Play as a courageous bunny on a quest to escape the darkness while navigating treacherous zones and enemies.</p>
+            <a href="https://github.com/Trayauraus/World_Of_Wonders" class="cta-button" target="_blank">Download Game</a>
         </section>
 
-        <section id="download">
-            <h2>Download</h2>
-            <p>The game is available for free on GitHub. Click the button below to download the latest version.</p>
-            <a href="https://github.com/Trayauraus/World_Of_Wonders" class="cta-button" target="_blank">Download from GitHub</a>
+        <section id="editor">
+            <hr style="width: 50%; margin: 50px auto; border-color: var(--secondary-color);">
+            <h2>World O' Wonders - Editor</h2>
+            <p>Unleash your creativity with the official World O' Wonders Editor! Build your own custom levels, place enemies, configure environments, and share your creations with the community.</p>
+            
+            <div style="margin-top: 30px;">
+                <a href="https://github.com/Trayauraus/World_Of_Wonders-Editor/releases/" class="cta-button" target="_blank">Download Editor</a>
+                <a href="https://github.com/Trayauraus/World_Of_Wonders-Editor/" class="cta-button" target="_blank" style="background-color: #333; color: white;">GitHub Page</a>
+                <a href="editor_docs.html" class="cta-button" target="_blank" style="background-color: #4CAF50; color: white;">Read Documentation</a>
+            </div>
         </section>
 
         <section id="import-system">
-            <hr style="width: 50%; margin: 50px auto;">
+            <hr style="width: 50%; margin: 50px auto; border-color: var(--secondary-color);">
             <h2>Custom Level Support</h2>
             <p>Take control of your experience! We've added an <strong>Import System</strong> located directly below the Play button in the main menu.</p>
             
             <div class="import-details">
                 <h3>Supported Formats:</h3>
                 <ul>
-                    <li><strong>.wowlv</strong> – The official World O' Wonders custom level format.</li>
-                    <li><strong>.tscn</strong> – Godot scene files built for the game.</li>
-                    <div style="text-align: center; margin-top: 20px;">
-                    <h3 style="text-align: center; margin-top: 30px;">
-                    (Levels <span style="color: red;">MUST</span> be created in WoW Editor)
-                    </h3>
-                    <h2 style="text-align: center; margin-top: 30px;">
-                    (WoW Creator <span style="color: red;">NOT</span> Officially Out Yet)
-                    </h2>
-                    </div>
+                    <li><strong>.wowlv</strong> – The official World O' Wonders custom level format (Exported to the game).</li>
+                    <li><strong>.tlst</strong> – Editor tileset saves (The editor utilizes two of these files: one for the main tileset, one for the background).</li>
+                    <li><strong>.dat</strong> – The main level data project file saved by the editor.</li>
                 </ul>
-                <p>Simply import your files and dive into new worlds instantly.</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <h3 style="text-align: center; margin-top: 30px;">
+                    (Levels <span style="color: red;">MUST</span> be created in the WoW Editor)
+                    </h3>
+                </div>
+                <p style="margin-top: 20px;">Simply import your exported .wowlv files and dive into new worlds instantly.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Trayauraus / T-Man. Made with <a href="https://godotengine.org/">Godot Engine</a>.</p>
+        <p>&copy; 2026 Trayauraus / T-Man. Made with <a href="https://godotengine.org/" target="_blank">Godot Engine</a>.</p>
     </footer>
 </body>
 </html>

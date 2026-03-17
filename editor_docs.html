@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World O' Wonders - Editor Documentation</title>
+    <style>
+        /* DOCUMENTATION STYLING
+           Intentionally keeping this clean, standard, and completely free of custom display fonts.
+        */
+        :root {
+            --bg-color: #f8f9fa;
+            --sidebar-bg: #212529;
+            --text-main: #343a40;
+            --accent-blue: #0d6efd;
+            --border-color: #dee2e6;
+            --code-bg: #e9ecef;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            color: white;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        aside h2 {
+            padding: 0 20px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #495057;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        aside li a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        aside li a:hover {
+            background-color: #343a40;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 280px;
+            padding: 40px 60px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #212529;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #212529;
+        }
+
+        h3 {
+            color: #495057;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            color: #d63384;
+        }
+
+        .highlight-box {
+            background-color: #e2e3e5;
+            border-left: 4px solid #6c757d;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box.warning {
+            background-color: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            aside {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            main {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <h2>WoW Editor Docs</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#file-system">File System & Formats</a></li>
+            <li><a href="#editor-tools">Editor Tools</a></li>
+            <li><a href="#environments">Environments</a></li>
+            <li><a href="#architecture">Under the Hood (Code)</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <h1>World O' Wonders Editor - Documentation</h1>
+        
+        <p>Welcome to the official documentation for the <strong>World O' Wonders (WoW) Editor</strong>. This page breaks down the architecture, file systems, and toolset provided in the editor to help you create custom levels.</p>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>The WoW Editor is built natively in Godot Engine and is designed to allow players to construct intricate platforming stages, place interactive items (like Carrots, Coins, and Enemies), and export them in a highly compressed binary format that the main game can parse.</p>
+        </section>
+
+        <section id="file-system">
+            <h2>File System & Formats</h2>
+            <p>The editor creates localized directories on your computer to manage configurations and your raw project data.</p>
+            
+            <h3>Directories</h3>
+            <ul>
+                <li><strong>Project Data:</strong> <code>user://Project Data</code> - This is where your active and saved level projects live before being exported.</li>
+                <li><strong>Editor Settings:</strong> <code>user://Editor Data/Configs/</code> - Stores the <code>config.ini</code> file, which remembers settings like your 10 most recently opened projects.</li>
+            </ul>
+
+            <h3>File Types</h3>
+            <div class="highlight-box">
+                <p><strong>Raw Project Files (Editor Only):</strong></p>
+                <ul>
+                    <li><code>.dat</code>: The main level project file holding logic, spawn data, node arrays, and configurations.</li>
+                    <li><code>.tlst</code>: The custom tileset saving format. A project utilizes <strong>two</strong> of these (<code>tileset_main.tlst</code> and <code>tileset_bg.tlst</code>).</li>
+                </ul>
+                <p><strong>Exported Levels (Game Ready):</strong></p>
+                <ul>
+                    <li><code>.wowlv</code>: The official World O' Wonders custom level format. This is what you generate via the Export function and load into the main game.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="editor-tools">
+            <hr>
+            <h2>Editor Tools</h2>
+            <p>The editor operates via a state-machine tool selector. Depending on the active tool, interactions with the SubViewport canvas will change.</p>
+            
+            <ul>
+                <li><strong>Select Tool (0):</strong> Default interaction.</li>
+                <li><strong>Player Move Tool (1):</strong> Sets the <code>player_spawn</code> Vector2 position in the level data.</li>
+                <li><strong>Tilemap Placement Tool (2):</strong> Allows drawing and erasing on either the Main Layer or the Background layer.</li>
+                <li><strong>Carrot Placement Tool (3):</strong> Places carrot collectables (saved to <code>carrot_locations</code> array).</li>
+                <li><strong>Collision Placement Tool (4):</strong> Defines deathzones and winzones.</li>
+                <li><strong>Coin Placement Tool (5):</strong> Adds coin collectables to the level.</li>
+                <li><strong>Enemy Placement Tool (6):</strong> Instantiates enemies at designated positions.</li>
+            </ul>
+        </section>
+
+        <section id="environments">
+            <hr>
+            <h2>Environments</h2>
+            <p>The editor supports injecting custom WorldEnvironments directly into the level. This alters lighting, backgrounds, and ambiance. The available options built into the resource loader are:</p>
+            <ul>
+                <li><code>0</code> - None / Default</li>
+                <li><code>1</code> - Lava</li>
+                <li><code>2</code> - Lava Dark</li>
+                <li><code>3</code> - Desert</li>
+                <li><code>4</code> - Ice</li>
+                <li><code>5</code> - Grass</li>
+            </ul>
+        </section>
+
+        <section id="architecture">
+            <hr>
+            <h2>Under the Hood (Code Architecture)</h2>
+            <p>For contributors or advanced users, here is a brief overview of how the Editor's backend manages data, based on the internal GDScript files.</p>
+
+            <h3>Global Systems (Autoloads)</h3>
+            <ul>
+                <li><strong>GlobalEditor (<code>Global - Editor.gd</code>):</strong> Handles configuration loading/saving (<code>config.ini</code>), recent project arrays, and tracks cross-scene data like <code>loading_scene_next_scene</code>.</li>
+                <li><strong>GlobalProject (<code>Global - Projects.gd</code>):</strong> The heavy lifter for project arrays. It stores arrays of custom types (e.g., <code>CarrotUpgradeData</code>, <code>WinzoneData</code>) and handles the intricate compression formulas.</li>
+            </ul>
+
+            <h3>Tilemap Compression Protocol</h3>
+            <p>To keep the `.wowlv` export files small, Godot object arrays are mapped into a <code>PackedInt32Array</code>. Every single tile takes up exactly <strong>6 integers</strong>:</p>
+            <ol>
+                <li><code>local_x</code>: X coordinate in the grid.</li>
+                <li><code>local_y</code>: Y coordinate in the grid.</li>
+                <li><code>source_id</code>: The ID of the texture atlas.</li>
+                <li><code>atlas_x</code>: X coordinate on the sprite sheet.</li>
+                <li><code>atlas_y</code>: Y coordinate on the sprite sheet.</li>
+                <li><code>alternative_tile</code>: Flipping/Rotation data.</li>
+            </ol>
+            
+            <div class="highlight-box warning">
+                <strong>Loading Sequence:</strong> The transition from the boot menu to the main editor is buffered by <code>Editor - Loading Scene.gd</code>. It purposely freezes the thread to securely load the <code>.dat</code> and <code>.tlst</code> files into the Global memory before allowing the viewport to initialize.
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
