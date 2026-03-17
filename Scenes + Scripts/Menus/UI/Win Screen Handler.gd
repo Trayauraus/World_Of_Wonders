@@ -126,9 +126,9 @@ func _find_and_sort_levels():
 			var level_num = prefix.to_int()
 			
 			# Skip the tutorial (0) and credits
-			if level_num == 0 or level_num == 9: 
+			if level_num == 0: #or level_num == 9: 
 				continue
 				
 			level_paths[level_num] = actual_path
-			print("Win Screen found Level %d: %s" % [level_num, actual_path])
+			print("Win Screen found Level %d: %s" % [level_num   , actual_path])
 #endregion

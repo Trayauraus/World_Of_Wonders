@@ -64,6 +64,7 @@ func _process(_delta):
 			move_on()
 	
 func _input(event):
+	if has_won:
 		if event is InputEventScreenTouch && event.is_pressed():
 			move_on()
 		
