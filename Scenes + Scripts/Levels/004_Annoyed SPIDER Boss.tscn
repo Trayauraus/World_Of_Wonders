@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://b2jw6bsqmiteh"]
 
 [ext_resource type="PackedScene" uid="uid://cnph2c8nxvkft" path="res://Scenes + Scripts/Levels/UNIVERSAL Level Template.tscn" id="1_216hm"]
-[ext_resource type="Script" uid="uid://dn0floglc7asj" path="res://Standalone Scripts/Camera Zoom - Body Handler.gd" id="1_swyo2"]
 [ext_resource type="Script" uid="uid://c5evdrg4u2uch" path="res://Scenes + Scripts/General/Rope/Rope2D.gd" id="3_iuucr"]
 [ext_resource type="Resource" uid="uid://bfmoebiwb03kg" path="res://Resources/Environmental/Lava DARKENED.tres" id="3_kkuif"]
 [ext_resource type="AudioStream" uid="uid://cld4hx100g6f8" path="res://Audio/Music/Levels/Lv 4 Soundtrack - Pixel - Robloxeur.mp3" id="4_2bcn0"]
@@ -31,7 +30,6 @@ size = Vector2(897, 230)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g5lia"]
 
 [node name="004_Annoyed SPIDER Boss" type="Node2D" unique_id=489432730]
-script = ExtResource("1_swyo2")
 
 [node name="Universal Scene" parent="." unique_id=498263599 instance=ExtResource("1_216hm")]
 default_environment = ExtResource("3_kkuif")

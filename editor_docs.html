@@ -160,7 +160,7 @@
 
         <section id="introduction">
             <h2>Introduction</h2>
-            <p>The WoW Editor is built natively in Godot Engine and is designed to allow players to construct intricate platforming stages, place interactive items (like Carrots, Coins, and Enemies), and export them in a highly compressed binary format that the main game can parse.</p>
+            <p>The WoW Editor is built natively in Godot Engine (4.x) and is designed to allow players to construct intricate platforming stages, place interactive items (like Carrots, Coins, and Enemies), and export them in a highly compressed binary format that the main game can parse.</p>
         </section>
 
         <section id="file-system">
@@ -178,11 +178,11 @@
                 <p><strong>Raw Project Files (Editor Only):</strong></p>
                 <ul>
                     <li><code>.dat</code>: The main level project file holding logic, spawn data, node arrays, and configurations.</li>
-                    <li><code>.tlst</code>: The custom tileset saving format. A project utilizes <strong>two</strong> of these (<code>tileset_main.tlst</code> and <code>tileset_bg.tlst</code>).</li>
+                    <li><code>.tlst</code>: The custom tileset saving format. A project utilizes <strong>two</strong> of these (<code>tileset_main.tlst</code> and <code>tileset_bg.tlst</code>). While most of it <i>is</i> in plain text, some is in binary.</li>
                 </ul>
                 <p><strong>Exported Levels (Game Ready):</strong></p>
                 <ul>
-                    <li><code>.wowlv</code>: The official World O' Wonders custom level format. This is what you generate via the Export function and load into the main game.</li>
+                    <li><code>.wowlv</code>: The official World O' Wonders custom level format. This is what you generate via the Export function and load into the main game. It is HIGHLY compressed and therefore, HIGHLY UNREADABLE.</li>
                 </ul>
             </div>
         </section>
@@ -193,7 +193,7 @@
             <p>The editor operates via a state-machine tool selector. Depending on the active tool, interactions with the SubViewport canvas will change.</p>
             
             <ul>
-                <li><strong>Select Tool (0):</strong> Default interaction.</li>
+                <li><strong>Select Tool (0):</strong> Select specific placed items to edit their properties via the side panel.</li>
                 <li><strong>Player Move Tool (1):</strong> Sets the <code>player_spawn</code> Vector2 position in the level data.</li>
                 <li><strong>Tilemap Placement Tool (2):</strong> Allows drawing and erasing on either the Main Layer or the Background layer.</li>
                 <li><strong>Carrot Placement Tool (3):</strong> Places carrot collectables (saved to <code>carrot_locations</code> array).</li>
@@ -206,7 +206,7 @@
         <section id="environments">
             <hr>
             <h2>Environments</h2>
-            <p>The editor supports injecting custom WorldEnvironments directly into the level. This alters lighting, backgrounds, and ambiance. The available options built into the resource loader are:</p>
+            <p>The editor supports injecting custom WorldEnvironments directly into the level. This alters lighting, backgrounds, and ambiance. This data is saved as an integer in which World of Wonders & this editor can refer to the correct environment using. The available options built into the resource loader are:</p>
             <ul>
                 <li><code>0</code> - None / Default</li>
                 <li><code>1</code> - Lava</li>
@@ -219,13 +219,13 @@
 
         <section id="architecture">
             <hr>
-            <h2>Under the Hood (Code Architecture)</h2>
+            <h2>Code Architecture</h2>
             <p>For contributors or advanced users, here is a brief overview of how the Editor's backend manages data, based on the internal GDScript files.</p>
 
             <h3>Global Systems (Autoloads)</h3>
             <ul>
                 <li><strong>GlobalEditor (<code>Global - Editor.gd</code>):</strong> Handles configuration loading/saving (<code>config.ini</code>), recent project arrays, and tracks cross-scene data like <code>loading_scene_next_scene</code>.</li>
-                <li><strong>GlobalProject (<code>Global - Projects.gd</code>):</strong> The heavy lifter for project arrays. It stores arrays of custom types (e.g., <code>CarrotUpgradeData</code>, <code>WinzoneData</code>) and handles the intricate compression formulas.</li>
+                <li><strong>GlobalProject (<code>Global - Projects.gd</code>):</strong> Handles most project variables, along with saving & loading them. It stores arrays of custom types (e.g., <code>CarrotUpgradeData</code>, <code>WinzoneData</code>) and handles the intricate compression formulas.</li>
             </ul>
 
             <h3>Tilemap Compression Protocol</h3>
@@ -240,7 +240,7 @@
             </ol>
             
             <div class="highlight-box warning">
-                <strong>Loading Sequence:</strong> The transition from the boot menu to the main editor is buffered by <code>Editor - Loading Scene.gd</code>. It purposely freezes the thread to securely load the <code>.dat</code> and <code>.tlst</code> files into the Global memory before allowing the viewport to initialize.
+                <strong>Loading Sequence:</strong> The transition from the boot menu to the main editor is buffered by <code>Editor - Loading Scene.gd</code>. It purposely freezes the thread to securely load the <code>.dat</code> and <code>.tlst</code> files into the Global memory before allowing the viewport to initialize. Be careful when editing the sequence.
             </div>
         </section>
 

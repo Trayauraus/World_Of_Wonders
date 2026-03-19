@@ -1,5 +1,6 @@
 # Universal Level Script.gd
 # A universal management script to be attached to the root node of any level scene.
+@icon("res://Assets/[General Art]/[Icons]/Exploding Rabbit Icon.png")
 class_name UniversalLevel
 extends Node2D
 

@@ -72,6 +72,7 @@ folder_colors={
 "res://Scenes + Scripts/Menus/UI/": "yellow",
 "res://Scenes + Scripts/TILEMAPS/": "green",
 "res://Standalone Scripts/": "purple",
+"res://Standalone Scripts/Debug/": "gray",
 "res://Standalone Scripts/Globals/": "yellow",
 "res://addons/": "pink"
 }

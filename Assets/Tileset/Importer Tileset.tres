@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7ks5kbdyp7bg" path="res://Assets/[General Art]/{Pixel}/Tiles/World Tiles Boss BG.png" id="3_w351l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s276o"]
+resource_name = "World Tiles"
 texture = ExtResource("1_357bt")
 3:8/0 = 0
 3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -345,6 +346,7 @@ texture = ExtResource("1_357bt")
 9:31/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jh2va"]
+resource_name = "Secondary Tiles"
 texture = ExtResource("2_lp2md")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -608,6 +610,7 @@ texture = ExtResource("2_lp2md")
 3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11, -14, 11, -14, 12, 16, -12, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6my6d"]
+resource_name = "Secondary BG Tiles"
 texture = ExtResource("3_w351l")
 0:0/0 = 0
 1:0/0 = 0
@@ -735,6 +738,6 @@ texture = ExtResource("3_w351l")
 
 [resource]
 physics_layer_0/collision_layer = 1
-sources/4 = SubResource("TileSetAtlasSource_s276o")
-sources/5 = SubResource("TileSetAtlasSource_jh2va")
-sources/6 = SubResource("TileSetAtlasSource_6my6d")
+sources/3 = SubResource("TileSetAtlasSource_6my6d")
+sources/2 = SubResource("TileSetAtlasSource_jh2va")
+sources/1 = SubResource("TileSetAtlasSource_s276o")

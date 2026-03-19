@@ -156,6 +156,8 @@ grow_vertical = 0
 
 [node name="Game" type="Node2D" parent="." unique_id=425640234]
 
+[node name="Directional Light" type="Node" parent="Game" unique_id=977201196]
+
 [node name="UNIVERSAL LV Nodes" type="Node" parent="Game" unique_id=265687480]
 
 [node name="Ash Follow Cam" type="CanvasLayer" parent="Game/UNIVERSAL LV Nodes" unique_id=1290585078]

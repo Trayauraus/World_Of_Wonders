@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b14wfs72nc4im" path="res://Assets/[General Art]/{Pixel}/Tiles/World Tiles.png" id="2_2ro1p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srpsu"]
+resource_name = "Template"
 texture = ExtResource("1_ihyu1")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -11,6 +12,7 @@ texture = ExtResource("1_ihyu1")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xwwa"]
+resource_name = "World Tiles"
 texture = ExtResource("2_2ro1p")
 3:0/0 = 0
 4:0/0 = 0
