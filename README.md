@@ -8,10 +8,12 @@
 
 [**World Of Wonder's Website**](https://trayauraus.github.io/World_Of_Wonders/)
 
+#### Note: As of right now the latest 'release' of WoW does **NOT** support the editor yet. If you would like to use the editor please choose one of the later beta versions that says it supports it.
 [**Game Editor Website**](https://github.com/Trayauraus/World_Of_Wonders-Editor)
 
 [**Game Editor Documentation**](https://trayauraus.github.io/World_Of_Wonders/editor_docs.html)
 
+---
 
 ## 📥 Downloads
 The playable versions of **World of Wonders** is found here: **[Releases](https://github.com/Trayauraus/World_Of_Wonders/releases)**. **Only stable builds** are publicly available.
@@ -37,7 +39,7 @@ It is meant to be a passion project I can work on in my free time.
 ## Technical Specifications ![Idle4 - Carrot Eat](https://github.com/user-attachments/assets/423d2972-3630-40d9-888d-35fad9caac21)
 
 * **Current Version:** [Check Here](https://github.com/Trayauraus/World_Of_Wonders/releases/)
-* **Base Engine:** [Godot 4.6.1](https://godotengine.org/download/archive/4.6.1-stable/)
+* **Base Engine:** [Godot](https://godotengine.org)
 * **Project Start Date:** February 13, 2025.
 
 ## 🗺️ Development Roadmap ![Idle3 - Turn](https://github.com/user-attachments/assets/59eec873-71b1-4abe-be1f-28000e15522e)
