@@ -3,11 +3,15 @@
 
 **World of Wonders (WoW)** is a 2D indie platforming adventure made in the **Godot Game Engine**. In this adventure, you play as a bunny hopping away from certain death and staying alive, while ensuring you avoid the "black plague", all while climbing a Volcano.
 
-## Website ![Carrot](https://github.com/user-attachments/assets/3b1b03d3-d9de-4b17-8b4e-30d33d7009b5)
+## Website(s) ![Carrot](https://github.com/user-attachments/assets/3b1b03d3-d9de-4b17-8b4e-30d33d7009b5)
+
 
 [**World Of Wonder's Website**](https://trayauraus.github.io/World_Of_Wonders/)
+
 [**Game Editor Website**](https://github.com/Trayauraus/World_Of_Wonders-Editor)
+
 [**Game Editor Documentation**](https://trayauraus.github.io/World_Of_Wonders/editor_docs.html)
+
 
 ## 📥 Downloads
 The playable versions of **World of Wonders** is found here: **[Releases](https://github.com/Trayauraus/World_Of_Wonders/releases)**. **Only stable builds** are publicly available.
