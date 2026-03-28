@@ -198,7 +198,7 @@ layout_mode = 2
 theme = ExtResource("5_olh2u")
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 20
-text = "-"
+text = "Custom Levels"
 flat = true
 
 [node name="Stats" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=1951695527]

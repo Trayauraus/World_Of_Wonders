@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ulm6wn8c6hjx" path="res://Scenes + Scripts/TILEMAPS/Default Tilemap.tscn" id="8_ky27y"]
 [ext_resource type="PackedScene" uid="uid://i13psxcoqy7a" path="res://Scenes + Scripts/General/Collectables/Coin.tscn" id="44_l28oa"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnu2r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f136"]
 resource_local_to_scene = true
 shader = ExtResource("2_kpg0f")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -61,7 +61,7 @@ camera_zoom_curve = null
 limit_bottom = 10000000
 
 [node name="AnimatedSprite" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="4" unique_id=1102127678]
-material = SubResource("ShaderMaterial_hnu2r")
+material = SubResource("ShaderMaterial_5f136")
 frame = 5
 frame_progress = 0.54101384
 

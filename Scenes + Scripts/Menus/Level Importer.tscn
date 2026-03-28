@@ -75,16 +75,25 @@ size_flags_vertical = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer" unique_id=1259413952]
 layout_mode = 2
 
-[node name="Recent_Label" type="Label" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=914341508]
+[node name="VBoxContainer" type="VBoxContainer" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=663749857]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Recent_Label" type="Label" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=914341508]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2829473, 0.55844134, 0.28294972, 1)
 theme_override_fonts/font = ExtResource("2_kdsp7")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 68
 text = "Recent LEvels"
+
+[node name="Label" type="Label" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=209928862]
+layout_mode = 2
+text = "Note: Pause menu does NOT WORK here. Pressing pause results in returning to title screen."
 
 [node name="VSeparator" type="VSeparator" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1872744941]
 layout_mode = 2
-theme_override_constants/separation = 182
+theme_override_constants/separation = 3
 
 [node name="RefreshButton" type="Button" parent="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=112830976]
 layout_mode = 2
@@ -148,9 +157,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -37.0
+offset_top = -30.0
 offset_right = -1.0
-offset_bottom = -14.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -313,5 +322,6 @@ visible = false
 
 [node name="Game UI" parent="Game/Current UI" unique_id=852240259 instance=ExtResource("11_s1k06")]
 
+[connection signal="pressed" from="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer/RefreshButton" to="." method="Refresh_Called"]
 [connection signal="pressed" from="Level Importer/HSplitContainer/PanelContainer/VBoxContainer/Back Button" to="." method="Go_Back_Called"]
 [connection signal="pressed" from="Level Importer/HSplitContainer/PanelContainer/VBoxContainer/ImportButton" to="." method="Import_Called"]

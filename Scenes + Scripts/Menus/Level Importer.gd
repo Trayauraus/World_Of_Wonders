@@ -1,3 +1,4 @@
+## Level Importer.gd (Standalone Version for Game side)
 extends Node
 
 # --- Configuration ---
@@ -16,8 +17,6 @@ extends Node
 @export var main_parallax: ParallaxBackground
 @export var cave_parallax: ParallaxBackground
 @export var ui: CanvasLayer
-
-
 
 @onready var bg_normal_color_rect: CanvasModulate = $"Game/UNIVERSAL LV Nodes/BG/Background/Parallax Layer/Colored BG"
 @onready var bg_cave_color_rect: CanvasModulate = $"Game/UNIVERSAL LV Nodes/BG/Background Cave/Colored BG"
@@ -46,6 +45,7 @@ const RECENT_PROJECTS_PATH = "user://recent_projects.json"
 var recent_projects: Array = []
 
 func _ready() -> void:
+	if $"Level Importer/WarningLabel": $"Level Importer/WarningLabel".hide()
 	if game_node: game_node.hide()
 	if particle_canvas: particle_canvas.hide()
 	if main_parallax: main_parallax.hide()
@@ -64,6 +64,54 @@ func _input(event: InputEvent) -> void:
 
 func Go_Back_Called():
 	get_tree().change_scene_to_file("res://Scenes + Scripts/Menus/Title n Boot Screen/Title Screen.tscn")
+
+func Refresh_Called():
+	var warning_label = $"Level Importer/WarningLabel"
+	var valid_projects = []
+	var removed_count = 0
+	
+	for project in recent_projects:
+		# 1. Check if file exists
+		if not FileAccess.file_exists(project.path):
+			removed_count += 1
+			continue
+			
+		# 2. Check for compatibility (Peek into the file)
+		var file = FileAccess.open_compressed(project.path, FileAccess.READ, FileAccess.COMPRESSION_ZSTD)
+		if file:
+			var data = file.get_var()
+			file.close()
+			if data is Dictionary:
+				# Check if 'custom_environment' is the new Int type, not the old Array type
+				if typeof(data.get("custom_environment")) == TYPE_INT:
+					valid_projects.append(project)
+					continue
+		
+		# If it fails existence or type check, we reach here
+		removed_count += 1
+
+	recent_projects = valid_projects
+	save_recent_projects_list()
+	refresh_level_ui()
+
+	if removed_count > 0:
+		warning_label.text = "Refresh Complete: Removed " + str(removed_count) + " missing or incompatible levels."
+		warning_label.modulate = Color.YELLOW
+	else:
+		warning_label.text = "All levels are compatible and reachable!"
+		warning_label.modulate = Color.GREEN
+	
+	_show_warning_label(warning_label)
+
+# Helper function to handle the label visibility/animation
+func _show_warning_label(label: Label):
+	label.show()
+	label.modulate.a = 1.0 # Ensure it's opaque
+	
+	# Create a simple fade out after 3 seconds
+	var tween = create_tween()
+	tween.tween_property(label, "modulate:a", 0.0, 1.5).set_delay(3.0)
+	tween.finished.connect(label.hide)
 
 # --- 1. THE IMPORT PROCESS ---
 
@@ -196,18 +244,41 @@ func load_level_data(file_path: String):
 		carrot_locations = data.get("carrot_locations", [])
 		winzone_location = data.get("winzone_location", [])
 		deathzone_locations = data.get("deathzone_locations", [])
-		custom_environment = data.get("custom_environment", 0)
+		var env_value = data.get("custom_environment")
+		if typeof(env_value) != TYPE_INT:
+			var warning_label = $"Level Importer/WarningLabel"
+			warning_label.text = "Error: This level uses an outdated format and loaded the default environment."
+			warning_label.modulate = Color.RED
+			_show_warning_label(warning_label)
+			env_value = 0
+
+		custom_environment = env_value
 		custom_environment_call_change_zone = data.get("custom_environment_call_change_zone", [])
 		
 		# Apply Tilemaps
 		if main_tilemap_layer: main_tilemap_layer.clear()
 		if bg_tilemap_layer: bg_tilemap_layer.clear()
 
+		# --- LOAD TILEMAPS NATIVELY ---
+		# We extract the PackedByteArray and feed it directly to Godot's C++ engine.
+		# This bypasses all GDScript loops and is significantly faster.
 		if data.has("tilemap_array_main_packed"):
-			_unpack_and_apply(main_tilemap_layer, data["tilemap_array_main_packed"])
+			var raw_main = data.get("tilemap_array_main_packed")
 			
+			# Check if this is the modern PackedByteArray format
+			if typeof(raw_main) == TYPE_PACKED_BYTE_ARRAY:
+				if not raw_main.is_empty() and main_tilemap_layer:
+					main_tilemap_layer.set_tile_map_data_from_array(raw_main)
+			else:
+				# It's likely a PackedInt32Array (Old Version). Skip and Warn.
+				_handle_incompatible_level("Tilemap format is outdated (PackedInt32Array).")
+				return 
+
 		if data.has("tilemap_array_bg_packed"):
-			_unpack_and_apply(bg_tilemap_layer, data["tilemap_array_bg_packed"])
+			var raw_bg = data.get("tilemap_array_bg_packed")
+			if typeof(raw_bg) == TYPE_PACKED_BYTE_ARRAY:
+				if not raw_bg.is_empty() and bg_tilemap_layer:
+					bg_tilemap_layer.set_tile_map_data_from_array(raw_bg)
 		
 		Get_Environment()
 		await get_tree().process_frame
@@ -220,16 +291,12 @@ func load_level_data(file_path: String):
 		if ui: ui.show()
 		print("Loaded Level: ", level_name, " (Spawn: ", player_spawn, ")")
 
-func _unpack_and_apply(layer: TileMapLayer, packed: PackedInt32Array):
-	if not layer: return
-	var i = 0
-	while i < packed.size():
-		var coords = Vector2i(packed[i], packed[i+1])
-		var source_id = packed[i+2]
-		var atlas_coords = Vector2i(packed[i+3], packed[i+4])
-		var alt_tile = packed[i+5]
-		layer.set_cell(coords, source_id, atlas_coords, alt_tile)
-		i += 6
+func _handle_incompatible_level(reason: String):
+	var warning_label = $"Level Importer/WarningLabel"
+	warning_label.text = "Error: " + reason
+	warning_label.modulate = Color.RED
+	_show_warning_label(warning_label)
+	if game_node: game_node.hide() # Hide the game view since load failed
 
 func Place_Player(spawn_coords: Vector2 = player_spawn):
 	var player_scene = load("res://Scenes + Scripts/General/Player/Player_Scene.tscn")
@@ -241,7 +308,6 @@ func Place_Player(spawn_coords: Vector2 = player_spawn):
 	
 	var camera: Camera2D = player_instance.get_node("Camera2D")
 	camera.limit_enabled = false
-
 
 func Get_Environment():
 	# Define the paths based on the order in your image
@@ -298,11 +364,9 @@ func _apply_environment(data: LevelEnvironmentData, instant: bool = false) -> vo
 
 	# Tween Colors
 	if instant:
-		#print_rich("[color=yellow]ENV: Applying Colors INSTANTLY[/color]")
 		if bg_normal_color_rect: bg_normal_color_rect.color = bg_color
 		if bg_cave_color_rect: bg_cave_color_rect.color = bg_color
 	else:
-		#print_rich("[color=yellow]ENV: Applying Colors via TWEEN[/color]")
 		var tween = create_tween()
 		tween.set_parallel(true)
 		if bg_normal_color_rect:
@@ -330,7 +394,7 @@ func _apply_environment(data: LevelEnvironmentData, instant: bool = false) -> vo
 	var player_light = spawned_player.get_node("Player Light")
 	# Update Player Light Visibility
 	if player_light:
-		if is_cave: #force_player_light_on or is_cave:
+		if is_cave: 
 			player_light.show()
 		else:
 			player_light.hide()

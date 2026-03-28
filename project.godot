@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="World O' Wonders"
 config/description="In this adventure, you play as a bunny! Hopping away from certain death.. and stayin alive! Ensure you avoid the black plague though.."
-config/version="6.1.0"
+config/version="6.2.0"
 config/tags=PackedStringArray("bunny", "platformer")
 run/main_scene="uid://djv1l874flw6e"
 config/features=PackedStringArray("4.6", "Forward Plus")
