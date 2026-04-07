@@ -603,10 +603,12 @@ func _on_demo_pressed() -> void:
 
 
 func _on_multiplayer_pressed() -> void:
-	DiscordStatusHandler.update_details_and_state("In Menu", "On Level Importer")
+	if OS.has_feature("pc"):
+		DiscordStatusHandler.update_details_and_state("In Menu", "On Level Importer")
 	get_tree().change_scene_to_file("res://Multiplayer/Multiplayer.tscn")
 
 
 func _on_level_importer_pressed() -> void:
-	DiscordStatusHandler.update_details_and_state("In Menu", "On Level Importer")
+	if OS.has_feature("pc"):
+		DiscordStatusHandler.update_details_and_state("In Menu", "On Level Importer")
 	get_tree().change_scene_to_file("res://Scenes + Scripts/Menus/Level Importer.tscn")

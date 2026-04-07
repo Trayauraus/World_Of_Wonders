@@ -5,16 +5,27 @@
 [ext_resource type="Environment" uid="uid://bph5eeiayrexk" path="res://Environments/Title Environment.tres" id="2_7bsqs"]
 [ext_resource type="FontFile" uid="uid://bhjthjdo8j2yw" path="res://Assets/Fonts/Pixel Game.otf" id="2_kdsp7"]
 [ext_resource type="TileSet" uid="uid://cac3gnbppphm" path="res://Assets/Tileset/Importer Tileset.tres" id="2_mhtg6"]
+[ext_resource type="PackedScene" uid="uid://cnbmtsnutm8me" path="res://Scenes + Scripts/General/Collectables/Carrot Upgrade.tscn" id="3_4ce07"]
+[ext_resource type="PackedScene" uid="uid://i13psxcoqy7a" path="res://Scenes + Scripts/General/Collectables/Coin.tscn" id="4_0qt1e"]
+[ext_resource type="PackedScene" uid="uid://chst4jgbqvi6" path="res://Scenes + Scripts/General/Enemies/ICE SLIME/Enemy - ICE SLIME.tscn" id="5_fum2n"]
 [ext_resource type="Material" uid="uid://ciaou8irr8a2g" path="res://Assets/Shaders/Shader Process Materials/Particle Process RED.tres" id="6_n28aj"]
 [ext_resource type="Texture2D" uid="uid://gk6nnan6cbyd" path="res://Assets/[General Art]/Backgrounds/Background.png" id="7_prpqg"]
 [ext_resource type="AudioStream" uid="uid://dql1tt0e21k1h" path="res://Audio/SFX/coin.wav" id="8_ghck4"]
+[ext_resource type="Script" uid="uid://bdrcsccml443f" path="res://Scenes + Scripts/Menus/Level Importer Helper.gd" id="9_0qt1e"]
 [ext_resource type="AudioStream" uid="uid://vpk6q47ubiqj" path="res://Audio/SFX/MixKit - GameWon.wav" id="9_s1k06"]
 [ext_resource type="AudioStream" uid="uid://d31bws0qi0tow" path="res://Audio/SFX/hurt.wav" id="10_bdwcv"]
 [ext_resource type="PackedScene" uid="uid://nj35fgwr1atr" path="res://Scenes + Scripts/Menus/UI/Game_UI.tscn" id="11_s1k06"]
+[ext_resource type="Script" uid="uid://bus17cvx5pffj" path="res://Standalone Scripts/Universal/EnvironmentTrigger.gd" id="16_yt8yt"]
+[ext_resource type="Resource" uid="uid://47aglto20s8p" path="res://Resources/Environmental/Lava.tres" id="17_m0w0f"]
+[ext_resource type="Resource" uid="uid://bfmoebiwb03kg" path="res://Resources/Environmental/Lava DARKENED.tres" id="18_pq0ax"]
+[ext_resource type="Resource" uid="uid://b2v6dcliqos7" path="res://Resources/Environmental/Desert.tres" id="19_1dql4"]
+[ext_resource type="Resource" uid="uid://c4iwcog384dw0" path="res://Resources/Environmental/Ice.tres" id="20_h5gui"]
+[ext_resource type="Resource" uid="uid://bf0vufp31d7xu" path="res://Resources/Environmental/Grasslands.tres" id="21_4godl"]
+[ext_resource type="PackedScene" uid="uid://bjyrb7iwinh13" path="res://Scenes + Scripts/General/Death Handler/Death Handler.tscn" id="22_klloo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bsqs"]
 
-[node name="Import Scene" type="Control" unique_id=1462694073 node_paths=PackedStringArray("main_tilemap_layer", "bg_tilemap_layer", "level_importer", "level_slot_list", "game_node", "particle_canvas", "main_parallax", "cave_parallax", "ui")]
+[node name="Import Scene" type="Control" unique_id=1462694073 node_paths=PackedStringArray("main_tilemap_layer", "bg_tilemap_layer", "level_importer", "level_slot_list", "audio_stream_player", "coin_holder", "carrot_holder", "enemy_holder", "game_node", "particle_canvas", "main_parallax", "cave_parallax", "ui", "game_handler", "collisions_parent", "wind_particles_left_color", "wind_particles_left_gray", "wind_particles_right_color", "wind_particles_right_gray")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,13 +36,26 @@ script = ExtResource("1_kdsp7")
 main_tilemap_layer = NodePath("Game/Main Tiles")
 bg_tilemap_layer = NodePath("Game/BG Tiles")
 shared_tileset = ExtResource("2_mhtg6")
+carrot_scene = ExtResource("3_4ce07")
+coin_scene = ExtResource("4_0qt1e")
+enemy_scene = ExtResource("5_fum2n")
 level_importer = NodePath("Level Importer")
 level_slot_list = NodePath("Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/LevelSlotList")
+audio_stream_player = NodePath("Game/LV Audio/Level Soundtrack")
+coin_holder = NodePath("Game/Spawned Objects/Coins")
+carrot_holder = NodePath("Game/Spawned Objects/Carrots")
+enemy_holder = NodePath("Game/Spawned Objects/Enemies")
 game_node = NodePath("Game")
 particle_canvas = NodePath("Game/UNIVERSAL LV Nodes/Ash Follow Cam")
 main_parallax = NodePath("Game/UNIVERSAL LV Nodes/BG/Background")
 cave_parallax = NodePath("Game/UNIVERSAL LV Nodes/BG/Background Cave")
 ui = NodePath("Game/Current UI")
+game_handler = NodePath("Universal Scene")
+collisions_parent = NodePath("Game/Collisions or AREA 2Ds")
+wind_particles_left_color = NodePath("Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND/CPU Particles ColouredL")
+wind_particles_left_gray = NodePath("Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND/CPU Particles GrayL")
+wind_particles_right_color = NodePath("Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND/CPU Particles ColouredR")
+wind_particles_right_gray = NodePath("Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND/CPU Particles GrayR")
 
 [node name="MenuEnvironment" type="WorldEnvironment" parent="." unique_id=752497612]
 environment = ExtResource("2_7bsqs")
@@ -163,6 +187,9 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="Universal Scene" type="Node2D" parent="." unique_id=1613118507]
+script = ExtResource("9_0qt1e")
+
 [node name="Game" type="Node2D" parent="." unique_id=425640234]
 
 [node name="Directional Light" type="Node" parent="Game" unique_id=977201196]
@@ -179,12 +206,12 @@ amount_ratio = 0.6
 process_material = ExtResource("6_n28aj")
 
 [node name="WIND" type="Node2D" parent="Game/UNIVERSAL LV Nodes/Ash Follow Cam" unique_id=402473160]
-visible = false
 scale = Vector2(0.6, 0.6)
 
 [node name="CPU Particles ColouredL" type="CPUParticles2D" parent="Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=130231506]
 z_index = 2
 position = Vector2(1919.9998, 540)
+emitting = false
 amount = 28
 lifetime = 4.5
 preprocess = 5.0
@@ -203,6 +230,7 @@ color = Color(0.937255, 0.721569, 0.141176, 1)
 
 [node name="CPU Particles GrayL" type="CPUParticles2D" parent="Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=639562978]
 position = Vector2(1919.9998, 540)
+emitting = false
 amount = 25
 lifetime = 16.0
 preprocess = 5.0
@@ -222,6 +250,7 @@ color = Color(0.580392, 0.560784, 0.603922, 1)
 [node name="CPU Particles ColouredR" type="CPUParticles2D" parent="Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=1793932741]
 z_index = 2
 position = Vector2(0, 540)
+emitting = false
 amount = 28
 lifetime = 4.5
 preprocess = 5.0
@@ -239,6 +268,7 @@ color = Color(0.937255, 0.721569, 0.141176, 1)
 
 [node name="CPU Particles GrayR" type="CPUParticles2D" parent="Game/UNIVERSAL LV Nodes/Ash Follow Cam/WIND" unique_id=1570818560]
 position = Vector2(0, 540)
+emitting = false
 amount = 25
 lifetime = 16.0
 preprocess = 5.0
@@ -309,6 +339,7 @@ stream = ExtResource("10_bdwcv")
 pitch_scale = 0.8
 
 [node name="Level Soundtrack" type="AudioStreamPlayer" parent="Game/LV Audio" unique_id=1952940077]
+volume_db = -5.0
 autoplay = true
 
 [node name="BG Tiles" type="TileMapLayer" parent="Game" unique_id=2032755723]
@@ -317,11 +348,69 @@ texture_filter = 1
 [node name="Main Tiles" type="TileMapLayer" parent="Game" unique_id=1730272854]
 texture_filter = 1
 
+[node name="Spawned Objects" type="Node" parent="Game" unique_id=1496716051]
+
+[node name="Coins" type="Node2D" parent="Game/Spawned Objects" unique_id=1795207857]
+
+[node name="Carrots" type="Node2D" parent="Game/Spawned Objects" unique_id=1790246870]
+
+[node name="Enemies" type="Node2D" parent="Game/Spawned Objects" unique_id=747658873]
+
 [node name="Current UI" type="CanvasLayer" parent="Game" unique_id=1903919252]
 visible = false
 
 [node name="Game UI" parent="Game/Current UI" unique_id=852240259 instance=ExtResource("11_s1k06")]
 
+[node name="Collisions or AREA 2Ds" type="Node" parent="Game" unique_id=2103816878]
+
+[node name="Lava Env" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=2119122106 node_paths=PackedStringArray("level_manager_override")]
+script = ExtResource("16_yt8yt")
+environment_to_load = ExtResource("17_m0w0f")
+level_manager_override = NodePath("../../../Universal Scene")
+
+[node name="Lava DARKENED" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=2110722931 node_paths=PackedStringArray("level_manager_override")]
+script = ExtResource("16_yt8yt")
+environment_to_load = ExtResource("18_pq0ax")
+level_manager_override = NodePath("../../../Universal Scene")
+
+[node name="Desert Env" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=2114532872 node_paths=PackedStringArray("level_manager_override")]
+script = ExtResource("16_yt8yt")
+environment_to_load = ExtResource("19_1dql4")
+level_manager_override = NodePath("../../../Universal Scene")
+
+[node name="Ice Env" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=153155818 node_paths=PackedStringArray("level_manager_override")]
+script = ExtResource("16_yt8yt")
+environment_to_load = ExtResource("20_h5gui")
+level_manager_override = NodePath("../../../Universal Scene")
+
+[node name="Grass Env" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=652047584 node_paths=PackedStringArray("level_manager_override")]
+script = ExtResource("16_yt8yt")
+environment_to_load = ExtResource("21_4godl")
+level_manager_override = NodePath("../../../Universal Scene")
+
+[node name="CaveZone" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=1874919171]
+
+[node name="Wind Left" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=1306701178]
+
+[node name="Wind Right" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=1917644288]
+
+[node name="Deactivate Wind" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=1786285979]
+
+[node name="WinArea" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=1908803627]
+
+[node name="Death Zone" parent="Game/Collisions or AREA 2Ds" unique_id=1529547203 instance=ExtResource("22_klloo")]
+
+[node name="Carrot Remover" type="Area2D" parent="Game/Collisions or AREA 2Ds" unique_id=1141928432]
+
 [connection signal="pressed" from="Level Importer/HSplitContainer/SlotListPanel/ScrollContainer/VBoxContainer/HBoxContainer/RefreshButton" to="." method="Refresh_Called"]
 [connection signal="pressed" from="Level Importer/HSplitContainer/PanelContainer/VBoxContainer/Back Button" to="." method="Go_Back_Called"]
 [connection signal="pressed" from="Level Importer/HSplitContainer/PanelContainer/VBoxContainer/ImportButton" to="." method="Import_Called"]
+[connection signal="body_entered" from="Game/Collisions or AREA 2Ds/CaveZone" to="Universal Scene" method="connect_cave_enter_zone"]
+[connection signal="body_exited" from="Game/Collisions or AREA 2Ds/CaveZone" to="Universal Scene" method="connect_cave_exit_zone"]
+[connection signal="body_entered" from="Game/Collisions or AREA 2Ds/Wind Left" to="Universal Scene" method="enable_wind_right_to_left"]
+[connection signal="body_entered" from="Game/Collisions or AREA 2Ds/Wind Right" to="Universal Scene" method="enable_wind_left_to_right"]
+[connection signal="body_exited" from="Game/Collisions or AREA 2Ds/Deactivate Wind" to="Universal Scene" method="_on_wind_area_exited"]
+[connection signal="body_entered" from="Game/Collisions or AREA 2Ds/WinArea" to="Universal Scene" method="_on_win_zone_body_entered"]
+[connection signal="body_entered" from="Game/Collisions or AREA 2Ds/Death Zone" to="Universal Scene" method="_on_death_zone_body_entered"]
+
+[editable path="Game/Collisions or AREA 2Ds/Death Zone"]

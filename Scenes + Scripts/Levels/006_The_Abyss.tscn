@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ulm6wn8c6hjx" path="res://Scenes + Scripts/TILEMAPS/Default Tilemap.tscn" id="8_ky27y"]
 [ext_resource type="PackedScene" uid="uid://i13psxcoqy7a" path="res://Scenes + Scripts/General/Collectables/Coin.tscn" id="44_l28oa"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f136"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqrou"]
 resource_local_to_scene = true
 shader = ExtResource("2_kpg0f")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -61,7 +61,7 @@ camera_zoom_curve = null
 limit_bottom = 10000000
 
 [node name="AnimatedSprite" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="4" unique_id=1102127678]
-material = SubResource("ShaderMaterial_5f136")
+material = SubResource("ShaderMaterial_mqrou")
 frame = 5
 frame_progress = 0.54101384
 
@@ -190,44 +190,44 @@ EmitsLight = false
 [node name="Coin21" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1143610008, 531716457) index="20" unique_id=2100138373 instance=ExtResource("44_l28oa")]
 position = Vector2(3624, -215)
 
-[node name="BEEG" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(1143610008, 2035832597) index="0" unique_id=1922011072 instance=ExtResource("44_l28oa")]
+[node name="BEEG" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(1143610008, 2035832597) index="0" unique_id=1922011072 instance=ExtResource("44_l28oa")]
 position = Vector2(2249, -43)
 EmitsLight = false
 coin_type = "Big_Yellow"
 coin_size = 3.0
 
-[node name="The SPECIAL" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(1143610008, 2035832597) index="1" unique_id=2142873303 instance=ExtResource("44_l28oa")]
+[node name="The SPECIAL" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(1143610008, 2035832597) index="1" unique_id=2142873303 instance=ExtResource("44_l28oa")]
 position = Vector2(1083, -543)
 coin_type = "Special_Coin"
 coin_size = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Universal Scene/Collectables/Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="0" unique_id=149899167]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Universal Scene/Collectables/Carrot Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="0" unique_id=149899167]
 position = Vector2(945.5, -311.75)
 shape = SubResource("RectangleShape2D_qirye")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Universal Scene/Collectables/Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="1" unique_id=2126174099]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Universal Scene/Collectables/Carrot Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="1" unique_id=2126174099]
 position = Vector2(1985, -778)
 shape = SubResource("RectangleShape2D_qirye")
 
-[node name="Secret" type="CollisionShape2D" parent="Universal Scene/Collectables/Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="2" unique_id=627157714]
+[node name="Secret" type="CollisionShape2D" parent="Universal Scene/Collectables/Carrot Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="2" unique_id=627157714]
 position = Vector2(2104, -98)
 shape = SubResource("RectangleShape2D_ky27y")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Universal Scene/Collectables/Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="3" unique_id=221154795]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Universal Scene/Collectables/Carrot Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(1143610008, 1243624506) index="3" unique_id=221154795]
 position = Vector2(3169, -519)
 shape = SubResource("RectangleShape2D_qirye")
 
-[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="1" unique_id=2058352563 node_paths=PackedStringArray("target_node") instance=ExtResource("4_vnpyl")]
+[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="1" unique_id=2058352563 node_paths=PackedStringArray("target_node") instance=ExtResource("4_vnpyl")]
 position = Vector2(72, -17)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 forced_max_dashes = 5
 
-[node name="Carrot Upgrade2" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="2" unique_id=1883199824 node_paths=PackedStringArray("target_node") instance=ExtResource("4_vnpyl")]
+[node name="Carrot Upgrade2" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="2" unique_id=1883199824 node_paths=PackedStringArray("target_node") instance=ExtResource("4_vnpyl")]
 position = Vector2(1911, -64)
 target_node = NodePath("../Carrot Upgrade")
 forced_max_dashes = 3
 
-[node name="Carrot DOWNGRADE" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="3" unique_id=265628919 node_paths=PackedStringArray("target_node", "removal_objects") instance=ExtResource("4_vnpyl")]
+[node name="Carrot DOWNGRADE" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="3" unique_id=265628919 node_paths=PackedStringArray("target_node", "removal_objects") instance=ExtResource("4_vnpyl")]
 position = Vector2(2156, -441)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 forced_max_dashes = 0
@@ -237,10 +237,7 @@ enable_object_addition = true
 additional_object_scenes = Array[PackedScene]([ExtResource("7_hnu2r")])
 spawn_locations = Array[Vector2]([Vector2(1984, -432)])
 
-[node name="Carrot" parent="Universal Scene/Collectables/Upgrades/Carrot DOWNGRADE" index="0" unique_id=678494656]
-modulate = Color(0.47524446, 0.56937784, 1.92523e-07, 1)
-
-[node name="Carrot Upgrade3" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="4" unique_id=724739882 node_paths=PackedStringArray("target_node", "removal_objects") instance=ExtResource("4_vnpyl")]
+[node name="Carrot Upgrade3" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(1143610008, 839593341) index="4" unique_id=724739882 node_paths=PackedStringArray("target_node", "removal_objects") instance=ExtResource("4_vnpyl")]
 position = Vector2(3478, -164)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 forced_max_dashes = 3
@@ -271,4 +268,3 @@ tile_map_data = PackedByteArray("AADTAOz/AQALAB4AAADUAOz/AQALAB4AAADVAOz/AQALAB4
 [editable path="Universal Scene"]
 [editable path="Universal Scene/UNIVERSAL LV Nodes/Player"]
 [editable path="Universal Scene/Collisions or AREA 2Ds/Death Zone"]
-[editable path="Universal Scene/Collectables/Upgrades/Carrot DOWNGRADE"]

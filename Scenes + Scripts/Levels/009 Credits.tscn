@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://iefyw0u8s7eg" path="res://Standalone Scripts/Universal/Universal Cam Shake.gd" id="20_eeghb"]
 [ext_resource type="Texture2D" uid="uid://dtmo6gaep31x4" path="res://Assets/[General Art]/{Pixel}/Sprites/Controller_Icons SP.png" id="21_vj1is"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltlbn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a45o4"]
 resource_local_to_scene = true
 shader = ExtResource("4_wv0n5")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -281,7 +281,7 @@ cant_move_until_floor_touched = true
 limit_right = 835
 
 [node name="AnimatedSprite" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="4" unique_id=1102127678]
-material = SubResource("ShaderMaterial_ltlbn")
+material = SubResource("ShaderMaterial_a45o4")
 
 [node name="Credits" type="Node2D" parent="Universal Scene/UNIVERSAL LV Nodes/Player" index="13" unique_id=1809760372]
 position = Vector2(0, -28)

@@ -407,7 +407,7 @@ EmitsLight = false
 [node name="Coin16" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(557514029, 531716457) index="15" unique_id=979998873 instance=ExtResource("4_2pn00")]
 position = Vector2(527, -682)
 
-[node name="BEEG COIN" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(557514029, 2035832597) index="0" unique_id=873680726 instance=ExtResource("4_2pn00")]
+[node name="BEEG COIN" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(557514029, 2035832597) index="0" unique_id=873680726 instance=ExtResource("4_2pn00")]
 position = Vector2(-677, -1253)
 coin_type = "Big_Yellow"
 coin_size = 5.0

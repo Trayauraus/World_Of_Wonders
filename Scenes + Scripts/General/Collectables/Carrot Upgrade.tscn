@@ -24,55 +24,38 @@
 [ext_resource type="Texture2D" uid="uid://cfev3rrvkm1nm" path="res://Assets/[General Art]/{Pixel}/Sprites/Carrot/frame0006.png" id="23_oalxk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5eix3"]
-load_path = "res://.godot/imported/normal61.png-4f2a9b41bd817ee2cdafadd8873cbe73.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_euhco"]
-load_path = "res://.godot/imported/normal00.png-98f6fce56b45d8f31d5375a444188699.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tayq0"]
-load_path = "res://.godot/imported/normal01.png-4f82cb1913e0b5b8c11e77bd4a612bd0.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bx14g"]
-load_path = "res://.godot/imported/normal02.png-dbb949ceac099282b0df6398c35dff03.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p8lhc"]
-load_path = "res://.godot/imported/normal03.png-f715d9f384a51f8467df8b4499682d47.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gkqc1"]
-load_path = "res://.godot/imported/normal04.png-d2e28922a8505bde461f56d16ff86b77.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ahxdq"]
-load_path = "res://.godot/imported/normal05.png-def2a67608cbb198758b43d7d026b23f.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xeit2"]
-load_path = "res://.godot/imported/normal06.png-bdde03df25ad61f2b6f45cf1c4df419c.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7wccf"]
-load_path = "res://.godot/imported/wings00.png-bbc0b66fe8b2e2f53f9cc56d723d4a39.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7712d"]
-load_path = "res://.godot/imported/wings01.png-e74ba0e45478bdd37d7163626a0fefd8.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_13wfv"]
-load_path = "res://.godot/imported/wings02.png-2ba195078168098d12d6d22ed1e4a43e.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w35pi"]
-load_path = "res://.godot/imported/wings03.png-c2c56dfc504eb14c66b1756a0c254448.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nq13k"]
-load_path = "res://.godot/imported/wings04.png-04203bf5faf4e2c4d1c3d0ddeb7398ca.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a0l1c"]
-load_path = "res://.godot/imported/wings05.png-7827a133879c395cf53c96aecc40a3a8.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iy4fr"]
-load_path = "res://.godot/imported/wings06.png-c88f5dc3300d1260a7e2560047a90578.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tk0d1"]
-load_path = "res://.godot/imported/wings07.png-c957eed7cec551b57104e03ab509c334.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7nf7"]
-load_path = "res://.godot/imported/wings08.png-c75386980c18cb2878b01c535327868c.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b6a34"]
 animations = [{

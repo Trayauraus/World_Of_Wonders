@@ -5,10 +5,10 @@ extends Node2D
 @onready var animated_sprite = $EnemySprite
 @onready var enemy_light: PointLight2D = $EnemyLight
 
+
 @export_enum("None", "LAVA", "DESERT", "ICE", "GRASSY") var super_tank_variant: String = "None"
 @export var SPEED = 60.0
 @export var emits_light: bool = true
-
 
 var direction = 1
 var playerdead = 1
@@ -84,8 +84,10 @@ func call_on_player_death():
 		if not universal_level:
 			universal_level =  $"Universal Scene"
 		if not universal_level:
+			universal_level = $"../../../../Universal Scene"
+		if not universal_level:
 			universal_level =  $"../.."
-			
+		
 		if universal_level:
 			# Call the function.
 			#universal_level.on_player_death()

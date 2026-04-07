@@ -185,11 +185,11 @@ collision_layer = 1
 collision_mask = 2
 coin_type = "Special_Coin"
 
-[node name="CoinPURP" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(427907940, 2035832597) index="0" unique_id=885467473 instance=ExtResource("6_6g8n1")]
+[node name="CoinPURP" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(427907940, 2035832597) index="0" unique_id=885467473 instance=ExtResource("6_6g8n1")]
 position = Vector2(-304, -1685)
 coin_type = "Special_Coin"
 
-[node name="CoinBEEG" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(427907940, 2035832597) index="1" unique_id=2078344736 instance=ExtResource("6_6g8n1")]
+[node name="CoinBEEG" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(427907940, 2035832597) index="1" unique_id=2078344736 instance=ExtResource("6_6g8n1")]
 position = Vector2(1976, -567)
 coin_type = "Big_Yellow"
 coin_size = 2.0

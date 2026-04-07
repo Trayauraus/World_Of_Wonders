@@ -156,13 +156,13 @@ EmitsLight = false
 [node name="Coin22" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(1700530106, 531716457) index="21" unique_id=986411948 instance=ExtResource("2_ashkp")]
 position = Vector2(2452, 287)
 
-[node name="BEEG Coin" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(1700530106, 2035832597) index="0" unique_id=913722707 instance=ExtResource("2_ashkp")]
+[node name="BEEG Coin" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(1700530106, 2035832597) index="0" unique_id=913722707 instance=ExtResource("2_ashkp")]
 position = Vector2(1353, 162)
 EmitsLight = false
 coin_type = "Big_Yellow"
 coin_size = 7.0
 
-[node name="Special Coin" parent="Universal Scene/Collectables/Special" parent_id_path=PackedInt32Array(1700530106, 2035832597) index="1" unique_id=1604602943 instance=ExtResource("2_ashkp")]
+[node name="Special Coin" parent="Universal Scene/Collectables/Special Coins" parent_id_path=PackedInt32Array(1700530106, 2035832597) index="1" unique_id=1604602943 instance=ExtResource("2_ashkp")]
 position = Vector2(2983, -123)
 coin_type = "Special_Coin"
 

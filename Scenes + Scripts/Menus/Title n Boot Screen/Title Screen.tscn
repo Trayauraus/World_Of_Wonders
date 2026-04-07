@@ -186,6 +186,7 @@ layout_mode = 2
 [node name="Play" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=330446076]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("5_olh2u")
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 72
@@ -195,15 +196,16 @@ text = "Campaign
 [node name="Level Importer" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=139791172]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("5_olh2u")
 theme_override_fonts/font = ExtResource("4_exejt")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 28
 text = "Custom Levels"
-flat = true
 
 [node name="Stats" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=1951695527]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("5_olh2u")
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 64
@@ -212,6 +214,7 @@ text = "Stats"
 [node name="Options" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=93449156]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("5_olh2u")
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 64
@@ -220,6 +223,7 @@ text = "Options"
 [node name="Exit" type="Button" parent="Title Screen/MarginContainer/VBoxContainer" unique_id=584753935]
 texture_filter = 1
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("5_olh2u")
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 64
@@ -509,9 +513,19 @@ texture_filter = 1
 offset_left = 6.6666565
 offset_top = 134.99998
 offset_right = 60.0
-offset_bottom = 156.66666
+offset_bottom = 186.66666
 theme_override_fonts/font = ExtResource("4_exejt")
 theme_override_font_sizes/font_size = 75
+
+[node name="Import2" type="Button" parent="Level Select" unique_id=1350778296]
+texture_filter = 1
+offset_left = 6.6666565
+offset_top = 196.66666
+offset_right = 248.33333
+offset_bottom = 391.66666
+theme_override_fonts/font = ExtResource("4_exejt")
+theme_override_font_sizes/font_size = 75
+flat = true
 
 [node name="Stats" type="Node2D" parent="." unique_id=1996921553]
 visible = false
@@ -699,6 +713,7 @@ color = Color(0, 0, 0, 0.392157)
 [connection signal="pressed" from="Level Select/Go Back" to="." method="_back_to_title_menu"]
 [connection signal="pressed" from="Level Select/Total Coins" to="." method="_back_to_title_menu"]
 [connection signal="pressed" from="Level Select/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Level Select/Import2" to="." method="_on_level_importer_pressed"]
 [connection signal="pressed" from="Stats/Stats Go Back" to="." method="_back_to_title_menu"]
 [connection signal="pressed" from="Stats/HSplitContainer/SlotDetailPanel/VBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
 [connection signal="canceled" from="Stats/CreateSlotDialog" to="." method="_on_new_slot_button_pressed"]

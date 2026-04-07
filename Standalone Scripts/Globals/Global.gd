@@ -35,7 +35,6 @@ var Has_Fallen = false
 
 var imported_levels: Array = []
 var current_level_path: String = ""
-var speed_up = false # Used in level import system
 
 func _ready():
 	var MASTER_BUS_INDEX = AudioServer.get_bus_index("Master")

@@ -227,11 +227,11 @@ debug_color = Color(0.8352941, 0.3019608, 0, 0.7764706)
 
 [node name="Coins" type="Node" parent="Collectables" unique_id=531716457]
 
-[node name="Special" type="Node" parent="Collectables" unique_id=2035832597]
+[node name="Special Coins" type="Node" parent="Collectables" unique_id=2035832597]
 
-[node name="Upgrades" type="Node" parent="Collectables" unique_id=839593341]
+[node name="Carrot Upgrades" type="Node" parent="Collectables" unique_id=839593341]
 
-[node name="Carrot Remover" type="Area2D" parent="Collectables/Upgrades" unique_id=1243624506]
+[node name="Carrot Remover" type="Area2D" parent="Collectables/Carrot Upgrades" unique_id=1243624506]
 
 [node name="Enemies" type="Node" parent="." unique_id=125243272]
 

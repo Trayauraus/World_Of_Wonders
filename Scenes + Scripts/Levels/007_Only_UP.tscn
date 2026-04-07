@@ -56,17 +56,17 @@ EmitsLight = false
 position = Vector2(-8, -680)
 EmitsLight = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Universal Scene/Collectables/Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(821686664, 1243624506) index="0" unique_id=1311005136]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Universal Scene/Collectables/Carrot Upgrades/Carrot Remover" parent_id_path=PackedInt32Array(821686664, 1243624506) index="0" unique_id=1311005136]
 position = Vector2(-89, -1112)
 shape = SubResource("RectangleShape2D_4i205")
 
-[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(821686664, 839593341) index="1" unique_id=331236481 node_paths=PackedStringArray("target_node") instance=ExtResource("2_chknp")]
+[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(821686664, 839593341) index="1" unique_id=331236481 node_paths=PackedStringArray("target_node") instance=ExtResource("2_chknp")]
 position = Vector2(28, 2)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 force_upgrade_collect_on_start = true
 forced_max_dashes = 3
 
-[node name="Carrot DOWNGRADE SECRET" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(821686664, 839593341) index="2" unique_id=77579829 node_paths=PackedStringArray("removal_objects") instance=ExtResource("2_chknp")]
+[node name="Carrot DOWNGRADE SECRET" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(821686664, 839593341) index="2" unique_id=77579829 node_paths=PackedStringArray("removal_objects") instance=ExtResource("2_chknp")]
 position = Vector2(-28, -286)
 forced_max_dashes = 1
 enable_object_removal = true
@@ -75,7 +75,7 @@ enable_object_addition = true
 additional_object_scenes = Array[PackedScene]([ExtResource("6_du2x1"), ExtResource("4_4i205")])
 spawn_locations = Array[Vector2]([Vector2(208, -96), Vector2(-195, -639)])
 
-[node name="CARROTE" type="Label" parent="Universal Scene/Collectables/Upgrades/Carrot DOWNGRADE SECRET" unique_id=1915223051]
+[node name="CARROTE" type="Label" parent="Universal Scene/Collectables/Carrot Upgrades/Carrot DOWNGRADE SECRET" unique_id=1915223051]
 texture_filter = 1
 offset_left = -77.0
 offset_top = -60.0

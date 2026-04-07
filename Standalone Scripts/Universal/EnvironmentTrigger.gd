@@ -1,7 +1,9 @@
+##EnvironmentTrigger.gd
 extends Area2D
 
 ## Drag and drop your .tres Environment Resource here
 @export var environment_to_load: LevelEnvironmentData
+@export var level_manager_override: Node2D
 
 func _ready() -> void:
 	# Connecting the signal
@@ -11,6 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		# We search the scene tree for the specific node that has your script
 		var level_manager = _find_universal_level(get_tree().current_scene)
+		if level_manager_override != null: level_manager = level_manager_override
 		
 		if level_manager and environment_to_load:
 			level_manager.change_environment_resource(environment_to_load)

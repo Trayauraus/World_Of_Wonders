@@ -88,7 +88,7 @@ tile_map_data = PackedByteArray("AAD//wEAAQAEAAQAAAAAAAEAAQAEAAQAAAABAAEAAQAEAAQ
 [node name="Coin" parent="Universal Scene/Collectables/Coins" parent_id_path=PackedInt32Array(498263599, 531716457) index="0" unique_id=201204016 instance=ExtResource("6_0ax2k")]
 position = Vector2(162, -59)
 
-[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Upgrades" parent_id_path=PackedInt32Array(498263599, 839593341) index="1" unique_id=1470881704 node_paths=PackedStringArray("target_node") instance=ExtResource("4_2vvhm")]
+[node name="Carrot Upgrade" parent="Universal Scene/Collectables/Carrot Upgrades" parent_id_path=PackedInt32Array(498263599, 839593341) index="1" unique_id=1470881704 node_paths=PackedStringArray("target_node") instance=ExtResource("4_2vvhm")]
 position = Vector2(632, -218)
 target_node = NodePath("../../../UNIVERSAL LV Nodes/Player")
 forced_max_dashes = 1

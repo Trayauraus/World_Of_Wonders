@@ -1,6 +1,6 @@
 @tool
 extends Node
-class_name TileConverter
+class_name TileMapConvertTool
 
 @export_category("Layers")
 ## The existing TileMapLayer with the old v1 tiles (Default ID 0)
