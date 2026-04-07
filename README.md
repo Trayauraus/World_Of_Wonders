@@ -5,10 +5,10 @@
 
 ## Website(s) ![Carrot](https://github.com/user-attachments/assets/3b1b03d3-d9de-4b17-8b4e-30d33d7009b5)
 
-
+### Game:
 [**World Of Wonder's Website**](https://trayauraus.github.io/World_Of_Wonders/)
 
-#### Note: As of right now the latest 'release' of WoW does **NOT** support the editor yet. If you would like to use the editor please choose one of the later beta versions that says it supports it.
+### Editor:
 [**Game Editor Website**](https://github.com/Trayauraus/World_Of_Wonders-Editor)
 
 [**Game Editor Documentation**](https://trayauraus.github.io/World_Of_Wonders/editor_docs.html)
@@ -44,9 +44,7 @@ It is meant to be a passion project I can work on in my free time.
 
 ## 🗺️ Development Roadmap ![Idle3 - Turn](https://github.com/user-attachments/assets/59eec873-71b1-4abe-be1f-28000e15522e)
 
-* **The Game Is Actually DONE!!** I may make a level editor in the future but as of right now its completely done.
-An import system *has* been added already but it still dosent guarantee a _fully_ functional level editor though.
-As of the moment there is a very basic editor.
+* **The Game Is Actually COMPLETELY DONE!!**
 
 ---
 
