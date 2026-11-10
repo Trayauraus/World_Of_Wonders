@@ -1,3 +1,6 @@
+# Godot 4.2+ specific ignores
+~*.dll
+
 # Godot 4+ specific ignores
 .godot/
 .nomedia
@@ -6,6 +9,17 @@
 .import/
 export.cfg
 export_credentials.cfg
+# Scene Temp Data
+*.tmp
+
+
+# Godot Addon ignores
+addons/ziva_agent
+
+# Plugin temp lockfiles
+addons/epic-online-services-godot/bin/windows/~*
+
+
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -14,3 +28,20 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Export outputs
+*.exe
+# Uncomment if your project does not version PCK files as runtime dependencies.
+*.pck
+
+#Syncthing
+.stignore
+.stfolder
+.stversions
+
+#VSCode
+.vscode
+addons/epic-online-services-godot/bin/windows/~libeosg.windows.template_debug.dev.x86_64.dll
+addons/epic-online-services-godot/bin/windows/~libeosg.windows.template_debug.dev.x86_64.dll~RF6dd08c.TMP
+
+*.import
